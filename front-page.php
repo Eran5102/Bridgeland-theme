@@ -112,8 +112,9 @@
                             <i class="fas fa-file-alt text-white fa-lg"></i>
                         </div>
                     </div>
-                    <div class="counter-number display-4 fw-bold mb-2" id="counter-valuations" data-target="500">0</div>
-                    <div class="counter-suffix display-4 fw-bold mb-2">+</div>
+                    <div class="display-4 fw-bold mb-2">
+                        <span class="counter-number" id="counter-valuations" data-target="500">0</span><span class="counter-suffix">+</span>
+                    </div>
                     <h5 class="counter-label mb-2" style="font-family: 'Inter', sans-serif;">Valuations Completed</h5>
                     <p class="small mb-0 opacity-75">Professional 409A and business valuations</p>
                 </div>
@@ -126,7 +127,9 @@
                             <i class="fas fa-dollar-sign text-white fa-lg"></i>
                         </div>
                     </div>
-                    <div class="counter-number display-4 fw-bold mb-2">$<span id="counter-assets" data-target="2">0</span>B+</div>
+                    <div class="display-4 fw-bold mb-2">
+                        $<span class="counter-number" id="counter-assets" data-target="2">0</span>B+
+                    </div>
                     <h5 class="counter-label mb-2" style="font-family: 'Inter', sans-serif;">Assets Valued</h5>
                     <p class="small mb-0 opacity-75">Total value of companies and assets analyzed</p>
                 </div>
@@ -139,8 +142,9 @@
                             <i class="fas fa-award text-white fa-lg"></i>
                         </div>
                     </div>
-                    <div class="counter-number display-4 fw-bold mb-2" id="counter-years" data-target="15">0</div>
-                    <div class="counter-suffix display-4 fw-bold mb-2">+</div>
+                    <div class="display-4 fw-bold mb-2">
+                        <span class="counter-number" id="counter-years" data-target="15">0</span><span class="counter-suffix">+</span>
+                    </div>
                     <h5 class="counter-label mb-2" style="font-family: 'Inter', sans-serif;">Years Experience</h5>
                     <p class="small mb-0 opacity-75">Investment banking and financial advisory</p>
                 </div>
@@ -766,30 +770,28 @@ section,
 }
 
 /* Counter animations */
+.counters-section {
+    background: linear-gradient(135deg, #8B0000 0%, #660000 100%);
+}
+
 .counter-card {
     transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .counter-card:hover {
     transform: translateY(-5px);
     background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
-.counter-number {
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.counter-number, .counter-suffix {
+    display: inline-block;
 }
 
 @media (max-width: 768px) {
-    .counter-number {
-        font-size: 2.5rem !important;
-        min-height: 60px;
-    }
-
-    .counter-suffix {
-        font-size: 2.5rem !important;
+    .counters-section .col-md-4 {
+        margin-bottom: 1.5rem;
     }
 }
 </style>
@@ -797,48 +799,42 @@ section,
 <script>
 // Interactive Counter Animation
 function animateCounters() {
-    const counters = document.querySelectorAll('[data-target]');
-    const speed = 50; // Animation speed
+    const counters = document.querySelectorAll('.counter-number[data-target]');
 
     counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-
-        const inc = target / speed;
-
-        if (count < target) {
-            counter.innerText = Math.ceil(count + inc);
-            setTimeout(() => animateCounters(), 50);
-        } else {
-            counter.innerText = target;
-        }
+        let current = 0;
+        const increment = target / 50; // 50 steps
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+            } else {
+                counter.textContent = Math.ceil(current);
+            }
+        }, 30); // Update every 30ms for smooth animation
     });
 }
 
 // Intersection Observer for counter animation
 function setupCounterObserver() {
     const counterSection = document.querySelector('.counters-section');
+    let hasAnimated = false;
 
     if (counterSection) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Reset counters to 0
-                    document.querySelectorAll('[data-target]').forEach(counter => {
-                        counter.innerText = '0';
-                    });
-
-                    // Start animation
+                if (entry.isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+                    // Start animation after a short delay
                     setTimeout(() => {
                         animateCounters();
                     }, 300);
-
-                    // Unobserve to prevent re-triggering
-                    observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.5
+            threshold: 0.3 // Trigger when 30% visible
         });
 
         observer.observe(counterSection);
