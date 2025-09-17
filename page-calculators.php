@@ -521,7 +521,7 @@
                 <a href="<?php echo home_url('/company-valuation/'); ?>" class="btn btn-outline-primary btn-lg">
                     <i class="fas fa-building me-2"></i>Company Valuation
                 </a>
-                <a href="" onclick="return openCalendly();" class="btn btn-success btn-lg">
+                <a href="javascript:void(0)" onclick="return openCalendly();" class="btn btn-success btn-lg">
                     <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
                 </a>
             </div>

@@ -255,7 +255,7 @@
             </ul>
 
             <!-- CTA Button -->
-            <a href="" onclick="return openCalendly();" class="btn btn-primary shadow-sm">
+            <a href="javascript:void(0)" onclick="return openCalendly();" class="btn btn-primary shadow-sm">
                 <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
             </a>
         </div>

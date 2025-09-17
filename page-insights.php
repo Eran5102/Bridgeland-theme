@@ -401,7 +401,7 @@
                     in your specific situation. Let's discuss your needs.
                 </p>
                 <div class="d-flex gap-3 justify-content-center flex-wrap">
-                    <a href="" onclick="return openCalendly();" class="btn btn-primary btn-lg">
+                    <a href="javascript:void(0)" onclick="return openCalendly();" class="btn btn-primary btn-lg">
                         <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
                     </a>
                     <a href="tel:+972-50-6842937" class="btn btn-outline-primary btn-lg">

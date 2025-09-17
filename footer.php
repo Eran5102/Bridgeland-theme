@@ -79,7 +79,7 @@
                     <div class="d-flex align-items-start">
                         <i class="fas fa-map-marker-alt text-brand me-2 mt-1"></i>
                         <div class="text-light">
-                            <?php echo get_theme_mod('company_address', '19 Ner Halayla St.<br>Even Yehuda, Israel'); ?>
+                            19 Ner Halayla St.<br>Even Yehuda, Israel
                         </div>
                     </div>
                 </div>

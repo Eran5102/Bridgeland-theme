@@ -580,7 +580,7 @@
                         <i class="fas fa-map-marker-alt text-primary me-3 mt-1"></i>
                         <div>
                             <h6 class="mb-1">Address</h6>
-                            <p class="text-muted mb-0"><?php echo get_theme_mod('company_address', '19 Ner Halayla St.<br>Even Yehuda, Israel'); ?></p>
+                            <p class="text-muted mb-0">19 Ner Halayla St.<br>Even Yehuda, Israel</p>
                         </div>
                     </div>
 
@@ -618,7 +618,7 @@
                 <div class="contact-methods">
                     <h4 class="mb-4">Get in Touch</h4>
                     <div class="d-grid gap-3">
-                        <a href="" onclick="return openCalendly();" class="btn btn-primary btn-lg">
+                        <a href="javascript:void(0)" onclick="return openCalendly();" class="btn btn-primary btn-lg">
                             <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
                         </a>
                         <a href="tel:+972-50-6842937" class="btn btn-outline-primary btn-lg">

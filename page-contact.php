@@ -676,6 +676,71 @@ window.addEventListener('load', function() {
     background-color: #f8f9fa;
 }
 
+/* Enhanced Contact Page Styling */
+.contact-hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.03;
+    background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23B91C1C" fill-opacity="0.1"><circle cx="7" cy="7" r="1"/><circle cx="53" cy="53" r="1"/><circle cx="30" cy="30" r="2"/></g></svg>');
+}
+
+.contact-highlights .highlight {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.contact-highlights .highlight:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-maroon);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.1);
+}
+
+.form-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.form-card .card-header {
+    background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-maroon-dark) 100%);
+    color: white;
+}
+
+.form-card .card-header h3 {
+    color: white !important;
+    margin-bottom: 0.5rem;
+}
+
+.form-control:focus {
+    border-color: var(--color-maroon);
+    box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25);
+}
+
+.form-select:focus {
+    border-color: var(--color-maroon);
+    box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25);
+}
+
+.office-info .detail-item {
+    transition: all 0.3s ease;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.office-info .detail-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
 .progress-steps .step {
     display: flex;
     flex-direction: column;
