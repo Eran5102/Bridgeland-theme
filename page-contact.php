@@ -587,7 +587,7 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 }
 
 .step.active .step-number {
-    background-color: var(--color-primary);
+    background-color: var(--color-maroon);
     color: white;
 }
 
@@ -604,7 +604,7 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 
 .step.active .step-label,
 .step.completed .step-label {
-    color: var(--color-primary);
+    color: var(--color-maroon);
 }
 
 .step-line {
@@ -625,8 +625,8 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 }
 
 .service-options .btn-check:checked + .btn {
-    background-color: var(--color-primary) !important;
-    border-color: var(--color-primary) !important;
+    background-color: var(--color-maroon) !important;
+    border-color: var(--color-maroon) !important;
     color: white !important;
 }
 
@@ -637,7 +637,7 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 
 .is-invalid {
     border-color: var(--color-error) !important;
-    box-shadow: 0 0 0 0.25rem rgba(220, 38, 38, 0.25) !important;
+    box-shadow: 0 0 0 0.25rem rgba(211, 47, 47, 0.25) !important;
 }
 
 @media (max-width: 768px) {
