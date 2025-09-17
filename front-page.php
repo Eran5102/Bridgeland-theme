@@ -20,7 +20,7 @@
                     </p>
 
                     <div class="hero-actions mb-5 animate-on-scroll">
-                        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-primary btn-lg me-3 mb-2 shadow">
+                        <a href="" onclick="return openCalendly();" class="btn btn-primary btn-lg me-3 mb-2 shadow">
                             <i class="fas fa-calendar-alt me-2"></i>
                             Schedule Consultation
                         </a>
@@ -937,7 +937,7 @@
                     <i class="fas fa-envelope me-2"></i>
                     Send Email
                 </a>
-                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-outline btn-large">
+                <a href="" onclick="return openCalendly();" class="btn btn-outline btn-large">
                     <i class="fas fa-calendar-alt me-2"></i>
                     Schedule Meeting
                 </a>

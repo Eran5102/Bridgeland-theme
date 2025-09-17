@@ -618,7 +618,7 @@
                 <div class="contact-methods">
                     <h4 class="mb-4">Get in Touch</h4>
                     <div class="d-grid gap-3">
-                        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-primary btn-lg">
+                        <a href="" onclick="return openCalendly();" class="btn btn-primary btn-lg">
                             <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
                         </a>
                         <a href="tel:+972-50-6842937" class="btn btn-outline-primary btn-lg">

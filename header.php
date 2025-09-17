@@ -136,7 +136,63 @@
 
     <!-- Calendly Popup Widget -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+
+    <!-- Calendly Helper Functions -->
+    <script>
+    // Helper function to ensure Calendly is loaded
+    function openCalendly() {
+        try {
+            if (typeof Calendly !== 'undefined' && Calendly.initPopupWidget) {
+                console.log('Opening Calendly popup widget');
+                Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'});
+                return false;
+            } else {
+                console.log('Calendly widget not available, opening in new tab');
+                // Fallback: open Calendly in new tab if widget fails
+                window.open('https://calendly.com/bridgeland-advisors', '_blank');
+                return false;
+            }
+        } catch (error) {
+            console.error('Error opening Calendly:', error);
+            // Fallback on error
+            window.open('https://calendly.com/bridgeland-advisors', '_blank');
+            return false;
+        }
+    }
+
+    // Enhanced Calendly loading check
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Checking for Calendly widget...');
+
+        // Check if Calendly is loaded every 200ms for up to 10 seconds
+        let attempts = 0;
+        const maxAttempts = 50;
+
+        const checkCalendly = setInterval(function() {
+            attempts++;
+            if (typeof Calendly !== 'undefined' && Calendly.initPopupWidget) {
+                clearInterval(checkCalendly);
+                console.log('✅ Calendly loaded successfully after', attempts * 200, 'ms');
+
+                // Add visual indicator that Calendly is ready
+                document.querySelectorAll('[onclick*="openCalendly"]').forEach(function(btn) {
+                    btn.style.cursor = 'pointer';
+                    btn.title = 'Schedule consultation with Calendly';
+                });
+
+            } else if (attempts >= maxAttempts) {
+                clearInterval(checkCalendly);
+                console.warn('⚠️ Calendly failed to load after', maxAttempts * 200, 'ms. Fallback will be used.');
+
+                // Update button titles to indicate fallback
+                document.querySelectorAll('[onclick*="openCalendly"]').forEach(function(btn) {
+                    btn.title = 'Schedule consultation (opens in new tab)';
+                });
+            }
+        }, 200);
+    });
+    </script>
 
     <?php wp_head(); ?>
 </head>
@@ -199,7 +255,7 @@
             </ul>
 
             <!-- CTA Button -->
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-primary shadow-sm">
+            <a href="" onclick="return openCalendly();" class="btn btn-primary shadow-sm">
                 <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
             </a>
         </div>

@@ -377,7 +377,7 @@
                     <h5 class="text-primary mb-3">Quick Actions</h5>
                     <div class="row g-3">
                         <div class="col-md-3">
-                            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-primary w-100">
+                            <a href="" onclick="return openCalendly();" class="btn btn-primary w-100">
                                 <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
                             </a>
                         </div>

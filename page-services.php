@@ -560,7 +560,7 @@
                     <a href="mailto:eran@bridgeland-advisors.com?subject=Services Inquiry" class="btn btn-outline btn-large">
                         <i class="fas fa-envelope me-2"></i>Email Consultation
                     </a>
-                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-outline btn-large">
+                    <a href="" onclick="return openCalendly();" class="btn btn-outline btn-large">
                         <i class="fas fa-calendar-alt me-2"></i>Schedule Meeting
                     </a>
                 </div>

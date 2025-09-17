@@ -17,7 +17,7 @@ get_header(); ?>
                     Expert guidance through investment term negotiations to secure favorable terms while maintaining investor relationships
                 </p>
                 <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-white btn-lg">
+                    <a href="" onclick="return openCalendly();" class="btn btn-white btn-lg">
                         <i class="fas fa-calendar-check me-2"></i>Schedule Consultation
                     </a>
                     <a href="#process" class="btn btn-outline-light btn-lg">
@@ -347,7 +347,7 @@ get_header(); ?>
                     <a href="mailto:eran@bridgeland-advisors.com" class="btn btn-outline-light btn-lg">
                         <i class="fas fa-envelope me-2"></i>Email Us
                     </a>
-                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-outline-light btn-lg">
+                    <a href="" onclick="return openCalendly();" class="btn btn-outline-light btn-lg">
                         <i class="fas fa-calendar-alt me-2"></i>Schedule Meeting
                     </a>
                 </div>

@@ -363,7 +363,7 @@
                 Schedule a consultation to discuss your specific needs.
             </p>
             <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-light btn-lg">
+                <a href="" onclick="return openCalendly();" class="btn btn-light btn-lg">
                     <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
                 </a>
                 <a href="tel:+972-50-6842937" class="btn btn-outline-light btn-lg">
