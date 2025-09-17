@@ -244,56 +244,56 @@
 </section>
 
 <!-- Stats Counter Section -->
-<section class="stats-counter-section py-5" style="background: linear-gradient(135deg, #8B0000 0%, #660000 100%);">
+<section class="stats-counter-section py-5 bg-white">
     <div class="container">
-        <div class="row text-center text-white mb-4">
+        <div class="row text-center mb-5">
             <div class="col-12">
-                <h2 class="display-6 fw-bold mb-3" style="font-family: 'Source Serif Pro', serif;">
+                <h2 class="display-6 fw-bold mb-3 text-primary" style="font-family: 'Source Serif Pro', serif;">
                     Our Track Record
                 </h2>
-                <p class="lead mb-0" style="font-family: 'Inter', sans-serif;">
+                <p class="lead mb-0 text-muted" style="font-family: 'Inter', sans-serif;">
                     Delivering exceptional results for companies worldwide
                 </p>
             </div>
         </div>
 
-        <div class="row text-center text-white">
+        <div class="row text-center">
             <div class="col-md-4 mb-4 mb-md-0">
-                <div class="stat-box p-4 rounded-4 bg-white bg-opacity-10 h-100">
+                <div class="stat-item animate-on-scroll" data-delay="0">
                     <div class="stat-icon mb-3">
-                        <i class="fas fa-file-contract fa-2x text-white opacity-75"></i>
+                        <i class="fas fa-file-contract fa-3x text-primary mb-3"></i>
                     </div>
-                    <div class="stat-number display-3 fw-bold mb-2">
+                    <div class="stat-number display-2 fw-bold text-primary mb-2">
                         <span data-count="200" class="counter">0</span>+
                     </div>
-                    <h4 class="stat-label h5 mb-2">Valuations Completed</h4>
-                    <p class="small opacity-75 mb-0">Professional 409A and business valuations delivered</p>
+                    <h4 class="stat-label h4 mb-2 text-dark">Valuations Completed</h4>
+                    <p class="text-muted mb-0">Professional 409A and business valuations delivered</p>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4 mb-md-0">
-                <div class="stat-box p-4 rounded-4 bg-white bg-opacity-10 h-100">
+                <div class="stat-item animate-on-scroll" data-delay="200">
                     <div class="stat-icon mb-3">
-                        <i class="fas fa-chart-line fa-2x text-white opacity-75"></i>
+                        <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
                     </div>
-                    <div class="stat-number display-3 fw-bold mb-2">
+                    <div class="stat-number display-2 fw-bold text-primary mb-2">
                         $<span data-count="2" class="counter">0</span>B+
                     </div>
-                    <h4 class="stat-label h5 mb-2">Assets Valued</h4>
-                    <p class="small opacity-75 mb-0">Total enterprise value analyzed and assessed</p>
+                    <h4 class="stat-label h4 mb-2 text-dark">Assets Valued</h4>
+                    <p class="text-muted mb-0">Total enterprise value analyzed and assessed</p>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <div class="stat-box p-4 rounded-4 bg-white bg-opacity-10 h-100">
+                <div class="stat-item animate-on-scroll" data-delay="400">
                     <div class="stat-icon mb-3">
-                        <i class="fas fa-award fa-2x text-white opacity-75"></i>
+                        <i class="fas fa-award fa-3x text-primary mb-3"></i>
                     </div>
-                    <div class="stat-number display-3 fw-bold mb-2">
+                    <div class="stat-number display-2 fw-bold text-primary mb-2">
                         <span data-count="15" class="counter">0</span>+
                     </div>
-                    <h4 class="stat-label h5 mb-2">Years Experience</h4>
-                    <p class="small opacity-75 mb-0">Investment banking and financial advisory expertise</p>
+                    <h4 class="stat-label h4 mb-2 text-dark">Years Experience</h4>
+                    <p class="text-muted mb-0">Investment banking and financial advisory expertise</p>
                 </div>
             </div>
         </div>
@@ -774,55 +774,47 @@ section,
 <script>
 // Enhanced Counter Animation Script
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Counter animation script loaded'); // Debug log
-
     const counterElements = document.querySelectorAll('.counter[data-count]');
-    console.log('Found counters:', counterElements.length); // Debug log
-
     let hasAnimated = false;
 
-    // Improved animation function with easing
-    function animateCounter(element) {
+    function animateCounter(element, delay = 0) {
         const target = parseInt(element.getAttribute('data-count'));
-        const duration = 3000; // 3 seconds for more visible animation
-        let start = null;
+        const duration = 2000; // 2 seconds for smooth animation
 
-        console.log('Animating counter to:', target); // Debug log
+        setTimeout(() => {
+            let start = null;
 
-        function updateCounter(timestamp) {
-            if (!start) start = timestamp;
-            const elapsed = timestamp - start;
-            const progress = Math.min(elapsed / duration, 1);
+            function updateCounter(timestamp) {
+                if (!start) start = timestamp;
+                const elapsed = timestamp - start;
+                const progress = Math.min(elapsed / duration, 1);
 
-            // Ease out function for smoother animation
-            const easeProgress = 1 - Math.pow(1 - progress, 3);
-            const currentValue = Math.floor(easeProgress * target);
+                // Smooth easing function
+                const easeProgress = 1 - Math.pow(1 - progress, 2);
+                const currentValue = Math.floor(easeProgress * target);
 
-            element.textContent = currentValue;
+                element.textContent = currentValue;
 
-            if (progress < 1) {
-                requestAnimationFrame(updateCounter);
-            } else {
-                element.textContent = target;
-                console.log('Animation complete for:', target); // Debug log
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
             }
-        }
 
-        requestAnimationFrame(updateCounter);
+            requestAnimationFrame(updateCounter);
+        }, delay);
     }
 
-    // Intersection Observer with better settings
+    // Intersection Observer for scroll trigger
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !hasAnimated) {
-                console.log('Stats section in view, starting animations'); // Debug log
                 hasAnimated = true;
 
-                // Animate each counter with staggered timing
+                // Start all counters with staggered delays
                 counterElements.forEach((counter, index) => {
-                    setTimeout(() => {
-                        animateCounter(counter);
-                    }, index * 300); // 300ms delay between counters
+                    animateCounter(counter, index * 200);
                 });
             }
         });
