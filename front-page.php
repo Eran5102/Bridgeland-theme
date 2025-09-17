@@ -264,7 +264,7 @@
                         <i class="fas fa-file-contract fa-2x text-white opacity-75"></i>
                     </div>
                     <div class="stat-number display-3 fw-bold mb-2">
-                        <span data-count="500" class="counter">500</span>+
+                        <span data-count="200" class="counter">0</span>+
                     </div>
                     <h4 class="stat-label h5 mb-2">Valuations Completed</h4>
                     <p class="small opacity-75 mb-0">Professional 409A and business valuations delivered</p>
@@ -277,7 +277,7 @@
                         <i class="fas fa-chart-line fa-2x text-white opacity-75"></i>
                     </div>
                     <div class="stat-number display-3 fw-bold mb-2">
-                        $<span data-count="2" class="counter">2</span>B+
+                        $<span data-count="2" class="counter">0</span>B+
                     </div>
                     <h4 class="stat-label h5 mb-2">Assets Valued</h4>
                     <p class="small opacity-75 mb-0">Total enterprise value analyzed and assessed</p>
@@ -290,7 +290,7 @@
                         <i class="fas fa-award fa-2x text-white opacity-75"></i>
                     </div>
                     <div class="stat-number display-3 fw-bold mb-2">
-                        <span data-count="15" class="counter">15</span>+
+                        <span data-count="15" class="counter">0</span>+
                     </div>
                     <h4 class="stat-label h5 mb-2">Years Experience</h4>
                     <p class="small opacity-75 mb-0">Investment banking and financial advisory expertise</p>
@@ -772,63 +772,86 @@ section,
 </style>
 
 <script>
-// Counter Animation Script
+// Enhanced Counter Animation Script
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Counter animation script loaded'); // Debug log
+
     const counterElements = document.querySelectorAll('.counter[data-count]');
+    console.log('Found counters:', counterElements.length); // Debug log
+
     let hasAnimated = false;
 
-    // Animation function
+    // Improved animation function with easing
     function animateCounter(element) {
         const target = parseInt(element.getAttribute('data-count'));
-        const duration = 2000; // 2 seconds
-        const start = performance.now();
+        const duration = 3000; // 3 seconds for more visible animation
+        let start = null;
 
-        function updateCounter(currentTime) {
-            const elapsed = currentTime - start;
+        console.log('Animating counter to:', target); // Debug log
+
+        function updateCounter(timestamp) {
+            if (!start) start = timestamp;
+            const elapsed = timestamp - start;
             const progress = Math.min(elapsed / duration, 1);
 
-            const currentValue = Math.floor(progress * target);
+            // Ease out function for smoother animation
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            const currentValue = Math.floor(easeProgress * target);
+
             element.textContent = currentValue;
 
             if (progress < 1) {
                 requestAnimationFrame(updateCounter);
             } else {
                 element.textContent = target;
+                console.log('Animation complete for:', target); // Debug log
             }
         }
 
         requestAnimationFrame(updateCounter);
     }
 
-    // Intersection Observer
+    // Intersection Observer with better settings
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !hasAnimated) {
+                console.log('Stats section in view, starting animations'); // Debug log
                 hasAnimated = true;
 
-                // Reset all counters to 0 first
-                counterElements.forEach(counter => {
-                    counter.textContent = '0';
-                });
-
-                // Start animations with staggered delay
+                // Animate each counter with staggered timing
                 counterElements.forEach((counter, index) => {
                     setTimeout(() => {
                         animateCounter(counter);
-                    }, index * 200); // 200ms delay between each counter
+                    }, index * 300); // 300ms delay between counters
                 });
             }
         });
     }, {
-        threshold: 0.3,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.2, // Trigger when 20% visible
+        rootMargin: '0px 0px -100px 0px' // Start slightly before fully visible
     });
 
     // Observe the stats section
     const statsSection = document.querySelector('.stats-counter-section');
     if (statsSection) {
+        console.log('Observing stats section'); // Debug log
         observer.observe(statsSection);
+    } else {
+        console.log('Stats section not found'); // Debug log
     }
+
+    // Fallback: Start animation after 3 seconds if not triggered by scroll
+    setTimeout(() => {
+        if (!hasAnimated) {
+            console.log('Fallback: Starting counter animations'); // Debug log
+            counterElements.forEach((counter, index) => {
+                setTimeout(() => {
+                    animateCounter(counter);
+                }, index * 300);
+            });
+            hasAnimated = true;
+        }
+    }, 3000);
 });
 </script>
 
