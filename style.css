@@ -2,7 +2,14 @@
 Theme Name: Bridgeland Advisors v2
 Description: Professional financial advisory theme with maroon branding and Bootstrap integration
 Author: Bridgeland Advisors
-Version: 2.0
+Version: 2.1
+GitHub Theme URI: Eran5102/Bridgeland-theme
+GitHub Branch: master
+Requires WP: 5.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /* Bootstrap is loaded separately via functions.php */
