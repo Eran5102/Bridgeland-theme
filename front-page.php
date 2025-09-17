@@ -360,16 +360,10 @@
 </section>
 
 <!-- Trusted By Section -->
-<section class="trusted-by-section py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-top: 3px solid var(--color-primary); border-bottom: 3px solid var(--color-primary);">
+<section class="trusted-by-section py-5 bg-white">
     <div class="container">
-        <div class="text-center mb-5">
-            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                <i class="fas fa-users fa-2x text-primary"></i>
-            </div>
-            <h2 class="display-6 fw-bold mb-3 text-primary" style="font-family: 'Source Serif Pro', serif;">TRUSTED BY LEADING COMPANIES</h2>
-            <p class="lead text-muted" style="font-family: 'Inter', sans-serif;">
-                Join 200+ successful companies who trust us with their most critical valuations
-            </p>
+        <div class="text-center mb-4">
+            <h3 class="h5 text-muted fw-semibold mb-4" style="font-family: 'Inter', sans-serif; letter-spacing: 0.5px;">TRUSTED BY LEADING COMPANIES</h3>
         </div>
 
         <!-- Client Logos Carousel -->
@@ -647,118 +641,240 @@
             </p>
         </div>
 
-        <div class="row g-4 justify-content-center">
-            <!-- Maya Cohen Testimonial -->
-            <div class="col-lg-4 animate-on-scroll">
-                <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 h-100 position-relative overflow-hidden">
-                    <!-- Quote decoration -->
-                    <div class="position-absolute top-0 start-0 p-4 opacity-10">
-                        <i class="fas fa-quote-left fa-3x text-primary"></i>
+        <!-- Testimonials Carousel -->
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators mb-4">
+                        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
                     </div>
 
-                    <div class="card-body p-5 position-relative">
-                        <div class="mb-4">
-                            <div class="text-warning mb-2">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                    <!-- Carousel Items -->
+                    <div class="carousel-inner">
+                        <!-- Slide 1: Maya Cohen -->
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 position-relative overflow-hidden">
+                                        <div class="position-absolute top-0 start-0 p-4 opacity-10">
+                                            <i class="fas fa-quote-left fa-3x text-primary"></i>
+                                        </div>
+
+                                        <div class="card-body p-5 position-relative text-center">
+                                            <div class="mb-4">
+                                                <div class="text-warning mb-3">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
+
+                                            <blockquote class="mb-4">
+                                                <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.2rem; line-height: 1.6; font-style: italic;">
+                                                    "Collaborating with Eran was effortless. The professionalism and streamlined process made it an outstanding experience. They really paid attention to what I needed and nailed it. Communication was clear and timely, which made the entire project run smoothly. I'd totally recommend Eran and the team for their awesome service and dedication."
+                                                </p>
+                                            </blockquote>
+
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                                    <i class="fas fa-user text-primary fa-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="fw-bold text-dark h5 mb-0" style="font-family: 'Inter', sans-serif;">Maya Cohen</div>
+                                                    <small class="text-muted" style="font-family: 'Inter', sans-serif;">CEO, Montopay</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <blockquote class="mb-4">
-                            <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.1rem; line-height: 1.6; font-style: italic;">
-                                "Collaborating with Eran was effortless. The professionalism and streamlined process made it an outstanding experience. They really paid attention to what I needed and nailed it. Communication was clear and timely, which made the entire project run smoothly. I'd totally recommend Eran and the team for their awesome service and dedication."
-                            </p>
-                        </blockquote>
+                        <!-- Slide 2: Josh Harro -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 position-relative overflow-hidden">
+                                        <div class="position-absolute top-0 start-0 p-4 opacity-10">
+                                            <i class="fas fa-quote-left fa-3x text-primary"></i>
+                                        </div>
 
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                                <i class="fas fa-user text-primary"></i>
-                            </div>
-                            <div>
-                                <div class="fw-bold text-dark" style="font-family: 'Inter', sans-serif;">Maya Cohen</div>
-                                <small class="text-muted" style="font-family: 'Inter', sans-serif;">CEO, Montopay</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                        <div class="card-body p-5 position-relative text-center">
+                                            <div class="mb-4">
+                                                <div class="text-warning mb-3">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
 
-            <!-- Josh Harro Testimonial -->
-            <div class="col-lg-4 animate-on-scroll">
-                <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 h-100 position-relative overflow-hidden">
-                    <!-- Quote decoration -->
-                    <div class="position-absolute top-0 start-0 p-4 opacity-10">
-                        <i class="fas fa-quote-left fa-3x text-primary"></i>
-                    </div>
+                                            <blockquote class="mb-4">
+                                                <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.2rem; line-height: 1.6; font-style: italic;">
+                                                    "Eran supported us with our 409A valuation. He was prompt, professional, and the process was seamless. They met our timeline and delivered a report we submitted to our investors and other stakeholders with confidence. Thanks!"
+                                                </p>
+                                            </blockquote>
 
-                    <div class="card-body p-5 position-relative">
-                        <div class="mb-4">
-                            <div class="text-warning mb-2">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-
-                        <blockquote class="mb-4">
-                            <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.1rem; line-height: 1.6; font-style: italic;">
-                                "Eran provided us with a 409A valuation, and I can't say enough about what a pleasure it was to work with him. He was extremely professional, and the work together was seamless. Eran exceeded our expectations and delivered the final report well within the time frame that we agree upon. I certainly expect us to continue collaborating with him going forward."
-                            </p>
-                        </blockquote>
-
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                                <i class="fas fa-user text-primary"></i>
-                            </div>
-                            <div>
-                                <div class="fw-bold text-dark" style="font-family: 'Inter', sans-serif;">Josh Harro</div>
-                                <small class="text-muted" style="font-family: 'Inter', sans-serif;">Director of Operations, Itur Intelligence</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Uriel Herman Testimonial -->
-            <div class="col-lg-4 animate-on-scroll">
-                <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 h-100 position-relative overflow-hidden">
-                    <!-- Quote decoration -->
-                    <div class="position-absolute top-0 start-0 p-4 opacity-10">
-                        <i class="fas fa-quote-left fa-3x text-primary"></i>
-                    </div>
-
-                    <div class="card-body p-5 position-relative">
-                        <div class="mb-4">
-                            <div class="text-warning mb-2">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                                    <i class="fas fa-user text-primary fa-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="fw-bold text-dark h5 mb-0" style="font-family: 'Inter', sans-serif;">Josh Harro</div>
+                                                    <small class="text-muted" style="font-family: 'Inter', sans-serif;">Director of Operations, Itur Intelligence</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <blockquote class="mb-4">
-                            <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.1rem; line-height: 1.6; font-style: italic;">
-                                "Half a Superman! Eran is a real expert in the field of strategic partnerships, VC, finance and investment processes. He brings years of legal & finance experience to the table, which is crucial for any company seeking accurate valuation in a cost-effective and accurate way. If you're looking for a strategic advisor, Eran is your man."
-                            </p>
-                        </blockquote>
+                        <!-- Slide 3: Uriel Herman -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 position-relative overflow-hidden">
+                                        <div class="position-absolute top-0 start-0 p-4 opacity-10">
+                                            <i class="fas fa-quote-left fa-3x text-primary"></i>
+                                        </div>
 
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                                <i class="fas fa-user text-primary"></i>
+                                        <div class="card-body p-5 position-relative text-center">
+                                            <div class="mb-4">
+                                                <div class="text-warning mb-3">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
+
+                                            <blockquote class="mb-4">
+                                                <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.2rem; line-height: 1.6; font-style: italic;">
+                                                    "Working with Eran was a pleasure. Our timeline was tight and he met every deadline. I received a comprehensive, professional package that helped us in our fundraising and internal processes. I'd definitely recommend him to other founders."
+                                                </p>
+                                            </blockquote>
+
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                                    <i class="fas fa-user text-primary fa-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="fw-bold text-dark h5 mb-0" style="font-family: 'Inter', sans-serif;">Uriel Herman</div>
+                                                    <small class="text-muted" style="font-family: 'Inter', sans-serif;">CEO, Extreme Simulations</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <div class="fw-bold text-dark" style="font-family: 'Inter', sans-serif;">Uriel Herman</div>
-                                <small class="text-muted" style="font-family: 'Inter', sans-serif;">CEO, Extreme Simulations</small>
+                        </div>
+
+                        <!-- Slide 4: Boaz Fraoman (Original) -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 position-relative overflow-hidden">
+                                        <div class="position-absolute top-0 start-0 p-4 opacity-10">
+                                            <i class="fas fa-quote-left fa-3x text-primary"></i>
+                                        </div>
+
+                                        <div class="card-body p-5 position-relative text-center">
+                                            <div class="mb-4">
+                                                <div class="text-warning mb-3">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
+
+                                            <blockquote class="mb-4">
+                                                <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.2rem; line-height: 1.6; font-style: italic;">
+                                                    "I highly recommend Bridgeland Advisors for their exceptional service in constructing a 409A valuation for our company. They demonstrated utmost professionalism and efficiency throughout the process."
+                                                </p>
+                                            </blockquote>
+
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                                    <i class="fas fa-user text-primary fa-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="fw-bold text-dark h5 mb-0" style="font-family: 'Inter', sans-serif;">Boaz Fraoman</div>
+                                                    <small class="text-muted" style="font-family: 'Inter', sans-serif;">Startup Founder</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5: David Cooper (Original) -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 position-relative overflow-hidden">
+                                        <div class="position-absolute top-0 start-0 p-4 opacity-10">
+                                            <i class="fas fa-quote-left fa-3x text-primary"></i>
+                                        </div>
+
+                                        <div class="card-body p-5 position-relative text-center">
+                                            <div class="mb-4">
+                                                <div class="text-warning mb-3">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
+
+                                            <blockquote class="mb-4">
+                                                <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.2rem; line-height: 1.6; font-style: italic;">
+                                                    "An absolute gem! Eran is a true expert in the field of VC finance and cap tables. He is an excellent communicator and an outstanding teacher."
+                                                </p>
+                                            </blockquote>
+
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                                                    <i class="fas fa-user text-primary fa-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="fw-bold text-dark h5 mb-0" style="font-family: 'Inter', sans-serif;">David Cooper</div>
+                                                    <small class="text-muted" style="font-family: 'Inter', sans-serif;">Investment Professional</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                        <div class="bg-primary rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="fas fa-chevron-left text-white"></i>
+                        </div>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                        <div class="bg-primary rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="fas fa-chevron-right text-white"></i>
+                        </div>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </div>
