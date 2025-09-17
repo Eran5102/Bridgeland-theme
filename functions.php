@@ -402,4 +402,170 @@ function bridgeland_seo_meta() {
     }
 }
 add_action('wp_head', 'bridgeland_seo_meta');
+
+// Auto-create pages when theme is activated
+function bridgeland_create_pages() {
+    $pages = array(
+        array(
+            'title' => 'About Us',
+            'slug' => 'about',
+            'template' => 'page-about.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Contact Us',
+            'slug' => 'contact-us',
+            'template' => 'page-contact.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Capital Raising',
+            'slug' => 'capital-raising',
+            'template' => 'page-capital-raising.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Calculators',
+            'slug' => 'calculators',
+            'template' => 'page-calculators.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Resources',
+            'slug' => 'resources',
+            'template' => 'page-resources.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Term Sheet Negotiation',
+            'slug' => 'term-sheet-negotiation',
+            'template' => 'page-term-sheet-negotiation.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Waterfall Analysis',
+            'slug' => 'waterfall-analysis',
+            'template' => 'page-waterfall-analysis.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'FAQ',
+            'slug' => 'faq',
+            'template' => 'page-faq.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Sitemap',
+            'slug' => 'sitemap',
+            'template' => 'page-sitemap.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Terms of Service',
+            'slug' => 'terms-of-service',
+            'template' => 'page-terms-of-service.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Privacy Policy',
+            'slug' => 'privacy-policy',
+            'template' => 'page-privacy-policy.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Insights',
+            'slug' => 'insights',
+            'template' => 'page-insights.php',
+            'content' => ''
+        )
+    );
+
+    foreach ($pages as $page) {
+        // Check if page already exists
+        $existing_page = get_page_by_path($page['slug']);
+
+        if (!$existing_page) {
+            // Create the page
+            $page_data = array(
+                'post_title' => $page['title'],
+                'post_name' => $page['slug'],
+                'post_content' => $page['content'],
+                'post_status' => 'publish',
+                'post_type' => 'page',
+                'post_author' => 1
+            );
+
+            $page_id = wp_insert_post($page_data);
+
+            // Set the page template
+            if ($page_id && !is_wp_error($page_id)) {
+                update_post_meta($page_id, '_wp_page_template', $page['template']);
+            }
+        }
+    }
+}
+
+// Run when theme is activated
+add_action('after_switch_theme', 'bridgeland_create_pages');
+
+// Also provide a manual trigger function for immediate execution
+function bridgeland_manual_create_pages() {
+    if (current_user_can('manage_options') && isset($_GET['create_pages']) && $_GET['create_pages'] === 'true') {
+        bridgeland_create_pages();
+        wp_redirect(admin_url('admin.php?page=bridgeland-setup&created=true'));
+        exit;
+    }
+}
+add_action('admin_init', 'bridgeland_manual_create_pages');
+
+// Add admin menu for manual page creation
+function bridgeland_admin_menu() {
+    add_theme_page(
+        'Bridgeland Setup',
+        'Theme Setup',
+        'manage_options',
+        'bridgeland-setup',
+        'bridgeland_setup_page'
+    );
+}
+add_action('admin_menu', 'bridgeland_admin_menu');
+
+function bridgeland_setup_page() {
+    ?>
+    <div class="wrap">
+        <h1>Bridgeland Advisors Theme Setup</h1>
+
+        <?php if (isset($_GET['created'])) : ?>
+            <div class="notice notice-success">
+                <p>All pages have been created successfully!</p>
+            </div>
+        <?php endif; ?>
+
+        <div class="card">
+            <h2>Create Theme Pages</h2>
+            <p>Click the button below to automatically create all necessary pages for the Bridgeland Advisors theme.</p>
+            <p><strong>Pages that will be created:</strong></p>
+            <ul>
+                <li>About Us (/about)</li>
+                <li>Contact Us (/contact-us)</li>
+                <li>Capital Raising (/capital-raising)</li>
+                <li>Calculators (/calculators)</li>
+                <li>Resources (/resources)</li>
+                <li>Term Sheet Negotiation (/term-sheet-negotiation)</li>
+                <li>Waterfall Analysis (/waterfall-analysis)</li>
+                <li>FAQ (/faq)</li>
+                <li>Sitemap (/sitemap)</li>
+                <li>Terms of Service (/terms-of-service)</li>
+                <li>Privacy Policy (/privacy-policy)</li>
+                <li>Insights (/insights)</li>
+            </ul>
+
+            <a href="<?php echo admin_url('admin.php?page=bridgeland-setup&create_pages=true'); ?>"
+               class="button button-primary button-large">
+                Create All Pages Now
+            </a>
+        </div>
+    </div>
+    <?php
+}
 ?>
