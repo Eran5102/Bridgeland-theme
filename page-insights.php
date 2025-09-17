@@ -401,7 +401,7 @@
                     in your specific situation. Let's discuss your needs.
                 </p>
                 <div class="d-flex gap-3 justify-content-center flex-wrap">
-                    <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-primary btn-lg">
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-primary btn-lg">
                         <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
                     </a>
                     <a href="tel:+972-50-6842937" class="btn btn-outline-primary btn-lg">

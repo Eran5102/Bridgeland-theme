@@ -618,8 +618,8 @@
                 <div class="contact-methods">
                     <h4 class="mb-4">Get in Touch</h4>
                     <div class="d-grid gap-3">
-                        <a href="mailto:eran@bridgeland-advisors.com?subject=Consultation Request" class="btn btn-primary btn-lg">
-                            <i class="fas fa-envelope me-2"></i>Schedule Consultation
+                        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
                         </a>
                         <a href="tel:+972-50-6842937" class="btn btn-outline-primary btn-lg">
                             <i class="fas fa-phone me-2"></i>Call Now

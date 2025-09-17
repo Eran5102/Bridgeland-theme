@@ -134,6 +134,10 @@
     }
     </script>
 
+    <!-- Calendly Popup Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <?php wp_head(); ?>
 </head>
 
@@ -195,7 +199,7 @@
             </ul>
 
             <!-- CTA Button -->
-            <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-primary shadow-sm">
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-primary shadow-sm">
                 <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
             </a>
         </div>

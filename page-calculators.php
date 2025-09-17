@@ -521,8 +521,8 @@
                 <a href="<?php echo home_url('/company-valuation/'); ?>" class="btn btn-outline-primary btn-lg">
                     <i class="fas fa-building me-2"></i>Company Valuation
                 </a>
-                <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-success btn-lg">
-                    <i class="fas fa-phone me-2"></i>Schedule Consultation
+                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/bridgeland-advisors'}); return false;" class="btn btn-success btn-lg">
+                    <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
                 </a>
             </div>
         </div>
