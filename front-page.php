@@ -83,86 +83,6 @@
     </div>
 </section>
 
-<!-- Interactive Counters Section -->
-<section class="counters-section py-5 bg-primary text-white position-relative overflow-hidden">
-    <!-- Background decoration -->
-    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <i class="fas fa-chart-line fa-9x text-white-50"></i>
-        </div>
-    </div>
-
-    <div class="container position-relative">
-        <div class="row">
-            <div class="col-12 text-center mb-5">
-                <h2 class="display-6 fw-bold mb-3" style="font-family: 'Source Serif Pro', serif;">
-                    Trusted by Companies Worldwide
-                </h2>
-                <p class="lead mb-0" style="font-family: 'Inter', sans-serif;">
-                    Professional valuations and financial advisory services with proven results
-                </p>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="counter-card text-center bg-white bg-opacity-10 rounded-4 p-4 h-100 backdrop-blur">
-                    <div class="counter-icon mb-3">
-                        <div class="bg-white bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                            <i class="fas fa-file-alt text-white fa-lg"></i>
-                        </div>
-                    </div>
-                    <div class="display-4 fw-bold mb-2">
-                        <span class="counter-number" id="counter-valuations" data-target="500">0</span><span class="counter-suffix">+</span>
-                    </div>
-                    <h5 class="counter-label mb-2" style="font-family: 'Inter', sans-serif;">Valuations Completed</h5>
-                    <p class="small mb-0 opacity-75">Professional 409A and business valuations</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="counter-card text-center bg-white bg-opacity-10 rounded-4 p-4 h-100 backdrop-blur">
-                    <div class="counter-icon mb-3">
-                        <div class="bg-white bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                            <i class="fas fa-dollar-sign text-white fa-lg"></i>
-                        </div>
-                    </div>
-                    <div class="display-4 fw-bold mb-2">
-                        $<span class="counter-number" id="counter-assets" data-target="2">0</span>B+
-                    </div>
-                    <h5 class="counter-label mb-2" style="font-family: 'Inter', sans-serif;">Assets Valued</h5>
-                    <p class="small mb-0 opacity-75">Total value of companies and assets analyzed</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="counter-card text-center bg-white bg-opacity-10 rounded-4 p-4 h-100 backdrop-blur">
-                    <div class="counter-icon mb-3">
-                        <div class="bg-white bg-opacity-20 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                            <i class="fas fa-award text-white fa-lg"></i>
-                        </div>
-                    </div>
-                    <div class="display-4 fw-bold mb-2">
-                        <span class="counter-number" id="counter-years" data-target="15">0</span><span class="counter-suffix">+</span>
-                    </div>
-                    <h5 class="counter-label mb-2" style="font-family: 'Inter', sans-serif;">Years Experience</h5>
-                    <p class="small mb-0 opacity-75">Investment banking and financial advisory</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-12 text-center">
-                <div class="d-inline-flex align-items-center bg-white bg-opacity-10 rounded-pill px-4 py-2">
-                    <i class="fas fa-shield-check text-white me-2"></i>
-                    <span class="small" style="font-family: 'Inter', sans-serif;">
-                        <strong>100% IRS Compliant</strong> • Audit Defense Included • 14-Day Turnaround
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Services Section -->
 <section id="services" class="services-section py-5">
@@ -317,6 +237,63 @@
                             Learn More <i class="fas fa-arrow-right ms-2"></i>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Counter Section -->
+<section class="stats-counter-section py-5" style="background: linear-gradient(135deg, #8B0000 0%, #660000 100%);">
+    <div class="container">
+        <div class="row text-center text-white mb-4">
+            <div class="col-12">
+                <h2 class="display-6 fw-bold mb-3" style="font-family: 'Source Serif Pro', serif;">
+                    Our Track Record
+                </h2>
+                <p class="lead mb-0" style="font-family: 'Inter', sans-serif;">
+                    Delivering exceptional results for companies worldwide
+                </p>
+            </div>
+        </div>
+
+        <div class="row text-center text-white">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="stat-box p-4 rounded-4 bg-white bg-opacity-10 h-100">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-file-contract fa-2x text-white opacity-75"></i>
+                    </div>
+                    <div class="stat-number display-3 fw-bold mb-2">
+                        <span data-count="500" class="counter">500</span>+
+                    </div>
+                    <h4 class="stat-label h5 mb-2">Valuations Completed</h4>
+                    <p class="small opacity-75 mb-0">Professional 409A and business valuations delivered</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="stat-box p-4 rounded-4 bg-white bg-opacity-10 h-100">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-chart-line fa-2x text-white opacity-75"></i>
+                    </div>
+                    <div class="stat-number display-3 fw-bold mb-2">
+                        $<span data-count="2" class="counter">2</span>B+
+                    </div>
+                    <h4 class="stat-label h5 mb-2">Assets Valued</h4>
+                    <p class="small opacity-75 mb-0">Total enterprise value analyzed and assessed</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="stat-box p-4 rounded-4 bg-white bg-opacity-10 h-100">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-award fa-2x text-white opacity-75"></i>
+                    </div>
+                    <div class="stat-number display-3 fw-bold mb-2">
+                        <span data-count="15" class="counter">15</span>+
+                    </div>
+                    <h4 class="stat-label h5 mb-2">Years Experience</h4>
+                    <p class="small opacity-75 mb-0">Investment banking and financial advisory expertise</p>
                 </div>
             </div>
         </div>
@@ -769,81 +746,89 @@ section,
     visibility: visible !important;
 }
 
-/* Counter animations */
-.counters-section {
-    background: linear-gradient(135deg, #8B0000 0%, #660000 100%);
-}
-
-.counter-card {
+/* Stats Counter Section */
+.stats-counter-section .stat-box {
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.counter-card:hover {
+.stats-counter-section .stat-box:hover {
     transform: translateY(-5px);
     background-color: rgba(255, 255, 255, 0.15) !important;
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
-.counter-number, .counter-suffix {
+.stats-counter-section .counter {
     display: inline-block;
+    min-width: 60px;
 }
 
 @media (max-width: 768px) {
-    .counters-section .col-md-4 {
-        margin-bottom: 1.5rem;
+    .stats-counter-section .stat-number {
+        font-size: 2.5rem !important;
     }
 }
+
 </style>
 
 <script>
-// Interactive Counter Animation
-function animateCounters() {
-    const counters = document.querySelectorAll('.counter-number[data-target]');
-
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        let current = 0;
-        const increment = target / 50; // 50 steps
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                counter.textContent = target;
-                clearInterval(timer);
-            } else {
-                counter.textContent = Math.ceil(current);
-            }
-        }, 30); // Update every 30ms for smooth animation
-    });
-}
-
-// Intersection Observer for counter animation
-function setupCounterObserver() {
-    const counterSection = document.querySelector('.counters-section');
+// Counter Animation Script
+document.addEventListener('DOMContentLoaded', function() {
+    const counterElements = document.querySelectorAll('.counter[data-count]');
     let hasAnimated = false;
 
-    if (counterSection) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !hasAnimated) {
-                    hasAnimated = true;
-                    // Start animation after a short delay
-                    setTimeout(() => {
-                        animateCounters();
-                    }, 300);
-                }
-            });
-        }, {
-            threshold: 0.3 // Trigger when 30% visible
-        });
+    // Animation function
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-count'));
+        const duration = 2000; // 2 seconds
+        const start = performance.now();
 
-        observer.observe(counterSection);
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - start;
+            const progress = Math.min(elapsed / duration, 1);
+
+            const currentValue = Math.floor(progress * target);
+            element.textContent = currentValue;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target;
+            }
+        }
+
+        requestAnimationFrame(updateCounter);
     }
-}
 
-// Initialize when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    setupCounterObserver();
+    // Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+
+                // Reset all counters to 0 first
+                counterElements.forEach(counter => {
+                    counter.textContent = '0';
+                });
+
+                // Start animations with staggered delay
+                counterElements.forEach((counter, index) => {
+                    setTimeout(() => {
+                        animateCounter(counter);
+                    }, index * 200); // 200ms delay between each counter
+                });
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe the stats section
+    const statsSection = document.querySelector('.stats-counter-section');
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
 });
 </script>
 
