@@ -135,9 +135,9 @@
                         </div>
                         <h5 class="mb-3" style="font-family: 'Inter', sans-serif;">Complete Guide to 409A Valuations</h5>
                         <p class="text-muted mb-3">
-                            Everything you need to know about IRS-compliant equity valuations for stock option programs.
+                            Everything you need to know about IRS-compliant equity valuations for stock option programs, including timing requirements, methodologies, and compliance best practices.
                         </p>
-                        <a href="#" class="btn btn-outline-primary">
+                        <a href="<?php echo home_url('/insights/'); ?>" class="btn btn-outline-primary">
                             <i class="fas fa-arrow-right me-2"></i>Read Guide
                         </a>
                     </div>
@@ -155,9 +155,9 @@
                         </div>
                         <h5 class="mb-3" style="font-family: 'Inter', sans-serif;">Startup Valuation Methods Explained</h5>
                         <p class="text-muted mb-3">
-                            Compare different valuation approaches and understand when to use each methodology.
+                            Compare different valuation approaches including VC Method, Scorecard, DCF, and market multiples to understand when to use each methodology.
                         </p>
-                        <a href="#" class="btn btn-outline-success">
+                        <a href="<?php echo home_url('/insights/'); ?>" class="btn btn-outline-success">
                             <i class="fas fa-arrow-right me-2"></i>Read Guide
                         </a>
                     </div>
@@ -175,9 +175,9 @@
                         </div>
                         <h5 class="mb-3" style="font-family: 'Inter', sans-serif;">Capital Raising Best Practices</h5>
                         <p class="text-muted mb-3">
-                            Strategic guidance for successful fundraising rounds and investor relations.
+                            Strategic guidance for successful fundraising rounds, investor targeting, pitch preparation, and term sheet negotiation.
                         </p>
-                        <a href="#" class="btn btn-outline-info">
+                        <a href="<?php echo home_url('/insights/'); ?>" class="btn btn-outline-info">
                             <i class="fas fa-arrow-right me-2"></i>Read Guide
                         </a>
                     </div>
@@ -195,9 +195,9 @@
                         </div>
                         <h5 class="mb-3" style="font-family: 'Inter', sans-serif;">Exit Waterfall Analysis Guide</h5>
                         <p class="text-muted mb-3">
-                            Understand liquidation preferences and exit distribution scenarios.
+                            Understand liquidation preferences, participation rights, and how different exit scenarios affect stakeholder distributions.
                         </p>
-                        <a href="#" class="btn btn-outline-warning">
+                        <a href="<?php echo home_url('/insights/'); ?>" class="btn btn-outline-warning">
                             <i class="fas fa-arrow-right me-2"></i>Read Guide
                         </a>
                     </div>
@@ -215,9 +215,9 @@
                         </div>
                         <h5 class="mb-3" style="font-family: 'Inter', sans-serif;">Term Sheet Negotiation Guide</h5>
                         <p class="text-muted mb-3">
-                            Key terms, common pitfalls, and negotiation strategies for investment deals.
+                            Key terms, common pitfalls, valuation clauses, board control, and negotiation strategies for venture capital investment deals.
                         </p>
-                        <a href="#" class="btn btn-outline-danger">
+                        <a href="<?php echo home_url('/insights/'); ?>" class="btn btn-outline-danger">
                             <i class="fas fa-arrow-right me-2"></i>Read Guide
                         </a>
                     </div>
@@ -235,9 +235,9 @@
                         </div>
                         <h5 class="mb-3" style="font-family: 'Inter', sans-serif;">SEC & IRS Compliance Basics</h5>
                         <p class="text-muted mb-3">
-                            Essential compliance requirements for startup valuations and reporting.
+                            Essential compliance requirements for startup valuations, 83(b) elections, and financial reporting obligations.
                         </p>
-                        <a href="#" class="btn btn-outline-secondary">
+                        <a href="<?php echo home_url('/insights/'); ?>" class="btn btn-outline-secondary">
                             <i class="fas fa-arrow-right me-2"></i>Read Guide
                         </a>
                     </div>

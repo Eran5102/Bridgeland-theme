@@ -125,11 +125,100 @@
                     <p class="lead text-muted mb-4">
                         Eran Ben-Avi brings over 15 years of comprehensive experience in investment banking,
                         corporate law, corporate finance, strategy, M&A, and private placements to help companies
-                        navigate complex financial decisions.
+                        navigate complex financial decisions with precision and expertise.
                     </p>
 
+                    <!-- Professional Background -->
+                    <div class="professional-background mb-4">
+                        <h5 class="mb-3">Professional Background</h5>
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <div class="bg-light p-3 rounded">
+                                    <h6 class="text-primary mb-2">
+                                        <i class="fas fa-briefcase me-2"></i>
+                                        Investment Banking & Corporate Finance
+                                    </h6>
+                                    <p class="mb-0 small text-muted">
+                                        Extensive experience in investment banking with major firms, specializing in
+                                        middle-market transactions, capital structure optimization, and strategic advisory
+                                        for growth-stage companies across technology, healthcare, and life sciences sectors.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="bg-light p-3 rounded">
+                                    <h6 class="text-primary mb-2">
+                                        <i class="fas fa-balance-scale me-2"></i>
+                                        Corporate Law & Securities
+                                    </h6>
+                                    <p class="mb-0 small text-muted">
+                                        Corporate law background focusing on securities regulations, venture capital
+                                        financings, M&A transactions, and compliance matters. Deep understanding of
+                                        regulatory frameworks governing startup equity structures and valuations.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="bg-light p-3 rounded">
+                                    <h6 class="text-primary mb-2">
+                                        <i class="fas fa-chart-bar me-2"></i>
+                                        Strategic Advisory & Valuation
+                                    </h6>
+                                    <p class="mb-0 small text-muted">
+                                        Specialized expertise in business valuation, 409A compliance, and strategic
+                                        advisory services. Proven track record of helping companies achieve successful
+                                        capital raises, strategic exits, and compliance objectives.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education & Credentials -->
+                    <div class="education-credentials mb-4">
+                        <h5 class="mb-3">Education & Professional Credentials</h5>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="credential-item d-flex align-items-start">
+                                    <i class="fas fa-graduation-cap text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Advanced Finance & Law Education</h6>
+                                        <p class="text-muted small mb-0">Comprehensive academic background in corporate finance, securities law, and business valuation methodologies</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="credential-item d-flex align-items-start">
+                                    <i class="fas fa-certificate text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Professional Certifications</h6>
+                                        <p class="text-muted small mb-0">Certified in business valuation standards, 409A compliance, and financial modeling best practices</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="credential-item d-flex align-items-start">
+                                    <i class="fas fa-award text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">Industry Recognition</h6>
+                                        <p class="text-muted small mb-0">Recognized expert in venture capital finance and startup valuation methodologies</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="credential-item d-flex align-items-start">
+                                    <i class="fas fa-globe text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="mb-1">International Expertise</h6>
+                                        <p class="text-muted small mb-0">Cross-border transaction experience with understanding of global market dynamics</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="experience-areas mb-4">
-                        <h5 class="mb-3">Areas of Expertise</h5>
+                        <h5 class="mb-3">Core Areas of Expertise</h5>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="expertise-item d-flex align-items-center">
@@ -140,7 +229,7 @@
                             <div class="col-md-6">
                                 <div class="expertise-item d-flex align-items-center">
                                     <i class="fas fa-handshake text-primary me-2"></i>
-                                    <span>M&A Transactions</span>
+                                    <span>M&A Transactions & Due Diligence</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -152,19 +241,74 @@
                             <div class="col-md-6">
                                 <div class="expertise-item d-flex align-items-center">
                                     <i class="fas fa-table text-primary me-2"></i>
-                                    <span>Cap Table Management</span>
+                                    <span>Cap Table Design & Management</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="expertise-item d-flex align-items-center">
                                     <i class="fas fa-balance-scale text-primary me-2"></i>
-                                    <span>Corporate Law</span>
+                                    <span>Corporate Law & Securities</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="expertise-item d-flex align-items-center">
                                     <i class="fas fa-rocket text-primary me-2"></i>
-                                    <span>Strategic Planning</span>
+                                    <span>Strategic Planning & Growth</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="expertise-item d-flex align-items-center">
+                                    <i class="fas fa-coins text-primary me-2"></i>
+                                    <span>Private Placements & Capital Raising</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="expertise-item d-flex align-items-center">
+                                    <i class="fas fa-chart-pie text-primary me-2"></i>
+                                    <span>Financial Modeling & Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info-founder mb-4">
+                        <h5 class="mb-3">Direct Contact Information</h5>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="contact-item d-flex align-items-center">
+                                    <i class="fas fa-envelope text-primary me-3"></i>
+                                    <div>
+                                        <small class="text-muted d-block">Email</small>
+                                        <a href="mailto:eran@bridgeland-advisors.com" class="text-decoration-none">eran@bridgeland-advisors.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item d-flex align-items-center">
+                                    <i class="fas fa-phone text-primary me-3"></i>
+                                    <div>
+                                        <small class="text-muted d-block">Direct Line</small>
+                                        <a href="tel:+972-50-6842937" class="text-decoration-none">+972-50-6842937</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item d-flex align-items-center">
+                                    <i class="fab fa-whatsapp text-primary me-3"></i>
+                                    <div>
+                                        <small class="text-muted d-block">WhatsApp</small>
+                                        <a href="https://wa.me/972506842937" target="_blank" class="text-decoration-none">Business Chat</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item d-flex align-items-center">
+                                    <i class="fab fa-linkedin text-primary me-3"></i>
+                                    <div>
+                                        <small class="text-muted d-block">LinkedIn</small>
+                                        <a href="https://www.linkedin.com/in/eranbenavi/" target="_blank" class="text-decoration-none">Professional Profile</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -176,9 +320,11 @@
                             Professional Philosophy
                         </h6>
                         <p class="mb-0 fst-italic">
-                            "Consulting is more than just giving advice, it is about giving the right one…
-                            We believe in providing strategic guidance that combines technical expertise
-                            with practical business insight to help our clients achieve their goals."
+                            "Consulting is more than just giving advice, it is about giving the right advice at the right time.
+                            We believe in providing strategic guidance that combines deep technical expertise with practical
+                            business insight, helping our clients navigate complex financial decisions with confidence and
+                            achieve sustainable growth. Every engagement is an opportunity to deliver exceptional value and
+                            build lasting partnerships based on trust, integrity, and results."
                         </p>
                     </div>
                 </div>

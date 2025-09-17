@@ -509,17 +509,38 @@ document.getElementById('multi-step-contact-form').addEventListener('submit', fu
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-        document.querySelectorAll('.form-step').forEach(step => {
-            step.classList.remove('active');
-        });
+    // Collect form data
+    const formData = new FormData(this);
 
-        document.querySelector('.progress-steps').style.display = 'none';
-        document.getElementById('form-response').classList.remove('d-none');
+    // Send AJAX request
+    fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        credentials: 'same-origin'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Show success message
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
 
+            document.querySelector('.progress-steps').style.display = 'none';
+            document.getElementById('form-response').classList.remove('d-none');
+        } else {
+            // Show error message
+            alert('There was an error sending your message. Please try again or contact us directly.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error sending your message. Please try again or contact us directly.');
+    })
+    .finally(() => {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-    }, 2000);
+    });
 });
 
 document.querySelectorAll('input[name="service"]').forEach(radio => {
