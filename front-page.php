@@ -35,46 +35,105 @@
 
             <div class="col-lg-6">
                 <div class="hero-visual animate-on-scroll">
-                    <div class="dashboard-mockup bg-white rounded-4 shadow-lg p-4 border border-light">
-                        <div class="dashboard-header d-flex align-items-center mb-4">
-                            <div class="bg-primary bg-opacity-10 rounded-circle p-2 me-3">
-                                <i class="fas fa-chart-line text-primary"></i>
+                    <div class="advanced-dashboard bg-white rounded-4 shadow-lg p-4 border border-light position-relative overflow-hidden">
+                        <!-- Dashboard Header with Live Status -->
+                        <div class="dashboard-header d-flex align-items-center justify-content-between mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle p-2 me-3">
+                                    <i class="fas fa-chart-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0 text-dark fw-semibold">409A Valuation Dashboard</h5>
+                                    <small class="text-muted">Live Analytics</small>
+                                </div>
                             </div>
-                            <div>
-                                <h5 class="mb-0 text-dark fw-semibold">Valuation Dashboard</h5>
-                                <small class="text-muted">Real-time analysis</small>
+                            <div class="live-indicator d-flex align-items-center">
+                                <div class="live-dot bg-success rounded-circle me-2" style="width: 8px; height: 8px;"></div>
+                                <small class="text-success fw-semibold">LIVE</small>
                             </div>
                         </div>
 
+                        <!-- Key Metrics Row -->
+                        <div class="dashboard-metrics row g-2 mb-4">
+                            <div class="col-4">
+                                <div class="metric-card bg-gradient text-white rounded p-3 h-100" style="background: linear-gradient(135deg, #8B0000 0%, #660000 100%);">
+                                    <div class="small opacity-75 mb-1">Enterprise Value</div>
+                                    <div class="h5 mb-0 fw-bold animated-value" data-value="15.7">$0M</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="metric-card bg-success text-white rounded p-3 h-100">
+                                    <div class="small opacity-75 mb-1">Growth Rate</div>
+                                    <div class="h5 mb-0 fw-bold animated-value" data-value="34.2">+0%</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="metric-card bg-info text-white rounded p-3 h-100">
+                                    <div class="small opacity-75 mb-1">Multiple</div>
+                                    <div class="h5 mb-0 fw-bold animated-value" data-value="8.3">0x</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Chart -->
                         <div class="dashboard-chart mb-4">
-                            <div class="d-flex align-items-end justify-content-around" style="height: 120px; padding: 0 10px;">
-                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 45px; width: 18px;" data-delay="0"></div>
-                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 65px; width: 18px;" data-delay="200"></div>
-                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 35px; width: 18px;" data-delay="400"></div>
-                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 85px; width: 18px;" data-delay="600"></div>
-                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 55px; width: 18px;" data-delay="800"></div>
-                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 75px; width: 18px;" data-delay="1000"></div>
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="mb-0 fw-semibold">Valuation Methodology</h6>
+                                <small class="text-muted">DCF + Market Approach</small>
                             </div>
-                            <p class="text-center text-muted small mb-0 mt-2">Company Valuation Trend</p>
-                        </div>
-
-                        <div class="dashboard-metrics row g-3">
-                            <div class="col-6">
-                                <div class="metric-item bg-light rounded p-3">
-                                    <div class="small text-muted mb-1">Current Valuation</div>
-                                    <div class="h4 text-primary mb-0 fw-bold">$12.5M</div>
+                            <div class="chart-container bg-light rounded p-3">
+                                <div class="d-flex align-items-end justify-content-around" style="height: 100px;">
+                                    <div class="chart-segment" style="height: 100%; width: 20%; position: relative;">
+                                        <div class="chart-bar bg-primary rounded-top animated-chart-bar" style="--target-height: 60%; width: 100%; transition: height 2s ease;" data-delay="0"></div>
+                                        <small class="chart-label text-center d-block mt-1">DCF</small>
+                                    </div>
+                                    <div class="chart-segment" style="height: 100%; width: 20%; position: relative;">
+                                        <div class="chart-bar bg-success rounded-top animated-chart-bar" style="--target-height: 80%; width: 100%; transition: height 2s ease;" data-delay="300"></div>
+                                        <small class="chart-label text-center d-block mt-1">Market</small>
+                                    </div>
+                                    <div class="chart-segment" style="height: 100%; width: 20%; position: relative;">
+                                        <div class="chart-bar bg-warning rounded-top animated-chart-bar" style="--target-height: 45%; width: 100%; transition: height 2s ease;" data-delay="600"></div>
+                                        <small class="chart-label text-center d-block mt-1">Asset</small>
+                                    </div>
+                                    <div class="chart-segment" style="height: 100%; width: 20%; position: relative;">
+                                        <div class="chart-bar bg-info rounded-top animated-chart-bar" style="--target-height: 90%; width: 100%; transition: height 2s ease;" data-delay="900"></div>
+                                        <small class="chart-label text-center d-block mt-1">Final</small>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="metric-item bg-light rounded p-3">
-                                    <div class="small text-muted mb-1">Growth Rate</div>
-                                    <div class="h4 text-success mb-0 fw-bold">+24.3%</div>
-                                </div>
+                        </div>
+
+                        <!-- Analysis Progress -->
+                        <div class="analysis-progress mb-3">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <small class="fw-semibold">Analysis Progress</small>
+                                <small class="text-primary fw-semibold animated-progress">0%</small>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-primary animated-progress-bar" style="width: 0%; transition: width 3s ease;"></div>
                             </div>
                         </div>
 
-                        <div class="mt-3 text-center">
-                            <small class="text-muted">Interactive financial modeling & analysis</small>
+                        <!-- Status Indicators -->
+                        <div class="status-indicators d-flex justify-content-between">
+                            <div class="status-item text-center">
+                                <div class="status-icon bg-success bg-opacity-10 rounded-circle p-2 mx-auto mb-1" style="width: 30px; height: 30px;">
+                                    <i class="fas fa-check text-success small"></i>
+                                </div>
+                                <small class="text-muted">Data Validated</small>
+                            </div>
+                            <div class="status-item text-center">
+                                <div class="status-icon bg-primary bg-opacity-10 rounded-circle p-2 mx-auto mb-1" style="width: 30px; height: 30px;">
+                                    <i class="fas fa-sync fa-spin text-primary small"></i>
+                                </div>
+                                <small class="text-muted">Processing</small>
+                            </div>
+                            <div class="status-item text-center">
+                                <div class="status-icon bg-warning bg-opacity-10 rounded-circle p-2 mx-auto mb-1" style="width: 30px; height: 30px;">
+                                    <i class="fas fa-clock text-warning small"></i>
+                                </div>
+                                <small class="text-muted">Pending Review</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -307,49 +366,82 @@
             <h3 class="h5 text-muted fw-semibold mb-4" style="font-family: 'Inter', sans-serif; letter-spacing: 0.5px;">TRUSTED BY LEADING COMPANIES</h3>
         </div>
 
-        <div class="logos-carousel">
-            <div class="row align-items-center justify-content-center g-4">
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="logo-item text-center p-3">
-                        <div class="bg-light rounded-3 p-3 d-inline-flex align-items-center justify-content-center" style="width: 100px; height: 60px;">
-                            <div class="text-muted fw-bold" style="font-size: 14px;">TechCorp</div>
-                        </div>
-                    </div>
+        <!-- Client Logos Carousel -->
+        <div class="logos-carousel overflow-hidden position-relative">
+            <div class="logos-track d-flex align-items-center" style="animation: logoScroll 40s linear infinite; width: 200%;">
+                <!-- First set -->
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/extreme simulations.jpeg" alt="Extreme Simulations" class="client-logo">
                 </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="logo-item text-center p-3">
-                        <div class="bg-light rounded-3 p-3 d-inline-flex align-items-center justify-content-center" style="width: 100px; height: 60px;">
-                            <div class="text-muted fw-bold" style="font-size: 14px;">StartupX</div>
-                        </div>
-                    </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/monto.jpeg" alt="Montopay" class="client-logo">
                 </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="logo-item text-center p-3">
-                        <div class="bg-light rounded-3 p-3 d-inline-flex align-items-center justify-content-center" style="width: 100px; height: 60px;">
-                            <div class="text-muted fw-bold" style="font-size: 14px;">InnovateLab</div>
-                        </div>
-                    </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/itur_intelligence_logo.jpg" alt="Itur Intelligence" class="client-logo">
                 </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="logo-item text-center p-3">
-                        <div class="bg-light rounded-3 p-3 d-inline-flex align-items-center justify-content-center" style="width: 100px; height: 60px;">
-                            <div class="text-muted fw-bold" style="font-size: 14px;">GrowthCo</div>
-                        </div>
-                    </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/detectx_logo.jpg" alt="DetectX" class="client-logo">
                 </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="logo-item text-center p-3">
-                        <div class="bg-light rounded-3 p-3 d-inline-flex align-items-center justify-content-center" style="width: 100px; height: 60px;">
-                            <div class="text-muted fw-bold" style="font-size: 14px;">VentureStudio</div>
-                        </div>
-                    </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/datumate_logo.jpg" alt="Datumate" class="client-logo">
                 </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="logo-item text-center p-3">
-                        <div class="bg-light rounded-3 p-3 d-inline-flex align-items-center justify-content-center" style="width: 100px; height: 60px;">
-                            <div class="text-muted fw-bold" style="font-size: 14px;">NextGen</div>
-                        </div>
-                    </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/corbelpay_logo.jpg" alt="CorbelPay" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/genetika_logo.jpeg" alt="Genetika" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/getpackage_logo.jpg" alt="GetPackage" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/keyport.png" alt="Keyport" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/lawflex_logo.jpeg" alt="LawFlex" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/lightyx_logo.jpeg" alt="LightyX" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/omnistruct_logo.jpeg" alt="Omnistruct" class="client-logo">
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/extreme simulations.jpeg" alt="Extreme Simulations" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/monto.jpeg" alt="Montopay" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/itur_intelligence_logo.jpg" alt="Itur Intelligence" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/detectx_logo.jpg" alt="DetectX" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/datumate_logo.jpg" alt="Datumate" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/corbelpay_logo.jpg" alt="CorbelPay" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/genetika_logo.jpeg" alt="Genetika" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/getpackage_logo.jpg" alt="GetPackage" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/keyport.png" alt="Keyport" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/lawflex_logo.jpeg" alt="LawFlex" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/lightyx_logo.jpeg" alt="LightyX" class="client-logo">
+                </div>
+                <div class="logo-item flex-shrink-0 mx-3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/logos/omnistruct_logo.jpeg" alt="Omnistruct" class="client-logo">
                 </div>
             </div>
         </div>
@@ -369,102 +461,142 @@
         <div class="section-header text-center mb-5 animate-on-scroll">
             <h2 class="section-title display-5 fw-bold mb-3">Our Proven Process</h2>
             <p class="section-subtitle lead text-muted mx-auto" style="max-width: 600px;">
-                A systematic 4-step approach ensuring accuracy, transparency, and 14-day turnaround guarantee.
+                A comprehensive 8-step approach ensuring accuracy, transparency, and 14-day turnaround guarantee.
             </p>
         </div>
 
-        <!-- Timeline Process Flow -->
+        <!-- 8-Step Process Flow -->
         <div class="process-timeline mb-5">
-            <div class="row">
-                <!-- Step 1 -->
+            <!-- First Row - Steps 1-4 -->
+            <div class="row mb-5">
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="process-step text-center animate-on-scroll">
                         <div class="step-number mb-3">
-                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 50px; height: 50px;">
                                 1
                             </div>
                         </div>
                         <div class="step-icon mb-3">
                             <i class="fas fa-handshake fa-2x text-primary"></i>
                         </div>
-                        <h4 class="step-title h5 fw-bold mb-3">Initial Consultation</h4>
-                        <p class="step-description text-muted">Understanding your business, requirements, and objectives. Formal engagement letter outlining scope and timeline.</p>
+                        <h4 class="step-title h6 fw-bold mb-2">Initial Consultation</h4>
+                        <p class="step-description text-muted small">Understanding business objectives and valuation requirements</p>
+                        <div class="step-duration small text-primary fw-semibold">Day 1</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center animate-on-scroll">
+                        <div class="step-number mb-3">
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 50px; height: 50px;">
+                                2
+                            </div>
+                        </div>
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-file-signature fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="step-title h6 fw-bold mb-2">Engagement Letter</h4>
+                        <p class="step-description text-muted small">Formal agreement outlining scope, timeline, and deliverables</p>
                         <div class="step-duration small text-primary fw-semibold">Day 1-2</div>
                     </div>
                 </div>
 
-                <!-- Connection Line -->
-                <div class="d-none d-lg-block col-lg-1">
-                    <div class="process-connector d-flex align-items-center justify-content-center h-100">
-                        <div class="connector-line bg-primary" style="width: 3px; height: 60px; border-radius: 2px;"></div>
-                        <i class="fas fa-arrow-right text-primary position-absolute"></i>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="process-step text-center animate-on-scroll">
                         <div class="step-number mb-3">
-                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                2
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 50px; height: 50px;">
+                                3
+                            </div>
+                        </div>
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-database fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="step-title h6 fw-bold mb-2">Data Collection</h4>
+                        <p class="step-description text-muted small">Gathering financial statements, cap tables, and business documents</p>
+                        <div class="step-duration small text-primary fw-semibold">Day 2-3</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center animate-on-scroll">
+                        <div class="step-number mb-3">
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 50px; height: 50px;">
+                                4
                             </div>
                         </div>
                         <div class="step-icon mb-3">
                             <i class="fas fa-search fa-2x text-primary"></i>
                         </div>
-                        <h4 class="step-title h5 fw-bold mb-3">Research & Setup</h4>
-                        <p class="step-description text-muted">Comprehensive market analysis, industry research, and kick-off meeting to discuss methodology and data requirements.</p>
+                        <h4 class="step-title h6 fw-bold mb-2">Market Research</h4>
+                        <p class="step-description text-muted small">Industry analysis and comparable company research</p>
                         <div class="step-duration small text-primary fw-semibold">Day 3-5</div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Connection Line -->
-                <div class="d-none d-lg-block col-lg-1">
-                    <div class="process-connector d-flex align-items-center justify-content-center h-100">
-                        <div class="connector-line bg-primary" style="width: 3px; height: 60px; border-radius: 2px;"></div>
-                        <i class="fas fa-arrow-right text-primary position-absolute"></i>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
+            <!-- Second Row - Steps 5-8 -->
+            <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="process-step text-center animate-on-scroll">
                         <div class="step-number mb-3">
-                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                3
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 50px; height: 50px;">
+                                5
                             </div>
                         </div>
                         <div class="step-icon mb-3">
                             <i class="fas fa-calculator fa-2x text-primary"></i>
                         </div>
-                        <h4 class="step-title h5 fw-bold mb-3">Analysis & Modeling</h4>
-                        <p class="step-description text-muted">Development of sophisticated financial models using AICPA and IPEV guidelines. Preparation of comprehensive draft report.</p>
-                        <div class="step-duration small text-primary fw-semibold">Day 6-12</div>
+                        <h4 class="step-title h6 fw-bold mb-2">Financial Modeling</h4>
+                        <p class="step-description text-muted small">DCF analysis and valuation model development using AICPA guidelines</p>
+                        <div class="step-duration small text-primary fw-semibold">Day 6-9</div>
                     </div>
                 </div>
 
-                <!-- Connection Line -->
-                <div class="d-none d-lg-block col-lg-1">
-                    <div class="process-connector d-flex align-items-center justify-content-center h-100">
-                        <div class="connector-line bg-primary" style="width: 3px; height: 60px; border-radius: 2px;"></div>
-                        <i class="fas fa-arrow-right text-primary position-absolute"></i>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="process-step text-center animate-on-scroll">
                         <div class="step-number mb-3">
-                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 60px; height: 60px; font-size: 1.5rem;">
-                                4
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 50px; height: 50px;">
+                                6
                             </div>
                         </div>
                         <div class="step-icon mb-3">
-                            <i class="fas fa-check-circle fa-2x text-primary"></i>
+                            <i class="fas fa-chart-bar fa-2x text-primary"></i>
                         </div>
-                        <h4 class="step-title h5 fw-bold mb-3">Review & Delivery</h4>
-                        <p class="step-description text-muted">Client review and feedback incorporation. Final report and certificate delivery with ongoing support and audit defense.</p>
-                        <div class="step-duration small text-primary fw-semibold">Day 13-14</div>
+                        <h4 class="step-title h6 fw-bold mb-2">Valuation Analysis</h4>
+                        <p class="step-description text-muted small">Multiple methodology analysis and discount calculations</p>
+                        <div class="step-duration small text-primary fw-semibold">Day 10-11</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center animate-on-scroll">
+                        <div class="step-number mb-3">
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 50px; height: 50px;">
+                                7
+                            </div>
+                        </div>
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-file-alt fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="step-title h6 fw-bold mb-2">Draft Report</h4>
+                        <p class="step-description text-muted small">Comprehensive draft report preparation and internal review</p>
+                        <div class="step-duration small text-primary fw-semibold">Day 12-13</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center animate-on-scroll">
+                        <div class="step-number mb-3">
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 50px; height: 50px;">
+                                8
+                            </div>
+                        </div>
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-award fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="step-title h6 fw-bold mb-2">Final Delivery</h4>
+                        <p class="step-description text-muted small">Client review, final report, and certificate delivery</p>
+                        <div class="step-duration small text-primary fw-semibold">Day 14</div>
                     </div>
                 </div>
             </div>
@@ -709,26 +841,9 @@
     transition: all 0.6s ease;
 }
 
-/* Enhanced Dashboard Animation */
-.chart-bar.animate-bar {
-    height: 0;
-    animation: growBar 1s ease-out forwards;
-    transform-origin: bottom;
-}
-
-@keyframes growBar {
-    from {
-        height: 0;
-        opacity: 0.5;
-    }
-    to {
-        height: var(--bar-height);
-        opacity: 1;
-    }
-}
-
-.dashboard-mockup {
-    animation: dashboardFloat 6s ease-in-out infinite;
+/* Advanced Dashboard Animations */
+.advanced-dashboard {
+    animation: dashboardFloat 8s ease-in-out infinite;
     transform-origin: center;
 }
 
@@ -737,22 +852,94 @@
         transform: translateY(0) scale(1);
     }
     50% {
-        transform: translateY(-10px) scale(1.02);
+        transform: translateY(-8px) scale(1.01);
     }
 }
 
-.dashboard-mockup:hover .chart-bar {
-    transform: scaleY(1.1);
-    transition: transform 0.3s ease;
+.live-dot {
+    animation: livePulse 2s ease-in-out infinite;
 }
 
-.metric-item {
+@keyframes livePulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+.metric-card {
+    transition: all 0.3s ease;
+    animation: slideInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.metric-card:nth-child(1) { animation-delay: 0.2s; }
+.metric-card:nth-child(2) { animation-delay: 0.4s; }
+.metric-card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.metric-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.animated-chart-bar {
+    height: 0%;
+    animation: chartGrow 2s ease-out forwards;
+}
+
+@keyframes chartGrow {
+    to {
+        height: var(--target-height);
+    }
+}
+
+.status-icon {
     transition: all 0.3s ease;
 }
 
-.metric-item:hover {
-    transform: translateY(-3px);
+.status-icon:hover {
+    transform: scale(1.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Client Logo Carousel */
+@keyframes logoScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logos-carousel:hover .logos-track {
+    animation-play-state: paused;
+}
+
+.client-logo {
+    height: 60px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
 }
 
 .animate-fade-in {
@@ -863,15 +1050,70 @@ document.addEventListener('DOMContentLoaded', function() {
     const counterElements = document.querySelectorAll('.counter[data-count]');
     let hasAnimated = false;
 
-    // Dashboard Chart Animation
-    const chartBars = document.querySelectorAll('.chart-bar.animate-bar');
-    chartBars.forEach(bar => {
-        const delay = parseInt(bar.getAttribute('data-delay')) || 0;
+    // Advanced Dashboard Animations
+    setTimeout(() => {
+        // Animate dashboard values
+        const animatedValues = document.querySelectorAll('.animated-value');
+        animatedValues.forEach((element, index) => {
+            setTimeout(() => {
+                const targetValue = parseFloat(element.getAttribute('data-value'));
+                const suffix = element.textContent.includes('M') ? 'M' :
+                              element.textContent.includes('%') ? '%' :
+                              element.textContent.includes('x') ? 'x' : '';
+                const prefix = element.textContent.includes('$') ? '$' :
+                              element.textContent.includes('+') ? '+' : '';
+
+                animateValue(element, 0, targetValue, 2000, prefix, suffix);
+            }, index * 300);
+        });
+
+        // Animate chart bars
+        const chartBars = document.querySelectorAll('.animated-chart-bar');
+        chartBars.forEach(bar => {
+            const delay = parseInt(bar.getAttribute('data-delay')) || 0;
+            setTimeout(() => {
+                bar.style.height = bar.style.getPropertyValue('--target-height');
+            }, delay);
+        });
+
+        // Animate progress bar
         setTimeout(() => {
-            bar.style.animationDelay = delay + 'ms';
-            bar.classList.add('animate');
-        }, 500); // Start after page load
-    });
+            const progressBar = document.querySelector('.animated-progress-bar');
+            const progressText = document.querySelector('.animated-progress');
+            if (progressBar && progressText) {
+                progressBar.style.width = '87%';
+                animateValue(progressText, 0, 87, 3000, '', '%');
+            }
+        }, 1000);
+    }, 1000);
+
+    function animateValue(element, start, end, duration, prefix = '', suffix = '') {
+        let startTime = null;
+
+        function updateValue(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            const easeProgress = 1 - Math.pow(1 - progress, 2);
+            const currentValue = start + (end - start) * easeProgress;
+
+            let displayValue = currentValue.toFixed(1);
+            if (suffix === '%' || suffix === 'x') {
+                displayValue = currentValue.toFixed(1);
+            }
+
+            element.textContent = prefix + displayValue + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateValue);
+            } else {
+                element.textContent = prefix + end.toFixed(1) + suffix;
+            }
+        }
+
+        requestAnimationFrame(updateValue);
+    }
 
     function animateCounter(element, delay = 0) {
         const target = parseInt(element.getAttribute('data-count'));
