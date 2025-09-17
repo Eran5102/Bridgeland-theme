@@ -2,7 +2,7 @@
 Theme Name: Bridgeland Advisors v2
 Description: Professional financial advisory theme with maroon branding and Bootstrap integration
 Author: Bridgeland Advisors
-Version: 3.2
+Version: 3.3
 GitHub Theme URI: Eran5102/Bridgeland-theme
 GitHub Branch: master
 Primary Branch: master
@@ -27,6 +27,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
     /* Secondary Colors */
     --color-gold: #D4AF37;
     --color-gold-light: #F4E4BC;
+
+    /* New Secondary - Bright Gray for CTAs */
+    --color-secondary: #F8F9FA;
+    --color-secondary-hover: #E9ECEF;
+    --color-secondary-dark: #DEE2E6;
 
     /* Neutral Colors */
     --color-white: #FFFFFF;
@@ -191,7 +196,9 @@ footer .text-muted {
     font-size: 0.95rem;
     line-height: 1.5;
     border-radius: var(--border-radius-md);
-    transition: all var(--transition-normal);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--color-maroon);
     color: white;
     border-color: var(--color-maroon);
@@ -204,6 +211,8 @@ footer .text-muted {
     border-color: var(--color-maroon-dark);
     color: white;
     text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
 }
 
 .btn-large {
@@ -235,6 +244,22 @@ footer .text-muted {
     --bs-btn-color: var(--color-maroon);
     --bs-btn-hover-bg: var(--color-gray-100);
     --bs-btn-hover-border-color: var(--color-gray-100);
+}
+
+/* New Secondary Button Style - Bright Gray */
+.btn-secondary-light {
+    background-color: var(--color-secondary) !important;
+    border-color: var(--color-secondary) !important;
+    color: var(--color-maroon) !important;
+    font-weight: var(--font-weight-medium);
+}
+
+.btn-secondary-light:hover {
+    background-color: var(--color-secondary-hover) !important;
+    border-color: var(--color-secondary-hover) !important;
+    color: var(--color-maroon-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Navigation Styles */

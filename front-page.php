@@ -244,14 +244,14 @@
 </section>
 
 <!-- Stats Counter Section -->
-<section class="stats-counter-section py-5 bg-white">
+<section class="stats-counter-section py-5" style="background: linear-gradient(135deg, #8B0000 0%, #660000 100%);">
     <div class="container">
         <div class="row text-center mb-5">
             <div class="col-12">
-                <h2 class="display-6 fw-bold mb-3 text-primary" style="font-family: 'Source Serif Pro', serif;">
+                <h2 class="display-6 fw-bold mb-3 text-white" style="font-family: 'Source Serif Pro', serif;">
                     Our Track Record
                 </h2>
-                <p class="lead mb-0 text-muted" style="font-family: 'Inter', sans-serif;">
+                <p class="lead mb-0 text-white opacity-75" style="font-family: 'Inter', sans-serif;">
                     Delivering exceptional results for companies worldwide
                 </p>
             </div>
@@ -261,39 +261,39 @@
             <div class="col-md-4 mb-4 mb-md-0">
                 <div class="stat-item animate-on-scroll" data-delay="0">
                     <div class="stat-icon mb-3">
-                        <i class="fas fa-file-contract fa-3x text-primary mb-3"></i>
+                        <i class="fas fa-file-contract fa-3x text-white mb-3"></i>
                     </div>
-                    <div class="stat-number display-2 fw-bold text-primary mb-2">
+                    <div class="stat-number display-2 fw-bold text-white mb-2">
                         <span data-count="200" class="counter">0</span>+
                     </div>
-                    <h4 class="stat-label h4 mb-2 text-dark">Valuations Completed</h4>
-                    <p class="text-muted mb-0">Professional 409A and business valuations delivered</p>
+                    <h4 class="stat-label h4 mb-2 text-white">Valuations Completed</h4>
+                    <p class="text-white opacity-75 mb-0">Professional 409A and business valuations delivered</p>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4 mb-md-0">
                 <div class="stat-item animate-on-scroll" data-delay="200">
                     <div class="stat-icon mb-3">
-                        <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                        <i class="fas fa-chart-line fa-3x text-white mb-3"></i>
                     </div>
-                    <div class="stat-number display-2 fw-bold text-primary mb-2">
+                    <div class="stat-number display-2 fw-bold text-white mb-2">
                         $<span data-count="2" class="counter">0</span>B+
                     </div>
-                    <h4 class="stat-label h4 mb-2 text-dark">Assets Valued</h4>
-                    <p class="text-muted mb-0">Total enterprise value analyzed and assessed</p>
+                    <h4 class="stat-label h4 mb-2 text-white">Assets Valued</h4>
+                    <p class="text-white opacity-75 mb-0">Total enterprise value analyzed and assessed</p>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="stat-item animate-on-scroll" data-delay="400">
                     <div class="stat-icon mb-3">
-                        <i class="fas fa-award fa-3x text-primary mb-3"></i>
+                        <i class="fas fa-award fa-3x text-white mb-3"></i>
                     </div>
-                    <div class="stat-number display-2 fw-bold text-primary mb-2">
+                    <div class="stat-number display-2 fw-bold text-white mb-2">
                         <span data-count="15" class="counter">0</span>+
                     </div>
-                    <h4 class="stat-label h4 mb-2 text-dark">Years Experience</h4>
-                    <p class="text-muted mb-0">Investment banking and financial advisory expertise</p>
+                    <h4 class="stat-label h4 mb-2 text-white">Years Experience</h4>
+                    <p class="text-white opacity-75 mb-0">Investment banking and financial advisory expertise</p>
                 </div>
             </div>
         </div>
