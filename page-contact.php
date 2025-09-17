@@ -432,16 +432,19 @@
             </div>
 
             <div class="col-lg-6">
-                <div class="map-placeholder bg-light rounded p-5 text-center">
-                    <i class="fas fa-map fa-3x text-muted mb-3"></i>
-                    <h5 class="text-muted">Interactive Map</h5>
-                    <p class="text-muted mb-3">
-                        Located in Even Yehuda, easily accessible from Tel Aviv and Jerusalem
-                    </p>
-                    <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
-                       target="_blank" class="btn btn-outline-primary">
-                        <i class="fas fa-external-link-alt me-2"></i>Open in Google Maps
-                    </a>
+                <div class="map-container bg-light rounded overflow-hidden">
+                    <div id="office-map" style="height: 350px; width: 100%;">
+                        <!-- Google Maps will load here -->
+                    </div>
+                    <div class="map-footer p-3 bg-white text-center">
+                        <small class="text-muted">Bridgeland Advisors Office Location</small>
+                        <div class="mt-2">
+                            <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
+                               target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-external-link-alt me-2"></i>Open in Google Maps
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -558,11 +561,119 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 });
 </script>
 
+<!-- Google Maps API -->
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApJ2itkMqPnuleXFoQFYm9l5HqxZ1ghDs&callback=initMap&libraries=maps,marker&v=beta"></script>
+
+<script>
+function initMap() {
+    // Coordinates for 19 Ner Halayla St, Even Yehuda, Israel
+    const officeLocation = { lat: 32.2667, lng: 34.8833 };
+
+    // Create the map
+    const map = new google.maps.Map(document.getElementById("office-map"), {
+        zoom: 15,
+        center: officeLocation,
+        mapId: "bridgeland_office_map",
+        styles: [
+            {
+                featureType: "all",
+                elementType: "geometry.fill",
+                stylers: [{ color: "#f8f9fa" }]
+            },
+            {
+                featureType: "water",
+                elementType: "geometry.fill",
+                stylers: [{ color: "#e3f2fd" }]
+            }
+        ]
+    });
+
+    // Create the marker
+    const marker = new google.maps.Marker({
+        position: officeLocation,
+        map: map,
+        title: "Bridgeland Advisors",
+        animation: google.maps.Animation.DROP
+    });
+
+    // Create info window
+    const infoWindow = new google.maps.InfoWindow({
+        content: `
+            <div style="padding: 10px; font-family: Inter, sans-serif;">
+                <h6 style="margin: 0 0 8px 0; color: #8B0000; font-weight: 600;">Bridgeland Advisors</h6>
+                <p style="margin: 0 0 8px 0; font-size: 14px; color: #666;">
+                    <i class="fas fa-map-marker-alt" style="color: #8B0000; margin-right: 6px;"></i>
+                    19 Ner Halayla St.<br>
+                    Even Yehuda, Israel
+                </p>
+                <p style="margin: 0 0 8px 0; font-size: 13px; color: #666;">
+                    <i class="fas fa-phone" style="color: #8B0000; margin-right: 6px;"></i>
+                    +972-50-6842937
+                </p>
+                <p style="margin: 0; font-size: 12px; color: #888;">
+                    Expert 409A Valuations & Financial Advisory
+                </p>
+            </div>
+        `
+    });
+
+    // Show info window when marker is clicked
+    marker.addListener("click", () => {
+        infoWindow.open(map, marker);
+    });
+
+    // Open info window by default
+    infoWindow.open(map, marker);
+}
+
+// Fallback in case the API fails to load
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        if (typeof google === 'undefined') {
+            const mapContainer = document.getElementById('office-map');
+            if (mapContainer) {
+                mapContainer.innerHTML = `
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100 text-center p-4">
+                        <i class="fas fa-map fa-3x text-muted mb-3"></i>
+                        <h6 class="text-muted mb-2">Map Loading...</h6>
+                        <p class="text-muted small mb-3">
+                            19 Ner Halayla St.<br>
+                            Even Yehuda, Israel
+                        </p>
+                        <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
+                           target="_blank" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-external-link-alt me-2"></i>View on Google Maps
+                        </a>
+                    </div>
+                `;
+            }
+        }
+    }, 3000);
+});
+</script>
+
 <style>
 .contact-method-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
     transition: all 0.3s ease;
+}
+
+.map-container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.map-container:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.map-footer {
+    border-top: 1px solid #e9ecef;
+}
+
+#office-map {
+    background-color: #f8f9fa;
 }
 
 .progress-steps .step {
