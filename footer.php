@@ -99,21 +99,17 @@
         <hr class="my-4 border-secondary">
 
         <!-- Bottom Footer -->
-        <div class="row align-items-center">
-            <div class="col-md-8">
-                <div class="d-md-flex align-items-center">
-                    <p class="mb-0 text-light">&copy; <?php echo date('Y'); ?> Bridgeland Advisors. All rights reserved.</p>
-                    <div class="ms-md-4 mt-2 mt-md-0">
-                        <a href="<?php echo home_url('/privacy-policy/'); ?>" class="text-light text-decoration-none me-3">Privacy Policy</a>
-                        <a href="<?php echo home_url('/terms-of-service/'); ?>" class="text-light text-decoration-none me-3">Terms of Service</a>
-                        <a href="<?php echo home_url('/sitemap/'); ?>" class="text-light text-decoration-none">Sitemap</a>
-                    </div>
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="d-flex flex-column flex-md-row align-items-center">
+                <p class="mb-2 mb-md-0 text-light">&copy; <?php echo date('Y'); ?> Bridgeland Advisors. All rights reserved.</p>
+                <div class="ms-md-3 mb-2 mb-md-0">
+                    <a href="<?php echo home_url('/privacy-policy/'); ?>" class="text-light text-decoration-none ms-md-3">Privacy Policy</a>
+                    <a href="<?php echo home_url('/terms-of-service/'); ?>" class="text-light text-decoration-none ms-3">Terms of Service</a>
+                    <a href="<?php echo home_url('/sitemap/'); ?>" class="text-light text-decoration-none ms-3">Sitemap</a>
                 </div>
             </div>
-            <div class="col-md-4 text-md-end">
-                <div class="mt-2 mt-md-0">
-                    <span class="text-muted small">Powered by expertise, driven by results</span>
-                </div>
+            <div>
+                <span class="text-muted small">Powered by expertise, driven by results</span>
             </div>
         </div>
     </div>

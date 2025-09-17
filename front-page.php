@@ -142,6 +142,62 @@
     </div>
 </section>
 
+<!-- Stats Counter Section -->
+<section class="stats-counter-section py-5" style="background: linear-gradient(135deg, #8B0000 0%, #660000 100%);">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="display-6 fw-bold mb-3 text-white" style="font-family: 'Source Serif Pro', serif;">
+                    Our Track Record
+                </h2>
+                <p class="lead mb-0 text-white opacity-75" style="font-family: 'Inter', sans-serif;">
+                    Delivering exceptional results for companies worldwide
+                </p>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="stat-item animate-on-scroll" data-delay="0">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-file-contract fa-3x text-white mb-3"></i>
+                    </div>
+                    <div class="stat-number display-2 fw-bold text-white mb-2">
+                        <span data-count="200" class="counter">0</span>+
+                    </div>
+                    <h4 class="stat-label h4 mb-2 text-white">Valuations Completed</h4>
+                    <p class="text-white opacity-75 mb-0">Professional 409A and business valuations delivered</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="stat-item animate-on-scroll" data-delay="200">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-chart-line fa-3x text-white mb-3"></i>
+                    </div>
+                    <div class="stat-number display-2 fw-bold text-white mb-2">
+                        $<span data-count="2" class="counter">0</span>B+
+                    </div>
+                    <h4 class="stat-label h4 mb-2 text-white">Assets Valued</h4>
+                    <p class="text-white opacity-75 mb-0">Total enterprise value analyzed and assessed</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="stat-item animate-on-scroll" data-delay="400">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-award fa-3x text-white mb-3"></i>
+                    </div>
+                    <div class="stat-number display-2 fw-bold text-white mb-2">
+                        <span data-count="15" class="counter">0</span>+
+                    </div>
+                    <h4 class="stat-label h4 mb-2 text-white">Years Experience</h4>
+                    <p class="text-white opacity-75 mb-0">Investment banking and financial advisory expertise</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Services Section -->
 <section id="services" class="services-section py-5">
@@ -296,63 +352,6 @@
                             Learn More <i class="fas fa-arrow-right ms-2"></i>
                         </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Stats Counter Section -->
-<section class="stats-counter-section py-5" style="background: linear-gradient(135deg, #8B0000 0%, #660000 100%);">
-    <div class="container">
-        <div class="row text-center mb-5">
-            <div class="col-12">
-                <h2 class="display-6 fw-bold mb-3 text-white" style="font-family: 'Source Serif Pro', serif;">
-                    Our Track Record
-                </h2>
-                <p class="lead mb-0 text-white opacity-75" style="font-family: 'Inter', sans-serif;">
-                    Delivering exceptional results for companies worldwide
-                </p>
-            </div>
-        </div>
-
-        <div class="row text-center">
-            <div class="col-md-4 mb-4 mb-md-0">
-                <div class="stat-item animate-on-scroll" data-delay="0">
-                    <div class="stat-icon mb-3">
-                        <i class="fas fa-file-contract fa-3x text-white mb-3"></i>
-                    </div>
-                    <div class="stat-number display-2 fw-bold text-white mb-2">
-                        <span data-count="200" class="counter">0</span>+
-                    </div>
-                    <h4 class="stat-label h4 mb-2 text-white">Valuations Completed</h4>
-                    <p class="text-white opacity-75 mb-0">Professional 409A and business valuations delivered</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4 mb-md-0">
-                <div class="stat-item animate-on-scroll" data-delay="200">
-                    <div class="stat-icon mb-3">
-                        <i class="fas fa-chart-line fa-3x text-white mb-3"></i>
-                    </div>
-                    <div class="stat-number display-2 fw-bold text-white mb-2">
-                        $<span data-count="2" class="counter">0</span>B+
-                    </div>
-                    <h4 class="stat-label h4 mb-2 text-white">Assets Valued</h4>
-                    <p class="text-white opacity-75 mb-0">Total enterprise value analyzed and assessed</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="stat-item animate-on-scroll" data-delay="400">
-                    <div class="stat-icon mb-3">
-                        <i class="fas fa-award fa-3x text-white mb-3"></i>
-                    </div>
-                    <div class="stat-number display-2 fw-bold text-white mb-2">
-                        <span data-count="15" class="counter">0</span>+
-                    </div>
-                    <h4 class="stat-label h4 mb-2 text-white">Years Experience</h4>
-                    <p class="text-white opacity-75 mb-0">Investment banking and financial advisory expertise</p>
                 </div>
             </div>
         </div>
@@ -1266,44 +1265,52 @@ document.addEventListener('DOMContentLoaded', function() {
         }, delay);
     }
 
-    // Intersection Observer for scroll trigger
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !hasAnimated) {
-                hasAnimated = true;
+    // Lazy loading counter animation with Intersection Observer
+    function initCounterAnimation() {
+        // Only initialize if counters exist and haven't animated yet
+        if (counterElements.length === 0 || hasAnimated) return;
 
-                // Start all counters with staggered delays
-                counterElements.forEach((counter, index) => {
-                    animateCounter(counter, index * 200);
-                });
-            }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    console.log('Stats section is visible - starting animation');
+                    hasAnimated = true;
+
+                    // Start all counters with staggered delays
+                    counterElements.forEach((counter, index) => {
+                        animateCounter(counter, index * 200);
+                    });
+
+                    // Unobserve after animation starts
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3, // Trigger when 30% visible
+            rootMargin: '0px 0px -50px 0px' // Trigger slightly before element is fully in view
         });
-    }, {
-        threshold: 0.5, // Trigger when 50% visible
-        rootMargin: '0px 0px 0px 0px' // No early triggering
-    });
 
-    // Observe the stats section
-    const statsSection = document.querySelector('.stats-counter-section');
-    if (statsSection) {
-        console.log('Observing stats section'); // Debug log
-        observer.observe(statsSection);
-    } else {
-        console.log('Stats section not found'); // Debug log
+        // Observe the stats section
+        const statsSection = document.querySelector('.stats-counter-section');
+        if (statsSection) {
+            console.log('Setting up lazy loading for stats section');
+            observer.observe(statsSection);
+        } else {
+            console.log('Stats section not found');
+        }
     }
 
-    // Fallback: Start animation after 3 seconds if not triggered by scroll
-    setTimeout(() => {
-        if (!hasAnimated) {
-            console.log('Fallback: Starting counter animations'); // Debug log
-            counterElements.forEach((counter, index) => {
-                setTimeout(() => {
-                    animateCounter(counter);
-                }, index * 300);
-            });
-            hasAnimated = true;
+    // Initialize counter animation after a small delay to ensure DOM is ready
+    setTimeout(initCounterAnimation, 100);
+
+    // Also try to initialize on scroll (in case section is already visible)
+    let scrollInitialized = false;
+    window.addEventListener('scroll', function() {
+        if (!scrollInitialized) {
+            scrollInitialized = true;
+            initCounterAnimation();
         }
-    }, 3000);
+    }, { once: true });
 });
 </script>
 
