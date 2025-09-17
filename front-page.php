@@ -360,10 +360,16 @@
 </section>
 
 <!-- Trusted By Section -->
-<section class="trusted-by-section py-5 bg-white">
+<section class="trusted-by-section py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-top: 3px solid var(--color-primary); border-bottom: 3px solid var(--color-primary);">
     <div class="container">
-        <div class="text-center mb-4">
-            <h3 class="h5 text-muted fw-semibold mb-4" style="font-family: 'Inter', sans-serif; letter-spacing: 0.5px;">TRUSTED BY LEADING COMPANIES</h3>
+        <div class="text-center mb-5">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                <i class="fas fa-users fa-2x text-primary"></i>
+            </div>
+            <h2 class="display-6 fw-bold mb-3 text-primary" style="font-family: 'Source Serif Pro', serif;">TRUSTED BY LEADING COMPANIES</h2>
+            <p class="lead text-muted" style="font-family: 'Inter', sans-serif;">
+                Join 200+ successful companies who trust us with their most critical valuations
+            </p>
         </div>
 
         <!-- Client Logos Carousel -->
