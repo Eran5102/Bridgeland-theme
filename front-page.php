@@ -48,12 +48,12 @@
 
                         <div class="dashboard-chart mb-4">
                             <div class="d-flex align-items-end justify-content-around" style="height: 120px; padding: 0 10px;">
-                                <div class="chart-bar bg-primary rounded-top shadow-sm" style="height: 45px; width: 18px;"></div>
-                                <div class="chart-bar bg-primary rounded-top shadow-sm" style="height: 65px; width: 18px;"></div>
-                                <div class="chart-bar bg-primary rounded-top shadow-sm" style="height: 35px; width: 18px;"></div>
-                                <div class="chart-bar bg-primary rounded-top shadow-sm" style="height: 85px; width: 18px;"></div>
-                                <div class="chart-bar bg-primary rounded-top shadow-sm" style="height: 55px; width: 18px;"></div>
-                                <div class="chart-bar bg-primary rounded-top shadow-sm" style="height: 75px; width: 18px;"></div>
+                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 45px; width: 18px;" data-delay="0"></div>
+                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 65px; width: 18px;" data-delay="200"></div>
+                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 35px; width: 18px;" data-delay="400"></div>
+                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 85px; width: 18px;" data-delay="600"></div>
+                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 55px; width: 18px;" data-delay="800"></div>
+                                <div class="chart-bar bg-primary rounded-top shadow-sm animate-bar" style="--bar-height: 75px; width: 18px;" data-delay="1000"></div>
                             </div>
                             <p class="text-center text-muted small mb-0 mt-2">Company Valuation Trend</p>
                         </div>
@@ -102,7 +102,7 @@
                     <div class="card-body p-4">
                         <div class="service-icon text-center mb-3">
                             <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fas fa-gavel text-primary fa-lg"></i>
+                                <i class="fas fa-balance-scale text-primary fa-lg"></i>
                             </div>
                         </div>
                         <h3 class="service-title h5 mb-3 text-center">409A Valuation</h3>
@@ -150,7 +150,7 @@
                     <div class="card-body p-4">
                         <div class="service-icon text-center mb-3">
                             <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fas fa-water text-primary fa-lg"></i>
+                                <i class="fas fa-chart-area text-primary fa-lg"></i>
                             </div>
                         </div>
                         <h3 class="service-title h5 mb-3 text-center">Exit Waterfall Analysis</h3>
@@ -356,142 +356,142 @@
 
         <div class="text-center mt-4">
             <p class="small text-muted mb-0">
-                <i class="fas fa-check-circle text-success me-2"></i>
-                500+ successful valuations completed for companies at all stages
+                <i class="fas fa-check-circle me-2" style="color: var(--color-secondary-dark);"></i>
+                200+ successful valuations completed for companies at all stages
             </p>
         </div>
     </div>
 </section>
 
-<!-- Process Section - Compact Accordion -->
+<!-- Process Section - Visual Timeline -->
 <section class="process-section py-5 bg-light">
     <div class="container">
         <div class="section-header text-center mb-5 animate-on-scroll">
             <h2 class="section-title display-5 fw-bold mb-3">Our Proven Process</h2>
             <p class="section-subtitle lead text-muted mx-auto" style="max-width: 600px;">
-                A systematic 8-step approach ensuring accuracy, transparency, and 14-day turnaround guarantee.
+                A systematic 4-step approach ensuring accuracy, transparency, and 14-day turnaround guarantee.
             </p>
         </div>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="accordion" id="processAccordion">
-                    <div class="accordion-item border-0 mb-3 shadow-sm">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#process1" aria-expanded="false">
-                                <span class="badge bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; font-size: 14px;">1</span>
-                                <strong>Initial Consultation & Engagement</strong>
-                            </button>
-                        </h2>
-                        <div id="process1" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-                            <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h6>Initial Consultation</h6>
-                                        <p class="text-muted mb-3">Understanding your business, valuation requirements, and specific objectives.</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h6>Engagement Letter</h6>
-                                        <p class="text-muted mb-0">Formal agreement outlining scope, timeline, and deliverables for transparency.</p>
-                                    </div>
-                                </div>
+        <!-- Timeline Process Flow -->
+        <div class="process-timeline mb-5">
+            <div class="row">
+                <!-- Step 1 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center animate-on-scroll">
+                        <div class="step-number mb-3">
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                1
                             </div>
                         </div>
-                    </div>
-
-                    <div class="accordion-item border-0 mb-3 shadow-sm">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#process2" aria-expanded="false">
-                                <span class="badge bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; font-size: 14px;">2</span>
-                                <strong>Project Setup & Research</strong>
-                            </button>
-                        </h2>
-                        <div id="process2" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-                            <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h6>Kick-off Meeting</h6>
-                                        <p class="text-muted mb-3">Detailed discussion of methodology, data requirements, and project timeline.</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h6>Background Research</h6>
-                                        <p class="text-muted mb-0">Comprehensive market analysis, industry research, and competitive landscape study.</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-handshake fa-2x text-primary"></i>
                         </div>
-                    </div>
-
-                    <div class="accordion-item border-0 mb-3 shadow-sm">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#process3" aria-expanded="false">
-                                <span class="badge bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; font-size: 14px;">3</span>
-                                <strong>Analysis & Modeling</strong>
-                            </button>
-                        </h2>
-                        <div id="process3" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-                            <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h6>Financial Modeling</h6>
-                                        <p class="text-muted mb-3">Development of sophisticated financial models using AICPA and IPEV guidelines.</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h6>Draft Report</h6>
-                                        <p class="text-muted mb-0">Preparation of comprehensive draft report with detailed analysis and findings.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item border-0 mb-3 shadow-sm">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#process4" aria-expanded="false">
-                                <span class="badge bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; font-size: 14px;">4</span>
-                                <strong>Review & Final Delivery</strong>
-                            </button>
-                        </h2>
-                        <div id="process4" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-                            <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h6>Management Review</h6>
-                                        <p class="text-muted mb-3">Client review and feedback incorporation to ensure accuracy and completeness.</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h6>Final Delivery</h6>
-                                        <p class="text-muted mb-0">Final report and certificate delivery with ongoing support and audit defense.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <h4 class="step-title h5 fw-bold mb-3">Initial Consultation</h4>
+                        <p class="step-description text-muted">Understanding your business, requirements, and objectives. Formal engagement letter outlining scope and timeline.</p>
+                        <div class="step-duration small text-primary fw-semibold">Day 1-2</div>
                     </div>
                 </div>
 
-                <div class="text-center mt-4">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="bg-white rounded p-3 shadow-sm">
-                                <i class="fas fa-clock text-primary mb-2"></i>
-                                <div class="fw-semibold">14 Days</div>
-                                <small class="text-muted">Turnaround Time</small>
+                <!-- Connection Line -->
+                <div class="d-none d-lg-block col-lg-1">
+                    <div class="process-connector d-flex align-items-center justify-content-center h-100">
+                        <div class="connector-line bg-primary" style="width: 3px; height: 60px; border-radius: 2px;"></div>
+                        <i class="fas fa-arrow-right text-primary position-absolute"></i>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center animate-on-scroll">
+                        <div class="step-number mb-3">
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                2
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="bg-white rounded p-3 shadow-sm">
-                                <i class="fas fa-shield-alt text-primary mb-2"></i>
-                                <div class="fw-semibold">Audit Defense</div>
-                                <small class="text-muted">Included</small>
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-search fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="step-title h5 fw-bold mb-3">Research & Setup</h4>
+                        <p class="step-description text-muted">Comprehensive market analysis, industry research, and kick-off meeting to discuss methodology and data requirements.</p>
+                        <div class="step-duration small text-primary fw-semibold">Day 3-5</div>
+                    </div>
+                </div>
+
+                <!-- Connection Line -->
+                <div class="d-none d-lg-block col-lg-1">
+                    <div class="process-connector d-flex align-items-center justify-content-center h-100">
+                        <div class="connector-line bg-primary" style="width: 3px; height: 60px; border-radius: 2px;"></div>
+                        <i class="fas fa-arrow-right text-primary position-absolute"></i>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center animate-on-scroll">
+                        <div class="step-number mb-3">
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                3
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="bg-white rounded p-3 shadow-sm">
-                                <i class="fas fa-certificate text-primary mb-2"></i>
-                                <div class="fw-semibold">IRS Compliant</div>
-                                <small class="text-muted">Certified</small>
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-calculator fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="step-title h5 fw-bold mb-3">Analysis & Modeling</h4>
+                        <p class="step-description text-muted">Development of sophisticated financial models using AICPA and IPEV guidelines. Preparation of comprehensive draft report.</p>
+                        <div class="step-duration small text-primary fw-semibold">Day 6-12</div>
+                    </div>
+                </div>
+
+                <!-- Connection Line -->
+                <div class="d-none d-lg-block col-lg-1">
+                    <div class="process-connector d-flex align-items-center justify-content-center h-100">
+                        <div class="connector-line bg-primary" style="width: 3px; height: 60px; border-radius: 2px;"></div>
+                        <i class="fas fa-arrow-right text-primary position-absolute"></i>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step text-center animate-on-scroll">
+                        <div class="step-number mb-3">
+                            <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center text-white fw-bold" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                4
                             </div>
                         </div>
+                        <div class="step-icon mb-3">
+                            <i class="fas fa-check-circle fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="step-title h5 fw-bold mb-3">Review & Delivery</h4>
+                        <p class="step-description text-muted">Client review and feedback incorporation. Final report and certificate delivery with ongoing support and audit defense.</p>
+                        <div class="step-duration small text-primary fw-semibold">Day 13-14</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process Guarantees -->
+        <div class="text-center">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-3">
+                    <div class="guarantee-item bg-white rounded-4 p-4 shadow-sm h-100">
+                        <i class="fas fa-clock fa-2x text-primary mb-3"></i>
+                        <div class="fw-bold h5 mb-2">14 Days</div>
+                        <small class="text-muted">Guaranteed Turnaround</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="guarantee-item bg-white rounded-4 p-4 shadow-sm h-100">
+                        <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
+                        <div class="fw-bold h5 mb-2">Audit Defense</div>
+                        <small class="text-muted">Included Support</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="guarantee-item bg-white rounded-4 p-4 shadow-sm h-100">
+                        <i class="fas fa-certificate fa-2x text-primary mb-3"></i>
+                        <div class="fw-bold h5 mb-2">IRS Compliant</div>
+                        <small class="text-muted">Certified Methodology</small>
                     </div>
                 </div>
             </div>
@@ -510,7 +510,8 @@
         </div>
 
         <div class="row g-4 justify-content-center">
-            <div class="col-lg-5 animate-on-scroll">
+            <!-- Maya Cohen Testimonial -->
+            <div class="col-lg-4 animate-on-scroll">
                 <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 h-100 position-relative overflow-hidden">
                     <!-- Quote decoration -->
                     <div class="position-absolute top-0 start-0 p-4 opacity-10">
@@ -530,7 +531,7 @@
 
                         <blockquote class="mb-4">
                             <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.1rem; line-height: 1.6; font-style: italic;">
-                                "I highly recommend Bridgeland Advisors for their exceptional service in constructing a 409A valuation for our company. They demonstrated utmost professionalism and efficiency throughout the process."
+                                "Collaborating with Eran was effortless. The professionalism and streamlined process made it an outstanding experience. They really paid attention to what I needed and nailed it. Communication was clear and timely, which made the entire project run smoothly. I'd totally recommend Eran and the team for their awesome service and dedication."
                             </p>
                         </blockquote>
 
@@ -539,15 +540,16 @@
                                 <i class="fas fa-user text-primary"></i>
                             </div>
                             <div>
-                                <div class="fw-bold text-dark" style="font-family: 'Inter', sans-serif;">Boaz Fraoman</div>
-                                <small class="text-muted" style="font-family: 'Inter', sans-serif;">Startup Founder</small>
+                                <div class="fw-bold text-dark" style="font-family: 'Inter', sans-serif;">Maya Cohen</div>
+                                <small class="text-muted" style="font-family: 'Inter', sans-serif;">CEO, Montopay</small>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-5 animate-on-scroll">
+            <!-- Josh Harro Testimonial -->
+            <div class="col-lg-4 animate-on-scroll">
                 <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 h-100 position-relative overflow-hidden">
                     <!-- Quote decoration -->
                     <div class="position-absolute top-0 start-0 p-4 opacity-10">
@@ -567,7 +569,7 @@
 
                         <blockquote class="mb-4">
                             <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.1rem; line-height: 1.6; font-style: italic;">
-                                "An absolute gem! Eran is a true expert in the field of VC finance and cap tables. He is an excellent communicator and an outstanding teacher."
+                                "Eran provided us with a 409A valuation, and I can't say enough about what a pleasure it was to work with him. He was extremely professional, and the work together was seamless. Eran exceeded our expectations and delivered the final report well within the time frame that we agree upon. I certainly expect us to continue collaborating with him going forward."
                             </p>
                         </blockquote>
 
@@ -576,8 +578,46 @@
                                 <i class="fas fa-user text-primary"></i>
                             </div>
                             <div>
-                                <div class="fw-bold text-dark" style="font-family: 'Inter', sans-serif;">David Cooper</div>
-                                <small class="text-muted" style="font-family: 'Inter', sans-serif;">Investment Professional</small>
+                                <div class="fw-bold text-dark" style="font-family: 'Inter', sans-serif;">Josh Harro</div>
+                                <small class="text-muted" style="font-family: 'Inter', sans-serif;">Director of Operations, Itur Intelligence</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Uriel Herman Testimonial -->
+            <div class="col-lg-4 animate-on-scroll">
+                <div class="testimonial-card bg-white rounded-4 shadow-lg border-0 h-100 position-relative overflow-hidden">
+                    <!-- Quote decoration -->
+                    <div class="position-absolute top-0 start-0 p-4 opacity-10">
+                        <i class="fas fa-quote-left fa-3x text-primary"></i>
+                    </div>
+
+                    <div class="card-body p-5 position-relative">
+                        <div class="mb-4">
+                            <div class="text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                        <blockquote class="mb-4">
+                            <p class="mb-0 text-dark" style="font-family: 'Source Serif Pro', serif; font-size: 1.1rem; line-height: 1.6; font-style: italic;">
+                                "Half a Superman! Eran is a real expert in the field of strategic partnerships, VC, finance and investment processes. He brings years of legal & finance experience to the table, which is crucial for any company seeking accurate valuation in a cost-effective and accurate way. If you're looking for a strategic advisor, Eran is your man."
+                            </p>
+                        </blockquote>
+
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-user text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold text-dark" style="font-family: 'Inter', sans-serif;">Uriel Herman</div>
+                                <small class="text-muted" style="font-family: 'Inter', sans-serif;">CEO, Extreme Simulations</small>
                             </div>
                         </div>
                     </div>
@@ -667,6 +707,52 @@
     opacity: 1 !important;
     transform: translateY(0) !important;
     transition: all 0.6s ease;
+}
+
+/* Enhanced Dashboard Animation */
+.chart-bar.animate-bar {
+    height: 0;
+    animation: growBar 1s ease-out forwards;
+    transform-origin: bottom;
+}
+
+@keyframes growBar {
+    from {
+        height: 0;
+        opacity: 0.5;
+    }
+    to {
+        height: var(--bar-height);
+        opacity: 1;
+    }
+}
+
+.dashboard-mockup {
+    animation: dashboardFloat 6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes dashboardFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.02);
+    }
+}
+
+.dashboard-mockup:hover .chart-bar {
+    transform: scaleY(1.1);
+    transition: transform 0.3s ease;
+}
+
+.metric-item {
+    transition: all 0.3s ease;
+}
+
+.metric-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .animate-fade-in {
@@ -777,6 +863,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const counterElements = document.querySelectorAll('.counter[data-count]');
     let hasAnimated = false;
 
+    // Dashboard Chart Animation
+    const chartBars = document.querySelectorAll('.chart-bar.animate-bar');
+    chartBars.forEach(bar => {
+        const delay = parseInt(bar.getAttribute('data-delay')) || 0;
+        setTimeout(() => {
+            bar.style.animationDelay = delay + 'ms';
+            bar.classList.add('animate');
+        }, 500); // Start after page load
+    });
+
     function animateCounter(element, delay = 0) {
         const target = parseInt(element.getAttribute('data-count'));
         const duration = 2000; // 2 seconds for smooth animation
@@ -819,8 +915,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, {
-        threshold: 0.2, // Trigger when 20% visible
-        rootMargin: '0px 0px -100px 0px' // Start slightly before fully visible
+        threshold: 0.5, // Trigger when 50% visible
+        rootMargin: '0px 0px 0px 0px' // No early triggering
     });
 
     // Observe the stats section

@@ -2,7 +2,7 @@
 Theme Name: Bridgeland Advisors v2
 Description: Professional financial advisory theme with maroon branding and Bootstrap integration
 Author: Bridgeland Advisors
-Version: 3.3
+Version: 3.4
 GitHub Theme URI: Eran5102/Bridgeland-theme
 GitHub Branch: master
 Primary Branch: master
@@ -260,6 +260,28 @@ footer .text-muted {
     color: var(--color-maroon-dark) !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Global Fix for Circular Icons */
+.rounded-circle {
+    aspect-ratio: 1 / 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Ensure buttons with rounded-circle maintain circular shape */
+.btn.rounded-circle {
+    width: auto !important;
+    height: auto !important;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+/* Fix for icon containers */
+.rounded-circle[style*="width"][style*="height"] {
+    min-width: unset !important;
+    min-height: unset !important;
 }
 
 /* Navigation Styles */
