@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridgeland Theme CSS Test</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Test -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: var(--color-maroon);">Bridgeland Advisors</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-5 fw-bold text-primary mb-3">CSS Styling Test</h1>
+                    <p class="lead text-muted mb-4">
+                        Testing the Bridgeland theme styling with fallback CSS support
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid Test -->
+            <div class="row mb-5">
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Column 1</h5>
+                            <p class="card-text">This tests the 4-column grid layout.</p>
+                            <a href="#" class="btn btn-primary">Test Button</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Column 2</h5>
+                            <p class="card-text">This tests responsive behavior.</p>
+                            <a href="#" class="btn btn-secondary">Secondary</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Column 3</h5>
+                            <p class="card-text">Maroon color scheme test.</p>
+                            <a href="#" class="btn btn-outline">Outline</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Test -->
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <form class="bg-light p-4 rounded">
+                        <h4 class="text-primary mb-3">Contact Form Test</h4>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Service Interest</label>
+                            <select class="form-select">
+                                <option>409A Valuation</option>
+                                <option>Company Valuation</option>
+                                <option>Waterfall Analysis</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Test</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Utility Classes Test -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        <h6 class="alert-heading"><i class="fas fa-info-circle me-2"></i>Styling Test</h6>
+                        <p class="mb-0">This alert tests the fallback styling system. All elements should display properly with maroon branding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6>Bridgeland Advisors</h6>
+                    <p class="small mb-0">Expert 409A Valuations and Strategic Financial Advisory</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="small mb-0">CSS Test Page</p>
+                    <p class="small mb-0">Bootstrap + Custom Fallback Styles</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

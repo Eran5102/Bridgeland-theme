@@ -1,0 +1,617 @@
+<?php get_header(); ?>
+
+<section class="contact-hero py-5" style="padding-top: 120px; background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-maroon-dark) 100%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center text-white">
+                <h1 class="display-4 fw-bold mb-4">Get In Touch</h1>
+                <p class="lead mb-4">
+                    Ready to discuss your valuation and financial advisory needs?
+                    Let's schedule a consultation to explore how we can help your business succeed.
+                </p>
+                <div class="contact-highlights d-flex justify-content-center gap-4 flex-wrap">
+                    <div class="highlight text-center">
+                        <i class="fas fa-clock fa-lg mb-2"></i>
+                        <div class="small">2-hour response time</div>
+                    </div>
+                    <div class="highlight text-center">
+                        <i class="fas fa-shield-alt fa-lg mb-2"></i>
+                        <div class="small">Confidential consultation</div>
+                    </div>
+                    <div class="highlight text-center">
+                        <i class="fas fa-handshake fa-lg mb-2"></i>
+                        <div class="small">No obligation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Methods -->
+<section class="contact-methods py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="contact-method-card card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <div class="contact-icon bg-primary bg-opacity-10 rounded-circle p-3 mx-auto mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-phone text-primary fa-lg"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Phone Call</h4>
+                        <p class="text-muted mb-3">Speak directly with Eran for immediate assistance</p>
+                        <div class="contact-info mb-3">
+                            <div class="fw-bold text-primary">+972-50-6842937</div>
+                            <div class="small text-muted">Available 9 AM - 6 PM IST</div>
+                        </div>
+                        <a href="tel:+972-50-6842937" class="btn btn-primary w-100">
+                            <i class="fas fa-phone me-2"></i>Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="contact-method-card card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <div class="contact-icon bg-success bg-opacity-10 rounded-circle p-3 mx-auto mb-3" style="width: 60px; height: 60px;">
+                            <i class="fab fa-whatsapp text-success fa-lg"></i>
+                        </div>
+                        <h4 class="h5 mb-3">WhatsApp</h4>
+                        <p class="text-muted mb-3">Quick chat for immediate questions and support</p>
+                        <div class="contact-info mb-3">
+                            <div class="fw-bold text-success">WhatsApp Business</div>
+                            <div class="small text-muted">Instant messaging available</div>
+                        </div>
+                        <a href="https://wa.me/972506842937?text=Hi%20Eran,%20I'm%20interested%20in%20your%20financial%20advisory%20services."
+                           target="_blank" class="btn btn-success w-100">
+                            <i class="fab fa-whatsapp me-2"></i>Start Chat
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="contact-method-card card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <div class="contact-icon bg-info bg-opacity-10 rounded-circle p-3 mx-auto mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-envelope text-info fa-lg"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Email</h4>
+                        <p class="text-muted mb-3">Detailed inquiries and document sharing</p>
+                        <div class="contact-info mb-3">
+                            <div class="fw-bold text-info">eran@bridgeland-advisors.com</div>
+                            <div class="small text-muted">Response within 2 hours</div>
+                        </div>
+                        <a href="mailto:eran@bridgeland-advisors.com?subject=Consultation Request" class="btn btn-info w-100">
+                            <i class="fas fa-envelope me-2"></i>Send Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Multi-Step Contact Form -->
+<section class="contact-form-section py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="form-card card border-0 shadow-sm">
+                    <div class="card-header bg-white border-0 p-4">
+                        <h3 class="text-center text-primary mb-3">Schedule Your Consultation</h3>
+                        <p class="text-center text-muted mb-0">
+                            Tell us about your project so we can provide the most relevant guidance
+                        </p>
+                    </div>
+
+                    <div class="card-body p-4">
+                        <!-- Progress Indicator -->
+                        <div class="progress-steps mb-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="step active" id="step-indicator-1">
+                                    <div class="step-number">1</div>
+                                    <div class="step-label">Service</div>
+                                </div>
+                                <div class="step-line"></div>
+                                <div class="step" id="step-indicator-2">
+                                    <div class="step-number">2</div>
+                                    <div class="step-label">Details</div>
+                                </div>
+                                <div class="step-line"></div>
+                                <div class="step" id="step-indicator-3">
+                                    <div class="step-number">3</div>
+                                    <div class="step-label">Contact</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="multi-step-contact-form" action="<?php echo admin_url('admin-ajax.php'); ?>" method="POST">
+                            <input type="hidden" name="action" value="bridgeland_contact">
+                            <?php wp_nonce_field('bridgeland_nonce', 'nonce'); ?>
+
+                            <!-- Step 1: Service Selection -->
+                            <div class="form-step active" id="step-1">
+                                <h4 class="mb-4">What service are you interested in?</h4>
+
+                                <div class="service-options">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <input type="radio" class="btn-check" name="service" value="409a-valuation" id="service-409a" required>
+                                            <label class="btn btn-outline-primary w-100 p-3" for="service-409a">
+                                                <i class="fas fa-gavel fa-lg mb-2 d-block"></i>
+                                                <strong>409A Valuation</strong>
+                                                <div class="small text-muted">IRS-compliant equity valuation</div>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <input type="radio" class="btn-check" name="service" value="company-valuation" id="service-company">
+                                            <label class="btn btn-outline-primary w-100 p-3" for="service-company">
+                                                <i class="fas fa-building fa-lg mb-2 d-block"></i>
+                                                <strong>Company Valuation</strong>
+                                                <div class="small text-muted">Business valuation for M&A</div>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <input type="radio" class="btn-check" name="service" value="waterfall-analysis" id="service-waterfall">
+                                            <label class="btn btn-outline-primary w-100 p-3" for="service-waterfall">
+                                                <i class="fas fa-water fa-lg mb-2 d-block"></i>
+                                                <strong>Waterfall Analysis</strong>
+                                                <div class="small text-muted">Exit scenario modeling</div>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <input type="radio" class="btn-check" name="service" value="capital-raising" id="service-capital">
+                                            <label class="btn btn-outline-primary w-100 p-3" for="service-capital">
+                                                <i class="fas fa-handshake fa-lg mb-2 d-block"></i>
+                                                <strong>Capital Raising</strong>
+                                                <div class="small text-muted">Fundraising advisory</div>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <input type="radio" class="btn-check" name="service" value="financial-modeling" id="service-modeling">
+                                            <label class="btn btn-outline-primary w-100 p-3" for="service-modeling">
+                                                <i class="fas fa-calculator fa-lg mb-2 d-block"></i>
+                                                <strong>Financial Modeling</strong>
+                                                <div class="small text-muted">Custom financial models</div>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <input type="radio" class="btn-check" name="service" value="other" id="service-other">
+                                            <label class="btn btn-outline-primary w-100 p-3" for="service-other">
+                                                <i class="fas fa-question fa-lg mb-2 d-block"></i>
+                                                <strong>Other / Not Sure</strong>
+                                                <div class="small text-muted">Let's discuss your needs</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-end mt-4">
+                                    <button type="button" class="btn btn-primary" onclick="nextStep()">
+                                        Next <i class="fas fa-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Project Details -->
+                            <div class="form-step" id="step-2">
+                                <h4 class="mb-4">Tell us about your project</h4>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="company-name">Company Name</label>
+                                        <input type="text" class="form-control" id="company-name" name="company" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="industry">Industry</label>
+                                        <select class="form-select" id="industry" name="industry" required>
+                                            <option value="">Select Industry</option>
+                                            <option value="technology">Technology / Software</option>
+                                            <option value="healthcare">Healthcare / Biotech</option>
+                                            <option value="fintech">Fintech / Financial Services</option>
+                                            <option value="ecommerce">E-commerce / Retail</option>
+                                            <option value="manufacturing">Manufacturing</option>
+                                            <option value="professional-services">Professional Services</option>
+                                            <option value="real-estate">Real Estate</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="company-stage">Company Stage</label>
+                                        <select class="form-select" id="company-stage" name="stage" required>
+                                            <option value="">Select Stage</option>
+                                            <option value="pre-seed">Pre-Seed</option>
+                                            <option value="seed">Seed</option>
+                                            <option value="series-a">Series A</option>
+                                            <option value="series-b">Series B</option>
+                                            <option value="series-c-plus">Series C+</option>
+                                            <option value="growth-stage">Growth Stage</option>
+                                            <option value="mature">Mature</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="timeline">Preferred Timeline</label>
+                                        <select class="form-select" id="timeline" name="timeline" required>
+                                            <option value="">Select Timeline</option>
+                                            <option value="urgent">Urgent (1-2 weeks)</option>
+                                            <option value="standard">Standard (2-4 weeks)</option>
+                                            <option value="flexible">Flexible (4+ weeks)</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label" for="project-details">Project Details</label>
+                                        <textarea class="form-control" id="project-details" name="message" rows="4"
+                                                  placeholder="Please provide additional context about your project, specific requirements, or any questions you have..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-outline-primary" onclick="prevStep()">
+                                        <i class="fas fa-arrow-left me-2"></i>Back
+                                    </button>
+                                    <button type="button" class="btn btn-primary" onclick="nextStep()">
+                                        Next <i class="fas fa-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Contact Information -->
+                            <div class="form-step" id="step-3">
+                                <h4 class="mb-4">Your contact information</h4>
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="contact-name">Full Name *</label>
+                                        <input type="text" class="form-control" id="contact-name" name="name" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="job-title">Job Title</label>
+                                        <input type="text" class="form-control" id="job-title" name="title"
+                                               placeholder="e.g., CEO, CFO, Founder">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="contact-email">Email Address *</label>
+                                        <input type="email" class="form-control" id="contact-email" name="email" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="contact-phone">Phone Number</label>
+                                        <input type="tel" class="form-control" id="contact-phone" name="phone"
+                                               placeholder="Include country code">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label" for="preferred-contact">Preferred Contact Method</label>
+                                        <div class="contact-preferences d-flex gap-3 flex-wrap">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="contact-method" value="email" id="prefer-email" checked>
+                                                <label class="form-check-label" for="prefer-email">
+                                                    <i class="fas fa-envelope me-1"></i>Email
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="contact-method" value="phone" id="prefer-phone">
+                                                <label class="form-check-label" for="prefer-phone">
+                                                    <i class="fas fa-phone me-1"></i>Phone
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="contact-method" value="whatsapp" id="prefer-whatsapp">
+                                                <label class="form-check-label" for="prefer-whatsapp">
+                                                    <i class="fab fa-whatsapp me-1"></i>WhatsApp
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="privacy-consent" name="privacy-consent" required>
+                                            <label class="form-check-label small" for="privacy-consent">
+                                                I agree to the <a href="<?php echo home_url('/privacy-policy/'); ?>" target="_blank">Privacy Policy</a>
+                                                and consent to being contacted about my inquiry.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-outline-primary" onclick="prevStep()">
+                                        <i class="fas fa-arrow-left me-2"></i>Back
+                                    </button>
+                                    <button type="submit" class="btn btn-primary" id="submit-btn">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Consultation Request
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Form Response -->
+                            <div class="form-response d-none" id="form-response">
+                                <div class="text-center">
+                                    <div class="response-icon bg-success bg-opacity-10 rounded-circle p-4 mx-auto mb-3" style="width: 80px; height: 80px;">
+                                        <i class="fas fa-check-circle text-success fa-2x"></i>
+                                    </div>
+                                    <h4 class="text-success mb-3">Thank You!</h4>
+                                    <p class="text-muted mb-4">
+                                        Your consultation request has been received. Eran will respond within 2 hours
+                                        during business hours (9 AM - 6 PM IST).
+                                    </p>
+                                    <div class="next-steps bg-light p-3 rounded">
+                                        <h6 class="mb-2">What happens next?</h6>
+                                        <ul class="list-unstyled small mb-0">
+                                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Review of your consultation request</li>
+                                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Initial call to understand your needs</li>
+                                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Custom proposal and timeline</li>
+                                            <li class="mb-0"><i class="fas fa-check text-success me-2"></i>Project kickoff and execution</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Office Information -->
+<section class="office-info py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h3 class="mb-4">Visit Our Office</h3>
+                <div class="office-details">
+                    <div class="detail-item d-flex align-items-start mb-3">
+                        <i class="fas fa-map-marker-alt text-primary me-3 mt-1"></i>
+                        <div>
+                            <h6 class="mb-1">Address</h6>
+                            <p class="text-muted mb-0">
+                                19 Ner Halayla St.<br>
+                                Even Yehuda, Israel
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item d-flex align-items-start mb-3">
+                        <i class="fas fa-clock text-primary me-3 mt-1"></i>
+                        <div>
+                            <h6 class="mb-1">Business Hours</h6>
+                            <div class="text-muted small">
+                                <div>Sunday - Thursday: 9:00 AM - 6:00 PM</div>
+                                <div>Friday: 9:00 AM - 2:00 PM</div>
+                                <div>Saturday: Closed</div>
+                                <div class="mt-1"><em>Israel Standard Time (GMT+3)</em></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-item d-flex align-items-start mb-3">
+                        <i class="fas fa-calendar-alt text-primary me-3 mt-1"></i>
+                        <div>
+                            <h6 class="mb-1">Appointments</h6>
+                            <p class="text-muted mb-0">
+                                In-person meetings available by appointment only.
+                                Video consultations available worldwide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="map-placeholder bg-light rounded p-5 text-center">
+                    <i class="fas fa-map fa-3x text-muted mb-3"></i>
+                    <h5 class="text-muted">Interactive Map</h5>
+                    <p class="text-muted mb-3">
+                        Located in Even Yehuda, easily accessible from Tel Aviv and Jerusalem
+                    </p>
+                    <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
+                       target="_blank" class="btn btn-outline-primary">
+                        <i class="fas fa-external-link-alt me-2"></i>Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+let currentStep = 1;
+const totalSteps = 3;
+
+function nextStep() {
+    if (validateCurrentStep()) {
+        if (currentStep < totalSteps) {
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            document.getElementById(`step-indicator-${currentStep}`).classList.remove('active');
+            document.getElementById(`step-indicator-${currentStep}`).classList.add('completed');
+
+            currentStep++;
+            document.getElementById(`step-${currentStep}`).classList.add('active');
+            document.getElementById(`step-indicator-${currentStep}`).classList.add('active');
+        }
+    }
+}
+
+function prevStep() {
+    if (currentStep > 1) {
+        document.getElementById(`step-${currentStep}`).classList.remove('active');
+        document.getElementById(`step-indicator-${currentStep}`).classList.remove('active');
+
+        currentStep--;
+        document.getElementById(`step-${currentStep}`).classList.add('active');
+        document.getElementById(`step-indicator-${currentStep}`).classList.remove('completed');
+        document.getElementById(`step-indicator-${currentStep}`).classList.add('active');
+    }
+}
+
+function validateCurrentStep() {
+    const currentStepElement = document.getElementById(`step-${currentStep}`);
+    const requiredFields = currentStepElement.querySelectorAll('input[required], select[required], textarea[required]');
+
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.classList.add('is-invalid');
+            isValid = false;
+        } else {
+            field.classList.remove('is-invalid');
+        }
+    });
+
+    return isValid;
+}
+
+document.getElementById('multi-step-contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (!validateCurrentStep()) {
+        return;
+    }
+
+    const submitBtn = document.getElementById('submit-btn');
+    const originalText = submitBtn.innerHTML;
+
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+        document.querySelectorAll('.form-step').forEach(step => {
+            step.classList.remove('active');
+        });
+
+        document.querySelector('.progress-steps').style.display = 'none';
+        document.getElementById('form-response').classList.remove('d-none');
+
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }, 2000);
+});
+
+document.querySelectorAll('input[name="service"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        document.querySelectorAll('label[for^="service-"]').forEach(label => {
+            label.classList.remove('btn-primary');
+            label.classList.add('btn-outline-primary');
+        });
+
+        if (this.checked) {
+            document.querySelector(`label[for="${this.id}"]`).classList.remove('btn-outline-primary');
+            document.querySelector(`label[for="${this.id}"]`).classList.add('btn-primary');
+        }
+    });
+});
+</script>
+
+<style>
+.contact-method-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+    transition: all 0.3s ease;
+}
+
+.progress-steps .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-gray-200);
+    color: var(--color-gray-600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.step.active .step-number {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.step.completed .step-number {
+    background-color: var(--color-success);
+    color: white;
+}
+
+.step-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    font-weight: 500;
+}
+
+.step.active .step-label,
+.step.completed .step-label {
+    color: var(--color-primary);
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background-color: var(--color-gray-200);
+    margin: 0 1rem;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.service-options .btn-check:checked + .btn {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    color: white !important;
+}
+
+.service-options .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.is-invalid {
+    border-color: var(--color-error) !important;
+    box-shadow: 0 0 0 0.25rem rgba(220, 38, 38, 0.25) !important;
+}
+
+@media (max-width: 768px) {
+    .progress-steps .d-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .step-line {
+        width: 2px;
+        height: 30px;
+        margin: 0.5rem 0;
+    }
+}
+</style>
+
+<?php get_footer(); ?>

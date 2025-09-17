@@ -1,0 +1,186 @@
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-light py-5 mt-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Company Information -->
+            <div class="col-lg-4">
+                <div class="d-flex align-items-center mb-3">
+                    <svg width="32" height="24" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+                        <path d="M5 25 Q 15 10, 20 25 Q 25 5, 35 25" stroke="var(--color-maroon)" stroke-width="2" fill="none"/>
+                        <path d="M2 25 Q 20 0, 38 25" stroke="var(--color-maroon)" stroke-width="3" fill="none"/>
+                        <line x1="8" y1="20" x2="8" y2="25" stroke="var(--color-maroon)" stroke-width="1.5"/>
+                        <line x1="13" y1="15" x2="13" y2="25" stroke="var(--color-maroon)" stroke-width="1.5"/>
+                        <line x1="20" y1="8" x2="20" y2="25" stroke="var(--color-maroon)" stroke-width="1.5"/>
+                        <line x1="27" y1="15" x2="27" y2="25" stroke="var(--color-maroon)" stroke-width="1.5"/>
+                        <line x1="32" y1="20" x2="32" y2="25" stroke="var(--color-maroon)" stroke-width="1.5"/>
+                    </svg>
+                    <h5 class="text-white mb-0">Bridgeland Advisors</h5>
+                </div>
+                <p class="text-light mb-3">
+                    Expert 409A valuations and strategic financial advisory services for startups and growth companies.
+                    15+ years of experience in investment banking, corporate law, and financial advisory.
+                </p>
+                <div class="d-flex gap-3">
+                    <a href="<?php echo get_theme_mod('company_linkedin', 'https://www.linkedin.com/in/eranbenavi/'); ?>" class="text-light" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                    <a href="mailto:<?php echo get_theme_mod('company_email', 'eran@bridgeland-advisors.com'); ?>" class="text-light">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </a>
+                    <a href="tel:<?php echo get_theme_mod('company_phone', '+972-50-6842937'); ?>" class="text-light">
+                        <i class="fas fa-phone fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-white mb-3">Services</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="<?php echo home_url('/409a-valuation/'); ?>" class="text-light text-decoration-none">409A Valuation</a></li>
+                    <li class="mb-2"><a href="<?php echo home_url('/company-valuation/'); ?>" class="text-light text-decoration-none">Company Valuation</a></li>
+                    <li class="mb-2"><a href="<?php echo home_url('/startup-valuation/'); ?>" class="text-light text-decoration-none">Startup Valuation</a></li>
+                    <li class="mb-2"><a href="<?php echo home_url('/waterfall-analysis/'); ?>" class="text-light text-decoration-none">Waterfall Analysis</a></li>
+                    <li class="mb-2"><a href="<?php echo home_url('/capital-raising/'); ?>" class="text-light text-decoration-none">Capital Raising</a></li>
+                    <li class="mb-2"><a href="<?php echo home_url('/term-sheet-negotiation/'); ?>" class="text-light text-decoration-none">Term Sheet Negotiation</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-white mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="<?php echo home_url('/about/'); ?>" class="text-light text-decoration-none">About Us</a></li>
+                    <li class="mb-2"><a href="<?php echo home_url('/case-studies/'); ?>" class="text-light text-decoration-none">Case Studies</a></li>
+                    <li class="mb-2"><a href="<?php echo home_url('/faq/'); ?>" class="text-light text-decoration-none">FAQ</a></li>
+                    <li class="mb-2"><a href="<?php echo home_url('/resources/'); ?>" class="text-light text-decoration-none">Resource Library</a></li>
+                    <li class="mb-2"><a href="<?php echo home_url('/calculators/'); ?>" class="text-light text-decoration-none">Calculators</a></li>
+                    <li class="mb-2"><a href="<?php echo home_url('/blog/'); ?>" class="text-light text-decoration-none">Insights</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-4">
+                <h6 class="text-white mb-3">Contact Information</h6>
+                <div class="mb-3">
+                    <div class="d-flex align-items-start mb-2">
+                        <i class="fas fa-envelope text-brand me-2 mt-1"></i>
+                        <div>
+                            <div><a href="mailto:eran@bridgeland-advisors.com" class="text-light text-decoration-none">eran@bridgeland-advisors.com</a></div>
+                            <div><a href="mailto:info@bridgeland-advisors.com" class="text-light text-decoration-none">info@bridgeland-advisors.com</a></div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-phone text-brand me-2"></i>
+                        <a href="tel:+972-50-6842937" class="text-light text-decoration-none">+972-50-6842937</a>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-map-marker-alt text-brand me-2 mt-1"></i>
+                        <div class="text-light">
+                            <?php echo get_theme_mod('company_address', '19 Ner Halayla St.<br>Even Yehuda, Israel'); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Contact -->
+                <div class="d-grid gap-2 d-md-flex">
+                    <a href="mailto:eran@bridgeland-advisors.com?subject=409A Valuation Inquiry" class="btn btn-primary btn-sm">
+                        <i class="fas fa-envelope me-1"></i>Quick Email
+                    </a>
+                    <a href="tel:+972-50-6842937" class="btn btn-outline-light btn-sm">
+                        <i class="fas fa-phone me-1"></i>Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4 border-secondary">
+
+        <!-- Bottom Footer -->
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="d-md-flex align-items-center">
+                    <p class="mb-0 text-light">&copy; <?php echo date('Y'); ?> Bridgeland Advisors. All rights reserved.</p>
+                    <div class="ms-md-4 mt-2 mt-md-0">
+                        <a href="<?php echo home_url('/privacy-policy/'); ?>" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                        <a href="<?php echo home_url('/terms-of-service/'); ?>" class="text-light text-decoration-none me-3">Terms of Service</a>
+                        <a href="<?php echo home_url('/sitemap/'); ?>" class="text-light text-decoration-none">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <div class="mt-2 mt-md-0">
+                    <span class="text-muted small">Powered by expertise, driven by results</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1000;">
+    <a href="https://wa.me/972506842937?text=Hi%20Eran,%20I'm%20interested%20in%20learning%20more%20about%20your%20valuation%20services."
+       target="_blank"
+       class="btn btn-success rounded-circle p-3 shadow-lg"
+       title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp fa-lg"></i>
+    </a>
+</div>
+
+<!-- Back to Top Button -->
+<div class="position-fixed bottom-0 start-0 p-3" style="z-index: 1000;">
+    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow-lg" style="display: none;" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</div>
+
+<?php wp_footer(); ?>
+
+<!-- Custom JavaScript -->
+<script>
+// Back to top functionality
+window.addEventListener('scroll', function() {
+    const backToTopBtn = document.getElementById('backToTop');
+    if (window.pageYOffset > 300) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+
+document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.pageYOffset > 50) {
+        navbar.classList.add('navbar-scrolled');
+    } else {
+        navbar.classList.remove('navbar-scrolled');
+    }
+});
+</script>
+
+</body>
+</html><?php // This closing PHP tag is optional but included for completeness ?>
