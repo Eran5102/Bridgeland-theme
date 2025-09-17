@@ -143,76 +143,61 @@
 <!-- Skip to main content for accessibility -->
 <a class="visually-hidden-focusable" href="#main">Skip to main content</a>
 
-<header class="navbar navbar-expand-lg fixed-top">
+<header class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
     <div class="container">
-        <div class="row w-100 align-items-center">
-            <div class="col">
-                <!-- Logo -->
-                <a class="navbar-brand d-flex align-items-center" href="<?php echo home_url(); ?>">
-                    <?php if (has_custom_logo()): ?>
-                        <?php the_custom_logo(); ?>
-                    <?php else: ?>
-                        <!-- Custom Bridge SVG Logo -->
-                        <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-3">
-                            <path d="M5 25 Q 15 10, 20 25 Q 25 5, 35 25" stroke="var(--color-maroon)" stroke-width="2" fill="none"/>
-                            <path d="M2 25 Q 20 0, 38 25" stroke="var(--color-maroon)" stroke-width="3" fill="none"/>
-                            <line x1="8" y1="20" x2="8" y2="25" stroke="var(--color-maroon)" stroke-width="1.5"/>
-                            <line x1="13" y1="15" x2="13" y2="25" stroke="var(--color-maroon)" stroke-width="1.5"/>
-                            <line x1="20" y1="8" x2="20" y2="25" stroke="var(--color-maroon)" stroke-width="1.5"/>
-                            <line x1="27" y1="15" x2="27" y2="25" stroke="var(--color-maroon)" stroke-width="1.5"/>
-                            <line x1="32" y1="20" x2="32" y2="25" stroke="var(--color-maroon)" stroke-width="1.5"/>
-                        </svg>
-                        <div>
-                            <h1 class="h5 mb-0 text-primary fw-bold">Bridgeland Advisors</h1>
-                            <small class="text-muted">Strategic Valuation & Advisory</small>
-                        </div>
-                    <?php endif; ?>
-                </a>
-            </div>
-
-            <div class="col-auto">
-                <!-- Mobile menu toggle -->
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Navigation Menu -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-4">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo home_url(); ?>">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Services
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?php echo home_url('/409a-valuation/'); ?>">409A Valuation</a></li>
-                                <li><a class="dropdown-item" href="<?php echo home_url('/company-valuation/'); ?>">Company Valuation</a></li>
-                                <li><a class="dropdown-item" href="<?php echo home_url('/startup-valuation/'); ?>">Startup Valuation</a></li>
-                                <li><a class="dropdown-item" href="<?php echo home_url('/waterfall-analysis/'); ?>">Exit Waterfall Analysis</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="<?php echo home_url('/capital-raising/'); ?>">Capital Raising</a></li>
-                                <li><a class="dropdown-item" href="<?php echo home_url('/term-sheet-negotiation/'); ?>">Term Sheet Negotiation</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo home_url('/about/'); ?>">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo home_url('/resources/'); ?>">Resources</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo home_url('/contact/'); ?>">Contact</a>
-                        </li>
-                    </ul>
-
-                    <!-- CTA Button -->
-                    <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-primary">
-                        <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
-                    </a>
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="<?php echo home_url(); ?>">
+            <?php if (has_custom_logo()): ?>
+                <?php the_custom_logo(); ?>
+            <?php else: ?>
+                <!-- Use actual logo file -->
+                <img src="<?php echo get_template_directory_uri(); ?>/logo.png" alt="Bridgeland Advisors" height="45" class="me-3">
+                <div>
+                    <h1 class="h5 mb-0 text-primary fw-bold">Bridgeland Advisors</h1>
+                    <small class="text-muted">Strategic Valuation & Advisory</small>
                 </div>
-            </div>
+            <?php endif; ?>
+        </a>
+
+        <!-- Mobile menu toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto me-4">
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" href="<?php echo home_url(); ?>">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-medium" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu shadow border-0">
+                        <li><a class="dropdown-item" href="<?php echo home_url('/409a-valuation/'); ?>"><i class="fas fa-gavel me-2 text-primary"></i>409A Valuation</a></li>
+                        <li><a class="dropdown-item" href="<?php echo home_url('/company-valuation/'); ?>"><i class="fas fa-building me-2 text-primary"></i>Company Valuation</a></li>
+                        <li><a class="dropdown-item" href="<?php echo home_url('/waterfall-analysis/'); ?>"><i class="fas fa-water me-2 text-primary"></i>Exit Waterfall Analysis</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="<?php echo home_url('/capital-raising/'); ?>"><i class="fas fa-handshake me-2 text-primary"></i>Capital Raising</a></li>
+                        <li><a class="dropdown-item" href="<?php echo home_url('/calculators/'); ?>"><i class="fas fa-calculator me-2 text-primary"></i>Calculators</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" href="<?php echo home_url('/about/'); ?>">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" href="<?php echo home_url('/resources/'); ?>">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium" href="<?php echo home_url('/contact/'); ?>">Contact</a>
+                </li>
+            </ul>
+
+            <!-- CTA Button -->
+            <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-primary shadow-sm">
+                <i class="fas fa-calendar-alt me-2"></i>Schedule Consultation
+            </a>
         </div>
     </div>
 </header>

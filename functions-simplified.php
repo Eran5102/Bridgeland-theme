@@ -1,6 +1,7 @@
 <?php
 /**
- * Bridgeland Advisors v2 Theme Functions
+ * Bridgeland Advisors v2 Theme Functions - SIMPLIFIED VERSION
+ * Core functionality without complex integrations
  */
 
 if (!defined('ABSPATH')) {
@@ -41,29 +42,17 @@ function bridgeland_scripts() {
     // Google Fonts for Professional Typography
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap', array(), null);
 
-    // Bootstrap CSS first (with fallback)
-    $bootstrap_path = get_template_directory() . '/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css';
-    if (file_exists($bootstrap_path)) {
-        wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css', array(), '5.3.8');
-    } else {
-        // Fallback to CDN if local Bootstrap is missing
-        wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css', array(), '5.3.8');
-    }
+    // Bootstrap CSS (CDN for reliability)
+    wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css', array(), '5.3.8');
 
     // Font Awesome
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0');
 
-    // Main stylesheet (depends on Bootstrap and Google Fonts)
+    // Main stylesheet
     wp_enqueue_style('bridgeland-style', get_stylesheet_uri(), array('google-fonts', 'bootstrap-css', 'font-awesome'), '2.1.' . time());
 
-    // Bootstrap JavaScript (with fallback)
-    $bootstrap_js_path = get_template_directory() . '/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js';
-    if (file_exists($bootstrap_js_path)) {
-        wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js', array(), '5.3.8', true);
-    } else {
-        // Fallback to CDN if local Bootstrap is missing
-        wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js', array(), '5.3.8', true);
-    }
+    // Bootstrap JavaScript
+    wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js', array(), '5.3.8', true);
 
     // Custom JavaScript
     wp_enqueue_script('bridgeland-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery', 'bootstrap-js'), '2.0', true);
@@ -205,94 +194,6 @@ function bridgeland_handle_contact_form() {
 add_action('wp_ajax_bridgeland_contact', 'bridgeland_handle_contact_form');
 add_action('wp_ajax_nopriv_bridgeland_contact', 'bridgeland_handle_contact_form');
 
-// Customizer Settings
-function bridgeland_customize_register($wp_customize) {
-    // Company Information Section
-    $wp_customize->add_section('bridgeland_company_info', array(
-        'title' => 'Company Information',
-        'priority' => 30,
-    ));
-
-    // Phone Number
-    $wp_customize->add_setting('company_phone', array(
-        'default' => '+972-50-6842937',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('company_phone', array(
-        'label' => 'Phone Number',
-        'section' => 'bridgeland_company_info',
-        'type' => 'text',
-    ));
-
-    // Email Address
-    $wp_customize->add_setting('company_email', array(
-        'default' => 'eran@bridgeland-advisors.com',
-        'sanitize_callback' => 'sanitize_email',
-    ));
-    $wp_customize->add_control('company_email', array(
-        'label' => 'Email Address',
-        'section' => 'bridgeland_company_info',
-        'type' => 'email',
-    ));
-
-    // Address
-    $wp_customize->add_setting('company_address', array(
-        'default' => '19 Ner Halayla St., Even Yehuda, Israel',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ));
-    $wp_customize->add_control('company_address', array(
-        'label' => 'Address',
-        'section' => 'bridgeland_company_info',
-        'type' => 'textarea',
-    ));
-
-    // LinkedIn URL
-    $wp_customize->add_setting('company_linkedin', array(
-        'default' => 'https://www.linkedin.com/in/eranbenavi/',
-        'sanitize_callback' => 'esc_url_raw',
-    ));
-    $wp_customize->add_control('company_linkedin', array(
-        'label' => 'LinkedIn URL',
-        'section' => 'bridgeland_company_info',
-        'type' => 'url',
-    ));
-}
-add_action('customize_register', 'bridgeland_customize_register');
-
-// Helper Functions
-function bridgeland_get_testimonials($limit = -1) {
-    return new WP_Query(array(
-        'post_type' => 'testimonial',
-        'posts_per_page' => $limit,
-        'post_status' => 'publish',
-        'orderby' => 'date',
-        'order' => 'DESC'
-    ));
-}
-
-function bridgeland_get_case_studies($limit = -1) {
-    return new WP_Query(array(
-        'post_type' => 'case_study',
-        'posts_per_page' => $limit,
-        'post_status' => 'publish',
-        'orderby' => 'date',
-        'order' => 'DESC'
-    ));
-}
-
-// Security enhancements
-function bridgeland_security_headers() {
-    header('X-Content-Type-Options: nosniff');
-    header('X-Frame-Options: SAMEORIGIN');
-    header('X-XSS-Protection: 1; mode=block');
-}
-add_action('send_headers', 'bridgeland_security_headers');
-
-// Remove unnecessary WordPress features
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'rsd_link');
-
 // Calculator Functions
 function bridgeland_calculate_vc_method() {
     if (!wp_verify_nonce($_POST['nonce'], 'bridgeland_nonce')) {
@@ -381,6 +282,81 @@ function bridgeland_calculate_scorecard() {
 add_action('wp_ajax_calculate_scorecard', 'bridgeland_calculate_scorecard');
 add_action('wp_ajax_nopriv_calculate_scorecard', 'bridgeland_calculate_scorecard');
 
+// Customizer Settings
+function bridgeland_customize_register($wp_customize) {
+    // Company Information Section
+    $wp_customize->add_section('bridgeland_company_info', array(
+        'title' => 'Company Information',
+        'priority' => 30,
+    ));
+
+    // Phone Number
+    $wp_customize->add_setting('company_phone', array(
+        'default' => '+972-50-6842937',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('company_phone', array(
+        'label' => 'Phone Number',
+        'section' => 'bridgeland_company_info',
+        'type' => 'text',
+    ));
+
+    // Email Address
+    $wp_customize->add_setting('company_email', array(
+        'default' => 'eran@bridgeland-advisors.com',
+        'sanitize_callback' => 'sanitize_email',
+    ));
+    $wp_customize->add_control('company_email', array(
+        'label' => 'Email Address',
+        'section' => 'bridgeland_company_info',
+        'type' => 'email',
+    ));
+
+    // Address
+    $wp_customize->add_setting('company_address', array(
+        'default' => '19 Ner Halayla St., Even Yehuda, Israel',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('company_address', array(
+        'label' => 'Address',
+        'section' => 'bridgeland_company_info',
+        'type' => 'textarea',
+    ));
+
+    // LinkedIn URL
+    $wp_customize->add_setting('company_linkedin', array(
+        'default' => 'https://www.linkedin.com/in/eranbenavi/',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control('company_linkedin', array(
+        'label' => 'LinkedIn URL',
+        'section' => 'bridgeland_company_info',
+        'type' => 'url',
+    ));
+}
+add_action('customize_register', 'bridgeland_customize_register');
+
+// Helper Functions
+function bridgeland_get_testimonials($limit = -1) {
+    return new WP_Query(array(
+        'post_type' => 'testimonial',
+        'posts_per_page' => $limit,
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'DESC'
+    ));
+}
+
+function bridgeland_get_case_studies($limit = -1) {
+    return new WP_Query(array(
+        'post_type' => 'case_study',
+        'posts_per_page' => $limit,
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'DESC'
+    ));
+}
+
 // Custom excerpt function
 function bridgeland_custom_excerpt($word_count = 25) {
     global $post;
@@ -390,6 +366,21 @@ function bridgeland_custom_excerpt($word_count = 25) {
         return wp_trim_words($post->post_content, $word_count);
     }
 }
+
+// Security enhancements
+function bridgeland_security_headers() {
+    if (!is_admin()) {
+        header('X-Content-Type-Options: nosniff');
+        header('X-Frame-Options: SAMEORIGIN');
+        header('X-XSS-Protection: 1; mode=block');
+    }
+}
+add_action('send_headers', 'bridgeland_security_headers');
+
+// Remove unnecessary WordPress features
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'rsd_link');
 
 // Basic SEO
 function bridgeland_seo_meta() {

@@ -1,26 +1,45 @@
 <?php get_header(); ?>
 
-<section class="contact-hero py-5" style="padding-top: 120px; background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-maroon-dark) 100%);">
-    <div class="container">
+<section class="contact-hero py-5" style="padding-top: 120px; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); position: relative;">
+    <!-- Subtle background pattern -->
+    <div class="hero-pattern" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url('data:image/svg+xml,<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"none\" fill-rule=\"evenodd\"><g fill=\"%23B91C1C\" fill-opacity=\"0.1\"><circle cx=\"7\" cy=\"7\" r=\"1\"/><circle cx=\"53\" cy=\"53\" r=\"1\"/><circle cx=\"30\" cy=\"30\" r=\"2\"/></g></svg>');\"></div>
+
+    <div class="container position-relative">
         <div class="row">
-            <div class="col-lg-8 mx-auto text-center text-white">
-                <h1 class="display-4 fw-bold mb-4">Get In Touch</h1>
-                <p class="lead mb-4">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-4 text-dark" style="font-family: 'Source Serif Pro', serif;">Get In Touch</h1>
+                <p class="lead mb-4 text-secondary" style="font-family: 'Inter', sans-serif;">
                     Ready to discuss your valuation and financial advisory needs?
                     Let's schedule a consultation to explore how we can help your business succeed.
                 </p>
-                <div class="contact-highlights d-flex justify-content-center gap-4 flex-wrap">
-                    <div class="highlight text-center">
-                        <i class="fas fa-clock fa-lg mb-2"></i>
-                        <div class="small">2-hour response time</div>
+
+                <div class="contact-highlights row g-4 justify-content-center mb-4">
+                    <div class="col-md-4">
+                        <div class="highlight text-center bg-white rounded-4 shadow-sm p-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-clock text-primary"></i>
+                            </div>
+                            <div class="fw-semibold text-dark">2-Hour Response</div>
+                            <small class="text-muted">During business hours</small>
+                        </div>
                     </div>
-                    <div class="highlight text-center">
-                        <i class="fas fa-shield-alt fa-lg mb-2"></i>
-                        <div class="small">Confidential consultation</div>
+                    <div class="col-md-4">
+                        <div class="highlight text-center bg-white rounded-4 shadow-sm p-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-shield-alt text-primary"></i>
+                            </div>
+                            <div class="fw-semibold text-dark">Confidential</div>
+                            <small class="text-muted">All consultations</small>
+                        </div>
                     </div>
-                    <div class="highlight text-center">
-                        <i class="fas fa-handshake fa-lg mb-2"></i>
-                        <div class="small">No obligation</div>
+                    <div class="col-md-4">
+                        <div class="highlight text-center bg-white rounded-4 shadow-sm p-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-handshake text-primary"></i>
+                            </div>
+                            <div class="fw-semibold text-dark">No Obligation</div>
+                            <small class="text-muted">Free consultation</small>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,30 @@
+# WordPress
+wp-config.php
+.htaccess
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+error_log
+
+# Cache
+cache/
+*.tmp
+
+# Backup files
+*.bak
+*~
+
+# Node modules (if any)
+node_modules/
+
+# Composer
+vendor/

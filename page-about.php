@@ -1,21 +1,24 @@
 <?php get_header(); ?>
 
-<section class="about-hero py-5" style="background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-maroon-dark) 100%); padding-top: 120px !important;">
-    <div class="container">
+<section class="about-hero py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding-top: 120px !important; position: relative;">
+    <!-- Subtle background pattern -->
+    <div class="hero-pattern" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url('data:image/svg+xml,<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"none\" fill-rule=\"evenodd\"><g fill=\"%23B91C1C\" fill-opacity=\"0.1\"><circle cx=\"7\" cy=\"7\" r=\"1\"/><circle cx=\"53\" cy=\"53\" r=\"1\"/><circle cx=\"30\" cy=\"30\" r=\"2\"/></g></svg>');\"></div>
+
+    <div class="container position-relative">
         <div class="row align-items-center">
             <div class="col-lg-8">
-                <div class="hero-content text-white">
-                    <h1 class="display-4 fw-bold mb-3">About Bridgeland Advisors</h1>
-                    <p class="lead mb-4">
+                <div class="hero-content">
+                    <h1 class="display-4 fw-bold mb-3 text-dark" style="font-family: 'Source Serif Pro', serif;">About Bridgeland Advisors</h1>
+                    <p class="lead mb-4 text-secondary" style="font-family: 'Inter', sans-serif;">
                         Founded to help early-stage companies navigate capital raising and company valuation,
                         we bring 15+ years of investment banking, corporate law, and strategic advisory experience
                         to every engagement.
                     </p>
                     <div class="d-flex gap-3 flex-wrap">
-                        <a href="#eran" class="btn btn-white btn-large">
+                        <a href="#eran" class="btn btn-primary btn-lg shadow">
                             <i class="fas fa-user me-2"></i>Meet Eran
                         </a>
-                        <a href="#contact" class="btn btn-outline btn-large">
+                        <a href="#contact" class="btn btn-outline-primary btn-lg">
                             <i class="fas fa-phone me-2"></i>Get in Touch
                         </a>
                     </div>
