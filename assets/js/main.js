@@ -13,6 +13,7 @@
         initAnimations();
         initServiceCards();
         initTestimonialCarousel();
+        initBackToTop();
     });
 
     // Navbar functionality
@@ -448,6 +449,34 @@
             return (num / 1000).toFixed(1) + 'K';
         }
         return num.toLocaleString();
+    }
+
+    // Back to top button functionality
+    function initBackToTop() {
+        const $backToTopBtn = $('#backToTop');
+
+        if ($backToTopBtn.length) {
+            // Show/hide based on scroll position
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 300) {
+                    $backToTopBtn.fadeIn(300);
+                } else {
+                    $backToTopBtn.fadeOut(300);
+                }
+            });
+
+            // Scroll to top when clicked
+            $backToTopBtn.on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 600, 'swing');
+                return false;
+            });
+
+            // Initial hide
+            $backToTopBtn.hide();
+        }
     }
 
     // Export to PDF functionality

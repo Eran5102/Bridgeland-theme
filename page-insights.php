@@ -92,7 +92,7 @@
                                 <div class="small text-muted">January 15, 2025 • 12 min read</div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-primary">Read Full Article</a>
+                        <a href="<?php echo home_url('/2025-startup-valuation-outlook/'); ?>" class="btn btn-primary">Read Full Article</a>
                     </div>
                 </div>
             </div>
@@ -127,7 +127,7 @@
                         </p>
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="small text-muted">11 min read</div>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                            <a href="<?php echo home_url('/ai-impact-startup-valuations/'); ?>" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
                         </p>
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="small text-muted">9 min read</div>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                            <a href="<?php echo home_url('/2025-409a-valuation-changes/'); ?>" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                         </p>
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="small text-muted">13 min read</div>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                            <a href="<?php echo home_url('/series-a-fundraising-strategies-2025/'); ?>" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -190,7 +190,7 @@
                         </p>
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="small text-muted">15 min read</div>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                            <a href="<?php echo home_url('/advanced-dcf-modeling-tech-startups/'); ?>" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                         </p>
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="small text-muted">16 min read</div>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                            <a href="<?php echo home_url('/exit-waterfall-50m-acquisition-case-study/'); ?>" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -232,7 +232,7 @@
                         </p>
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="small text-muted">10 min read</div>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                            <a href="<?php echo home_url('/2025-sec-updates-private-markets/'); ?>" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
