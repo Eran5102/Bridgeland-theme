@@ -7,7 +7,7 @@
     <div class="container position-relative">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4 fw-bold mb-4 text-dark" style="font-family: 'Source Serif Pro', serif;">Get In Touch</h1>
+                <h1 class="display-4 fw-bold mb-4 text-dark" style="font-family: 'Source Serif Pro', serif;">Find Us</h1>
                 <p class="lead mb-4 text-secondary" style="font-family: 'Inter', sans-serif;">
                     Ready to discuss your valuation and financial advisory needs?
                     Let's schedule a consultation to explore how we can help your business succeed.

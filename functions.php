@@ -215,6 +215,17 @@ function bridgeland_force_correct_company_info() {
 }
 add_action('init', 'bridgeland_force_correct_company_info');
 
+// Hide or redirect old contact page
+function bridgeland_handle_old_contact_page() {
+    // If someone visits the old contact page, redirect to new one
+    if (is_page('contact') && !is_page('find-us')) {
+        $new_url = home_url('/find-us/');
+        wp_redirect($new_url, 301);
+        exit();
+    }
+}
+add_action('template_redirect', 'bridgeland_handle_old_contact_page');
+
 // Helper function to always return correct company information
 function bridgeland_get_company_info($field) {
     $correct_info = array(
@@ -229,7 +240,7 @@ function bridgeland_get_company_info($field) {
 
 // Enqueue contact page specific styles
 function bridgeland_contact_page_styles() {
-    if (is_page('contact-us') || is_page('contact')) {
+    if (is_page('contact-us') || is_page('contact') || is_page('find-us')) {
         wp_add_inline_style('bridgeland-style', '
         /* Contact Page Enhanced Styling */
         .contact-hero {
@@ -623,8 +634,8 @@ function bridgeland_create_pages() {
             'content' => ''
         ),
         array(
-            'title' => 'Contact Us',
-            'slug' => 'contact-us',
+            'title' => 'Find Us',
+            'slug' => 'find-us',
             'template' => 'page-contact.php',
             'content' => ''
         ),
