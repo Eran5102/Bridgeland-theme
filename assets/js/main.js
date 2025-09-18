@@ -13,7 +13,7 @@
         initAnimations();
         initServiceCards();
         initTestimonialCarousel();
-        initBackToTop();
+        // Back to top is handled in footer.php for reliability
     });
 
     // Navbar functionality
@@ -451,33 +451,7 @@
         return num.toLocaleString();
     }
 
-    // Back to top button functionality
-    function initBackToTop() {
-        const $backToTopBtn = $('#backToTop');
-
-        if ($backToTopBtn.length) {
-            // Show/hide based on scroll position
-            $(window).scroll(function() {
-                if ($(window).scrollTop() > 300) {
-                    $backToTopBtn.fadeIn(300);
-                } else {
-                    $backToTopBtn.fadeOut(300);
-                }
-            });
-
-            // Scroll to top when clicked
-            $backToTopBtn.on('click', function(e) {
-                e.preventDefault();
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 600, 'swing');
-                return false;
-            });
-
-            // Initial hide
-            $backToTopBtn.hide();
-        }
-    }
+    // Back to top button functionality removed - handled in footer.php
 
     // Export to PDF functionality
     window.exportToPDF = function(elementId, filename) {

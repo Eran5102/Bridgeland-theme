@@ -131,14 +131,40 @@
 <!-- Back to Top Button -->
 <div class="position-fixed" style="bottom: 20px; right: 20px; z-index: 1050;">
     <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow-lg"
-            title="Back to top">
+            style="display: none; cursor: pointer;"
+            title="Back to top"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
         <i class="fas fa-arrow-up"></i>
     </button>
 </div>
 
 <?php wp_footer(); ?>
 
-<!-- Mobile menu and navbar effects are handled in main.js -->
+<!-- Simple standalone scroll button script -->
+<script>
+(function() {
+    // Simple scroll to top functionality - no dependencies
+    var backToTopBtn = document.getElementById('backToTop');
+
+    if (backToTopBtn) {
+        // Show/hide on scroll
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+
+        // Additional click handler as backup
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+            return false;
+        });
+    }
+})();
+</script>
 
 </body>
 </html><?php // This closing PHP tag is optional but included for completeness ?>
