@@ -215,16 +215,66 @@ function bridgeland_force_correct_company_info() {
 }
 add_action('init', 'bridgeland_force_correct_company_info');
 
-// Hide or redirect old contact page
-function bridgeland_handle_old_contact_page() {
-    // If someone visits the old contact page, redirect to new one
-    if (is_page('contact') && !is_page('find-us')) {
-        $new_url = home_url('/find-us/');
-        wp_redirect($new_url, 301);
-        exit();
+// Force delete old contact pages and recreate clean ones
+function bridgeland_force_clean_contact_page() {
+    // Find and delete any existing contact pages with wrong content
+    $old_pages = get_posts(array(
+        'post_type' => 'page',
+        'post_status' => 'any',
+        'meta_query' => array(
+            'relation' => 'OR',
+            array(
+                'key' => '_wp_page_template',
+                'value' => 'page-contact.php',
+                'compare' => '!='
+            )
+        ),
+        'title' => 'Contact Us',
+        'numberposts' => -1
+    ));
+
+    foreach ($old_pages as $old_page) {
+        // Check if this page has the wrong content (old address)
+        if (strpos($old_page->post_content, 'Alon Tower') !== false ||
+            strpos($old_page->post_content, 'Tel Aviv') !== false ||
+            strpos($old_page->post_content, 'Yigal Alon') !== false) {
+
+            // Delete the old page
+            wp_delete_post($old_page->ID, true);
+        }
+    }
+
+    // Also check for pages by slug
+    $contact_by_slug = get_page_by_path('contact-us');
+    if ($contact_by_slug && (
+        strpos($contact_by_slug->post_content, 'Alon Tower') !== false ||
+        strpos($contact_by_slug->post_content, 'Tel Aviv') !== false
+    )) {
+        wp_delete_post($contact_by_slug->ID, true);
     }
 }
-add_action('template_redirect', 'bridgeland_handle_old_contact_page');
+
+// Clean up any broken pages and force contact page recreation
+function bridgeland_cleanup_and_recreate() {
+    // Delete the broken Find Us page
+    $find_us_page = get_page_by_path('find-us');
+    if ($find_us_page) {
+        wp_delete_post($find_us_page->ID, true);
+    }
+
+    // Delete any contact pages with wrong content
+    bridgeland_force_clean_contact_page();
+
+    // Force recreation of all pages
+    bridgeland_create_pages();
+}
+
+// Run this on theme activation and admin init
+add_action('after_switch_theme', 'bridgeland_cleanup_and_recreate');
+add_action('admin_init', 'bridgeland_cleanup_and_recreate', 5);
+
+// Also run cleanup on init to catch any issues
+add_action('init', 'bridgeland_cleanup_and_recreate', 20);
 
 // Helper function to always return correct company information
 function bridgeland_get_company_info($field) {
@@ -240,7 +290,7 @@ function bridgeland_get_company_info($field) {
 
 // Enqueue contact page specific styles
 function bridgeland_contact_page_styles() {
-    if (is_page('contact-us') || is_page('contact') || is_page('find-us')) {
+    if (is_page('contact-us') || is_page('contact')) {
         wp_add_inline_style('bridgeland-style', '
         /* Contact Page Enhanced Styling */
         .contact-hero {
@@ -634,8 +684,8 @@ function bridgeland_create_pages() {
             'content' => ''
         ),
         array(
-            'title' => 'Find Us',
-            'slug' => 'find-us',
+            'title' => 'Contact Us',
+            'slug' => 'contact-us',
             'template' => 'page-contact.php',
             'content' => ''
         ),
@@ -704,6 +754,18 @@ function bridgeland_create_pages() {
     foreach ($pages as $page) {
         // Check if page already exists
         $existing_page = get_page_by_path($page['slug']);
+
+        // Special handling for contact page - force recreation if it has wrong content
+        if ($page['slug'] === 'contact-us' && $existing_page) {
+            if (strpos($existing_page->post_content, 'Alon Tower') !== false ||
+                strpos($existing_page->post_content, 'Tel Aviv') !== false ||
+                get_post_meta($existing_page->ID, '_wp_page_template', true) !== 'page-contact.php') {
+
+                // Delete the bad page
+                wp_delete_post($existing_page->ID, true);
+                $existing_page = null;
+            }
+        }
 
         if (!$existing_page) {
             // Create the page

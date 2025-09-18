@@ -250,7 +250,7 @@
                     <a class="nav-link fw-medium" href="<?php echo home_url('/resources/'); ?>">Resources</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-medium" href="<?php echo home_url('/find-us/'); ?>">Find Us</a>
+                    <a class="nav-link fw-medium" href="<?php echo home_url('/contact-us/'); ?>">Contact</a>
                 </li>
             </ul>
 
