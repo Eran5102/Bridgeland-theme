@@ -7,6 +7,48 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Add custom rewrite rules for article pages
+function bridgeland_add_article_rewrites() {
+    $articles = array(
+        'ai-impact-startup-valuations',
+        '2025-409a-valuation-changes',
+        'series-a-fundraising-strategies-2025',
+        'advanced-dcf-modeling-tech-startups',
+        'exit-waterfall-50m-acquisition-case-study',
+        '2025-sec-updates-private-markets',
+        '2025-startup-valuation-outlook'
+    );
+
+    foreach ($articles as $article) {
+        add_rewrite_rule(
+            '^' . $article . '/?$',
+            'index.php?article_page=' . $article,
+            'top'
+        );
+    }
+}
+add_action('init', 'bridgeland_add_article_rewrites');
+
+// Add query vars for article pages
+function bridgeland_add_query_vars($vars) {
+    $vars[] = 'article_page';
+    return $vars;
+}
+add_filter('query_vars', 'bridgeland_add_query_vars');
+
+// Template redirect for article pages
+function bridgeland_template_redirect() {
+    $article_page = get_query_var('article_page');
+    if ($article_page) {
+        $template_file = 'page-' . $article_page . '.php';
+        if (file_exists(get_template_directory() . '/' . $template_file)) {
+            include get_template_directory() . '/' . $template_file;
+            exit;
+        }
+    }
+}
+add_action('template_redirect', 'bridgeland_template_redirect');
+
 // Theme Setup
 function bridgeland_theme_setup() {
     // Add theme support for various features
@@ -790,6 +832,13 @@ function bridgeland_create_pages() {
 
 // Run when theme is activated
 add_action('after_switch_theme', 'bridgeland_create_pages');
+add_action('after_switch_theme', 'bridgeland_flush_rewrite_rules');
+
+// Flush rewrite rules when theme is activated to make article URLs work
+function bridgeland_flush_rewrite_rules() {
+    bridgeland_add_article_rewrites();
+    flush_rewrite_rules();
+}
 
 // Also provide a manual trigger function for immediate execution
 function bridgeland_manual_create_pages() {
