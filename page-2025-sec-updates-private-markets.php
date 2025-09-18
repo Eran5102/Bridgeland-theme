@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: 2025 SEC Updates Private Markets
+ * Description: Article about 2025 SEC regulatory changes
+ */
+get_header(); ?>
 
 <!-- Article Header -->
 <section class="article-hero py-5" style="background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-maroon-dark) 100%); padding-top: 120px !important;">

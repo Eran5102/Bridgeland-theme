@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: Exit Waterfall Case Study
+ * Description: Case study of $50M acquisition waterfall analysis
+ */
+get_header(); ?>
 
 <!-- Article Header -->
 <section class="article-hero py-5" style="background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-maroon-dark) 100%); padding-top: 120px !important;">

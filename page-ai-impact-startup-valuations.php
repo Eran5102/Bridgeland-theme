@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: AI Impact on Startup Valuations
+ * Description: Article about AI's impact on startup valuations
+ */
+get_header(); ?>
 
 <!-- Article Header -->
 <section class="article-hero py-5" style="background: linear-gradient(135deg, var(--color-maroon) 0%, var(--color-maroon-dark) 100%); padding-top: 120px !important;">
