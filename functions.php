@@ -205,6 +205,215 @@ function bridgeland_handle_contact_form() {
 add_action('wp_ajax_bridgeland_contact', 'bridgeland_handle_contact_form');
 add_action('wp_ajax_nopriv_bridgeland_contact', 'bridgeland_handle_contact_form');
 
+// Force correct company information - Override any incorrect saved values
+function bridgeland_force_correct_company_info() {
+    // Force correct address
+    set_theme_mod('company_address', '19 Ner Halayla St.<br>Even Yehuda, Israel');
+    set_theme_mod('company_phone', '+972-50-6842937');
+    set_theme_mod('company_email', 'eran@bridgeland-advisors.com');
+    set_theme_mod('company_linkedin', 'https://www.linkedin.com/in/eranbenavi/');
+}
+add_action('init', 'bridgeland_force_correct_company_info');
+
+// Helper function to always return correct company information
+function bridgeland_get_company_info($field) {
+    $correct_info = array(
+        'address' => '19 Ner Halayla St.<br>Even Yehuda, Israel',
+        'phone' => '+972-50-6842937',
+        'email' => 'eran@bridgeland-advisors.com',
+        'linkedin' => 'https://www.linkedin.com/in/eranbenavi/'
+    );
+
+    return isset($correct_info[$field]) ? $correct_info[$field] : '';
+}
+
+// Enqueue contact page specific styles
+function bridgeland_contact_page_styles() {
+    if (is_page('contact-us') || is_page('contact')) {
+        wp_add_inline_style('bridgeland-style', '
+        /* Contact Page Enhanced Styling */
+        .contact-hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+            position: relative;
+            overflow: hidden;
+            padding-top: 120px !important;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,<svg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'><g fill=\'none\' fill-rule=\'evenodd\'><g fill=\'%23B91C1C\' fill-opacity=\'0.1\'><circle cx=\'7\' cy=\'7\' r=\'1\'/><circle cx=\'53\' cy=\'53\' r=\'1\'/><circle cx=\'30\' cy=\'30\' r=\'2\'/></g></svg>");
+        }
+
+        .contact-highlights .highlight {
+            transition: all 0.3s ease !important;
+            border: 1px solid transparent !important;
+        }
+
+        .contact-highlights .highlight:hover {
+            transform: translateY(-2px) !important;
+            border-color: #8B0000 !important;
+            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.1) !important;
+        }
+
+        .form-card {
+            background: #ffffff !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+        }
+
+        .form-card .card-header {
+            background: linear-gradient(135deg, #8B0000 0%, #660000 100%) !important;
+            color: white !important;
+            border-bottom: none !important;
+        }
+
+        .form-card .card-header h3 {
+            color: white !important;
+            margin-bottom: 0.5rem !important;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #8B0000 !important;
+            box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25) !important;
+        }
+
+        .btn-primary {
+            background-color: #8B0000 !important;
+            border-color: #8B0000 !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #660000 !important;
+            border-color: #660000 !important;
+        }
+
+        .step-number {
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50% !important;
+            background-color: #EEEEEE !important;
+            color: #757575 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-weight: bold !important;
+            margin-bottom: 0.5rem !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .step.active .step-number {
+            background-color: #8B0000 !important;
+            color: white !important;
+        }
+
+        .step.completed .step-number {
+            background-color: #2E7D32 !important;
+            color: white !important;
+        }
+
+        .step-label {
+            font-size: 0.875rem !important;
+            color: #757575 !important;
+            font-weight: 500 !important;
+        }
+
+        .step.active .step-label,
+        .step.completed .step-label {
+            color: #8B0000 !important;
+        }
+
+        .service-options .btn-check:checked + .btn {
+            background-color: #8B0000 !important;
+            border-color: #8B0000 !important;
+            color: white !important;
+        }
+
+        .office-info .detail-item {
+            transition: all 0.3s ease !important;
+            padding: 1rem !important;
+            border-radius: 8px !important;
+        }
+
+        .office-info .detail-item:hover {
+            background-color: #f8f9fa !important;
+            transform: translateX(5px) !important;
+        }
+        ');
+    }
+}
+add_action('wp_enqueue_scripts', 'bridgeland_contact_page_styles');
+
+// Force Calendly integration to work
+function bridgeland_force_calendly_scripts() {
+    wp_add_inline_script('jquery', '
+    jQuery(document).ready(function($) {
+        // Override any existing openCalendly functions
+        window.openCalendly = function() {
+            console.log("Attempting to open Calendly...");
+            try {
+                if (typeof Calendly !== "undefined" && Calendly.initPopupWidget) {
+                    console.log("Opening Calendly popup widget");
+                    Calendly.initPopupWidget({url: "https://calendly.com/bridgeland-advisors"});
+                } else {
+                    console.log("Calendly widget not available, opening in new tab");
+                    window.open("https://calendly.com/bridgeland-advisors", "_blank");
+                }
+            } catch (error) {
+                console.error("Error opening Calendly:", error);
+                window.open("https://calendly.com/bridgeland-advisors", "_blank");
+            }
+            return false;
+        };
+
+        // Fix all consultation buttons
+        $(document).on("click", "[onclick*=\"openCalendly\"], [href*=\"calendly\"], .consultation-btn", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.openCalendly();
+            return false;
+        });
+
+        // Add consultation-btn class to all schedule buttons
+        $("a:contains(\"Schedule\"), a:contains(\"Consultation\")").addClass("consultation-btn");
+    });
+    ');
+}
+add_action('wp_enqueue_scripts', 'bridgeland_force_calendly_scripts');
+
+// Cache busting and force refresh
+function bridgeland_force_refresh() {
+    // Clear any caching plugins
+    if (function_exists('wp_cache_flush')) {
+        wp_cache_flush();
+    }
+
+    // Force theme mod refresh
+    remove_theme_mods();
+    bridgeland_force_correct_company_info();
+
+    // Add cache busting to scripts
+    add_filter('style_loader_src', 'bridgeland_add_version_to_assets', 9999);
+    add_filter('script_loader_src', 'bridgeland_add_version_to_assets', 9999);
+}
+
+function bridgeland_add_version_to_assets($src) {
+    if (strpos($src, 'bridgeland') !== false) {
+        $src = add_query_arg('v', time(), $src);
+    }
+    return $src;
+}
+
+// Run refresh on admin and theme activation
+add_action('after_switch_theme', 'bridgeland_force_refresh');
+add_action('customize_save_after', 'bridgeland_force_refresh');
+
 // Customizer Settings
 function bridgeland_customize_register($wp_customize) {
     // Company Information Section
@@ -235,10 +444,11 @@ function bridgeland_customize_register($wp_customize) {
         'type' => 'email',
     ));
 
-    // Address
+    // Address - Force correct default
     $wp_customize->add_setting('company_address', array(
-        'default' => '19 Ner Halayla St., Even Yehuda, Israel',
+        'default' => '19 Ner Halayla St.<br>Even Yehuda, Israel',
         'sanitize_callback' => 'sanitize_textarea_field',
+        'transport' => 'refresh',
     ));
     $wp_customize->add_control('company_address', array(
         'label' => 'Address',
