@@ -130,7 +130,7 @@
 
 <!-- Back to Top Button -->
 <div class="position-fixed" style="bottom: 20px; right: 20px; z-index: 1050;">
-    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow-lg" style="display: block; opacity: 1; background-color: #007bff !important;" title="Back to top">
+    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow-lg" style="display: block; opacity: 1;" title="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 </div>
