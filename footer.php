@@ -129,8 +129,8 @@
 </div>
 
 <!-- Back to Top Button -->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
-    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow-lg" style="display: none;" title="Back to top">
+<div class="position-fixed" style="bottom: 20px; right: 20px; z-index: 1050;">
+    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow-lg" style="display: block; opacity: 1; background-color: #007bff !important;" title="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 </div>
@@ -144,21 +144,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const backToTopBtn = document.getElementById('backToTop');
 
     if (backToTopBtn) {
+        console.log('Back to top button found:', backToTopBtn);
+
         // Show/hide based on scroll position
         function toggleBackToTop() {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.style.display = 'block';
-                backToTopBtn.classList.remove('hide');
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-                backToTopBtn.classList.add('hide');
-                setTimeout(() => {
-                    if (window.pageYOffset <= 300) {
-                        backToTopBtn.style.display = 'none';
-                    }
-                }, 300);
-            }
+            const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+            console.log('Scroll position:', scrolled);
+            console.log('Button should be visible - forced visibility test mode');
+            // Temporarily disabled opacity control for testing
+            // if (scrolled > 300) {
+            //     backToTopBtn.style.opacity = '1';
+            //     backToTopBtn.style.pointerEvents = 'auto';
+            //     console.log('Showing back to top button');
+            // } else {
+            //     backToTopBtn.style.opacity = '0';
+            //     backToTopBtn.style.pointerEvents = 'none';
+            //     console.log('Hiding back to top button');
+            // }
         }
 
         // Scroll event listener
@@ -167,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Click event listener
         backToTopBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Back to top clicked');
+            console.log('Back to top clicked - scrolling to top');
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -176,6 +178,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Initial check
         toggleBackToTop();
+
+        // Force visibility for testing (remove after testing)
+        console.log('Button current styles:', {
+            display: backToTopBtn.style.display,
+            opacity: backToTopBtn.style.opacity,
+            position: window.getComputedStyle(backToTopBtn).position
+        });
+    } else {
+        console.error('Back to top button NOT found!');
     }
 
     // Fix Bootstrap mobile menu issues
