@@ -358,11 +358,22 @@
     </div>
 </section>
 
-<!-- Trusted By Section -->
-<section class="trusted-by-section py-5 bg-white">
-    <div class="container">
-        <div class="text-center mb-4">
-            <h3 class="h5 text-muted fw-semibold mb-4" style="font-family: 'Inter', sans-serif; letter-spacing: 0.5px;">TRUSTED BY LEADING COMPANIES</h3>
+<!-- Enhanced Trusted By Section -->
+<section class="trusted-by-section py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); position: relative; overflow: hidden;">
+    <!-- Background Pattern -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.03; background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23B91C1C" fill-opacity="0.1"><circle cx="7" cy="7" r="1"/><circle cx="53" cy="53" r="1"/><circle cx="30" cy="30" r="2"/></g></svg>');"></div>
+
+    <div class="container position-relative">
+        <div class="text-center mb-5">
+            <div class="d-inline-block position-relative mb-3">
+                <h2 class="display-6 fw-bold text-dark mb-2" style="font-family: 'Source Serif Pro', serif;">
+                    Trusted by <span class="text-primary">Leading Companies</span>
+                </h2>
+                <div class="mx-auto" style="width: 100px; height: 3px; background: linear-gradient(90deg, var(--color-maroon) 0%, var(--color-gold) 100%); border-radius: 2px;"></div>
+            </div>
+            <p class="lead text-muted mb-4" style="max-width: 600px; margin: 0 auto; font-family: 'Inter', sans-serif;">
+                Join 200+ successful companies who trust our expertise for their critical financial decisions
+            </p>
         </div>
 
         <!-- Client Logos Carousel -->
@@ -445,11 +456,48 @@
             </div>
         </div>
 
-        <div class="text-center mt-4">
-            <p class="small text-muted mb-0">
-                <i class="fas fa-check-circle me-2" style="color: var(--color-secondary-dark);"></i>
-                200+ successful valuations completed for companies at all stages
-            </p>
+        <!-- Enhanced Statistics Section -->
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-10">
+                <div class="bg-white rounded-4 shadow-lg p-4 border">
+                    <div class="row g-4 text-center">
+                        <div class="col-md-4">
+                            <div class="stat-highlight p-3 rounded-3 h-100" style="background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(139, 0, 0, 0.05) 100%); border: 1px solid rgba(139, 0, 0, 0.1);">
+                                <div class="mb-2">
+                                    <i class="fas fa-chart-line fa-2x text-primary"></i>
+                                </div>
+                                <div class="fw-bold h4 text-primary mb-1">200+</div>
+                                <div class="small text-muted fw-medium">Successful Valuations</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-highlight p-3 rounded-3 h-100" style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%); border: 1px solid rgba(212, 175, 55, 0.2);">
+                                <div class="mb-2">
+                                    <i class="fas fa-award fa-2x" style="color: var(--color-gold);"></i>
+                                </div>
+                                <div class="fw-bold h4 mb-1" style="color: var(--color-gold);">15+ Years</div>
+                                <div class="small text-muted fw-medium">Industry Experience</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-highlight p-3 rounded-3 h-100" style="background: linear-gradient(135deg, rgba(46, 125, 50, 0.1) 0%, rgba(46, 125, 50, 0.05) 100%); border: 1px solid rgba(46, 125, 50, 0.2);">
+                                <div class="mb-2">
+                                    <i class="fas fa-shield-alt fa-2x text-success"></i>
+                                </div>
+                                <div class="fw-bold h4 text-success mb-1">100%</div>
+                                <div class="small text-muted fw-medium">IRS Compliant</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-3 pt-3 border-top">
+                        <p class="small text-muted mb-0">
+                            <i class="fas fa-check-circle me-2 text-success"></i>
+                            Trusted by startups to Fortune 500 companies across all industries
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

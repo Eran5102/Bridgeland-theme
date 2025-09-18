@@ -2,7 +2,7 @@
 Theme Name: Bridgeland Advisors v2
 Description: Professional financial advisory theme with maroon branding and Bootstrap integration
 Author: Bridgeland Advisors
-Version: 5.9
+Version: 6.0
 GitHub Theme URI: Eran5102/Bridgeland-theme
 GitHub Branch: master
 Primary Branch: master
@@ -1052,6 +1052,122 @@ section {
 
 .text-success {
     color: var(--color-success) !important;
+}
+
+/* Enhanced Client Logos Section */
+.trusted-by-section {
+    position: relative;
+    z-index: 1;
+}
+
+.trusted-by-section .stat-highlight {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.trusted-by-section .stat-highlight:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.trusted-by-section .stat-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.trusted-by-section .stat-highlight:hover::before {
+    left: 100%;
+}
+
+/* Enhanced Client Logo Carousel */
+.logos-carousel {
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.logos-track {
+    padding: 10px 0;
+}
+
+.client-logo {
+    height: 60px !important;
+    width: auto !important;
+    max-width: 120px !important;
+    object-fit: contain !important;
+    filter: grayscale(30%) opacity(0.85) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-radius: 8px !important;
+    padding: 5px !important;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%) opacity(1) !important;
+    transform: scale(1.15) translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.15) !important;
+}
+
+.logo-item {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.logo-item::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, transparent, rgba(139, 0, 0, 0.1), transparent);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.logo-item:hover::after {
+    opacity: 1;
+}
+
+/* Enhanced Animation */
+@keyframes logoScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logos-carousel:hover .logos-track {
+    animation-play-state: paused;
+}
+
+/* Mobile Responsiveness for Enhanced Logos */
+@media (max-width: 768px) {
+    .trusted-by-section .stat-highlight {
+        margin-bottom: 1rem;
+    }
+
+    .client-logo {
+        height: 50px !important;
+        max-width: 100px !important;
+    }
+
+    .logos-carousel {
+        padding: 15px 0;
+    }
 }
 
 /* Print Styles */
