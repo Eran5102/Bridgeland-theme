@@ -7,47 +7,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-// Add custom rewrite rules for article pages
-function bridgeland_add_article_rewrites() {
-    $articles = array(
-        'ai-impact-startup-valuations',
-        '2025-409a-valuation-changes',
-        'series-a-fundraising-strategies-2025',
-        'advanced-dcf-modeling-tech-startups',
-        'exit-waterfall-50m-acquisition-case-study',
-        '2025-sec-updates-private-markets',
-        '2025-startup-valuation-outlook'
-    );
-
-    foreach ($articles as $article) {
-        add_rewrite_rule(
-            '^' . $article . '/?$',
-            'index.php?article_page=' . $article,
-            'top'
-        );
-    }
-}
-add_action('init', 'bridgeland_add_article_rewrites');
-
-// Add query vars for article pages
-function bridgeland_add_query_vars($vars) {
-    $vars[] = 'article_page';
-    return $vars;
-}
-add_filter('query_vars', 'bridgeland_add_query_vars');
-
-// Template redirect for article pages
-function bridgeland_template_redirect() {
-    $article_page = get_query_var('article_page');
-    if ($article_page) {
-        $template_file = 'page-' . $article_page . '.php';
-        if (file_exists(get_template_directory() . '/' . $template_file)) {
-            include get_template_directory() . '/' . $template_file;
-            exit;
-        }
-    }
-}
-add_action('template_redirect', 'bridgeland_template_redirect');
+// Article pages are now created as actual WordPress pages in bridgeland_create_pages()
 
 // Theme Setup
 function bridgeland_theme_setup() {
@@ -790,6 +750,49 @@ function bridgeland_create_pages() {
             'slug' => 'insights',
             'template' => 'page-insights.php',
             'content' => ''
+        ),
+        // Article pages
+        array(
+            'title' => 'AI\'s Impact on Startup Valuations: The 2025 Reality',
+            'slug' => 'ai-impact-startup-valuations',
+            'template' => 'page-ai-impact-startup-valuations.php',
+            'content' => ''
+        ),
+        array(
+            'title' => '2025 409A Valuation Changes: What You Need to Know',
+            'slug' => '2025-409a-valuation-changes',
+            'template' => 'page-2025-409a-valuation-changes.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Series A Fundraising Strategies for 2025',
+            'slug' => 'series-a-fundraising-strategies-2025',
+            'template' => 'page-series-a-fundraising-strategies-2025.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Advanced DCF Modeling for Tech Startups',
+            'slug' => 'advanced-dcf-modeling-tech-startups',
+            'template' => 'page-advanced-dcf-modeling-tech-startups.php',
+            'content' => ''
+        ),
+        array(
+            'title' => 'Exit Waterfall Success: A $50M Acquisition Case Study',
+            'slug' => 'exit-waterfall-50m-acquisition-case-study',
+            'template' => 'page-exit-waterfall-50m-acquisition-case-study.php',
+            'content' => ''
+        ),
+        array(
+            'title' => '2025 SEC Updates: Impact on Private Markets',
+            'slug' => '2025-sec-updates-private-markets',
+            'template' => 'page-2025-sec-updates-private-markets.php',
+            'content' => ''
+        ),
+        array(
+            'title' => '2025 Startup Valuation Outlook: Key Trends Shaping the Market',
+            'slug' => '2025-startup-valuation-outlook',
+            'template' => 'page-2025-startup-valuation-outlook.php',
+            'content' => ''
         )
     );
 
@@ -834,9 +837,8 @@ function bridgeland_create_pages() {
 add_action('after_switch_theme', 'bridgeland_create_pages');
 add_action('after_switch_theme', 'bridgeland_flush_rewrite_rules');
 
-// Flush rewrite rules when theme is activated to make article URLs work
+// Flush rewrite rules when theme is activated (simplified since we use real pages now)
 function bridgeland_flush_rewrite_rules() {
-    bridgeland_add_article_rewrites();
     flush_rewrite_rules();
 }
 
