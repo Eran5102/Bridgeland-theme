@@ -51,59 +51,78 @@
 <section class="contact-methods py-5">
     <div class="container">
         <div class="row g-4">
-            <div class="col-lg-4">
+            <div class="col-lg-3 col-md-6">
                 <div class="contact-method-card card h-100 border-0 shadow-sm text-center">
-                    <div class="card-body p-4">
+                    <div class="card-body p-4 d-flex flex-column">
                         <div class="contact-icon bg-primary bg-opacity-10 rounded-circle p-3 mx-auto mb-3" style="width: 60px; height: 60px;">
                             <i class="fas fa-phone text-primary fa-lg"></i>
                         </div>
                         <h4 class="h5 mb-3">Phone Call</h4>
-                        <p class="text-muted mb-3">Speak directly with Eran for immediate assistance</p>
+                        <p class="text-muted mb-3 flex-grow-1">Speak directly with Eran for immediate assistance</p>
                         <div class="contact-info mb-3">
-                            <div class="fw-bold text-primary">+972-50-6842937</div>
-                            <div class="small text-muted">Available 9 AM - 6 PM IST</div>
+                            <div class="fw-bold text-primary">+1 (215) 313-3224</div>
+                            <div class="small text-muted">US-based clients</div>
                         </div>
-                        <a href="tel:+972-50-6842937" class="btn btn-primary w-100">
+                        <a href="tel:+12153133224" class="btn btn-primary w-100 mt-auto">
                             <i class="fas fa-phone me-2"></i>Call Now
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-3 col-md-6">
                 <div class="contact-method-card card h-100 border-0 shadow-sm text-center">
-                    <div class="card-body p-4">
+                    <div class="card-body p-4 d-flex flex-column">
                         <div class="contact-icon bg-success bg-opacity-10 rounded-circle p-3 mx-auto mb-3" style="width: 60px; height: 60px;">
                             <i class="fab fa-whatsapp text-success fa-lg"></i>
                         </div>
                         <h4 class="h5 mb-3">WhatsApp</h4>
-                        <p class="text-muted mb-3">Quick chat for immediate questions and support</p>
+                        <p class="text-muted mb-3 flex-grow-1">Quick chat for immediate questions and support</p>
                         <div class="contact-info mb-3">
-                            <div class="fw-bold text-success">WhatsApp Business</div>
+                            <div class="fw-bold text-success">+1 (215) 313-3224</div>
                             <div class="small text-muted">Instant messaging available</div>
                         </div>
-                        <a href="https://wa.me/972506842937?text=Hi%20Eran,%20I'm%20interested%20in%20your%20financial%20advisory%20services."
-                           target="_blank" class="btn btn-success w-100">
+                        <a href="https://wa.me/12153133224?text=Hi%20Eran,%20I'm%20interested%20in%20your%20financial%20advisory%20services."
+                           target="_blank" class="btn btn-success w-100 mt-auto">
                             <i class="fab fa-whatsapp me-2"></i>Start Chat
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-3 col-md-6">
                 <div class="contact-method-card card h-100 border-0 shadow-sm text-center">
-                    <div class="card-body p-4">
+                    <div class="card-body p-4 d-flex flex-column">
                         <div class="contact-icon bg-info bg-opacity-10 rounded-circle p-3 mx-auto mb-3" style="width: 60px; height: 60px;">
                             <i class="fas fa-envelope text-info fa-lg"></i>
                         </div>
                         <h4 class="h5 mb-3">Email</h4>
-                        <p class="text-muted mb-3">Detailed inquiries and document sharing</p>
+                        <p class="text-muted mb-3 flex-grow-1">Detailed inquiries and document sharing</p>
                         <div class="contact-info mb-3">
                             <div class="fw-bold text-info">eran@bridgeland-advisors.com</div>
                             <div class="small text-muted">Response within 2 hours</div>
                         </div>
-                        <a href="mailto:eran@bridgeland-advisors.com?subject=Consultation Request" class="btn btn-info w-100">
+                        <a href="mailto:eran@bridgeland-advisors.com?subject=Consultation Request" class="btn btn-info w-100 mt-auto">
                             <i class="fas fa-envelope me-2"></i>Send Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="contact-method-card card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="contact-icon bg-warning bg-opacity-10 rounded-circle p-3 mx-auto mb-3" style="width: 60px; height: 60px;">
+                            <i class="fas fa-video text-warning fa-lg"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Online Meeting</h4>
+                        <p class="text-muted mb-3 flex-grow-1">Schedule a video consultation at your convenience</p>
+                        <div class="contact-info mb-3">
+                            <div class="fw-bold text-warning">Video Conference</div>
+                            <div class="small text-muted">Available worldwide</div>
+                        </div>
+                        <a href="javascript:void(0)" onclick="return openCalendly();" class="btn btn-warning w-100 mt-auto">
+                            <i class="fas fa-calendar-alt me-2"></i>Schedule Meeting
                         </a>
                     </div>
                 </div>
@@ -414,6 +433,18 @@
                                 <div>Friday: 9:00 AM - 2:00 PM</div>
                                 <div>Saturday: Closed</div>
                                 <div class="mt-1"><em>Israel Standard Time (GMT+3)</em></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-item d-flex align-items-start mb-3">
+                        <i class="fas fa-phone text-primary me-3 mt-1"></i>
+                        <div>
+                            <h6 class="mb-1">Contact Numbers</h6>
+                            <div class="text-muted small">
+                                <div class="mb-1"><strong>US Clients:</strong> +1 (215) 313-3224</div>
+                                <div class="mb-1"><strong>International:</strong> +972-50-6842937</div>
+                                <div class="mt-1"><em>Available during business hours</em></div>
                             </div>
                         </div>
                     </div>
