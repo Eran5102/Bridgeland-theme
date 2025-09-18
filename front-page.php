@@ -1382,22 +1382,35 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Found', totalSlides, 'testimonial slides');
 
             function showSlide(index) {
-                // Remove active from all slides and indicators
-                slides.forEach(slide => slide.classList.remove('active'));
+                // Remove active from all slides and indicators with sliding animation
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active', 'carousel-item-next', 'carousel-item-prev', 'carousel-item-start', 'carousel-item-end');
+
+                    if (i === index) {
+                        // Current slide - make active and center
+                        slide.classList.add('active');
+                        slide.style.transform = 'translateX(0)';
+                    } else if (i < index) {
+                        // Previous slides - slide left
+                        slide.style.transform = 'translateX(-100%)';
+                    } else {
+                        // Next slides - slide right
+                        slide.style.transform = 'translateX(100%)';
+                    }
+                });
+
+                // Update indicators
                 indicators.forEach(indicator => {
                     indicator.classList.remove('active');
                     indicator.removeAttribute('aria-current');
                 });
 
-                // Add active to current slide and indicator
-                if (slides[index]) {
-                    slides[index].classList.add('active');
-                    console.log('Showing slide', index + 1);
-                }
                 if (indicators[index]) {
                     indicators[index].classList.add('active');
                     indicators[index].setAttribute('aria-current', 'true');
                 }
+
+                console.log('Showing slide', index + 1, 'with sliding animation');
             }
 
             function nextSlide() {

@@ -2,7 +2,7 @@
 Theme Name: Bridgeland Advisors v2
 Description: Professional financial advisory theme with maroon branding and Bootstrap integration
 Author: Bridgeland Advisors
-Version: 6.1
+Version: 6.2
 GitHub Theme URI: Eran5102/Bridgeland-theme
 GitHub Branch: master
 Primary Branch: master
@@ -1168,6 +1168,65 @@ section {
     .logos-carousel {
         padding: 15px 0;
     }
+}
+
+/* Enhanced Testimonials Carousel Animations */
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+    display: block;
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+    transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+    transform: translateX(-100%);
+}
+
+.carousel-item-next.carousel-item-start,
+.carousel-item-prev.carousel-item-end {
+    transform: translateX(0);
+}
+
+/* Testimonials specific styling */
+#testimonialsCarousel .carousel-item {
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+#testimonialsCarousel .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--color-maroon);
+    background-color: transparent;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+#testimonialsCarousel .carousel-indicators button.active {
+    background-color: var(--color-maroon);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+#testimonialsCarousel .carousel-control-prev,
+#testimonialsCarousel .carousel-control-next {
+    width: 50px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#testimonialsCarousel .carousel-control-prev:hover,
+#testimonialsCarousel .carousel-control-next:hover {
+    opacity: 1;
 }
 
 /* Print Styles */
