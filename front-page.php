@@ -376,82 +376,173 @@
             </p>
         </div>
 
-        <!-- Client Logos Carousel -->
-        <div class="logos-carousel overflow-hidden position-relative">
-            <div class="logos-track d-flex align-items-center" style="animation: logoScroll 40s linear infinite; width: 200%;">
-                <!-- First set -->
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/extreme simulations.jpeg" alt="Extreme Simulations" class="client-logo">
+        <!-- Enhanced Two-Row Client Logos Carousel -->
+        <div class="logos-carousel-container overflow-hidden position-relative">
+            <!-- Top Row - 13 logos -->
+            <div class="logos-row mb-3 overflow-hidden">
+                <div class="logos-track d-flex align-items-center" style="animation: logoScrollTop 60s linear infinite; width: 200%;">
+                    <!-- First set of 13 logos -->
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/extreme simulations.jpeg" alt="Extreme Simulations" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/monto.jpeg" alt="Montopay" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/itur_intelligence_logo.jpg" alt="Itur Intelligence" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/detectx_logo.jpg" alt="DetectX" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/datumate_logo.jpg" alt="Datumate" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/corbelpay_logo.jpg" alt="CorbelPay" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/genetika_logo.jpeg" alt="Genetika" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/getpackage_logo.jpg" alt="GetPackage" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/keyport.png" alt="Keyport" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/lawflex_logo.jpeg" alt="LawFlex" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/lightyx_logo.jpeg" alt="LightyX" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/omnistruct_logo.jpeg" alt="Omnistruct" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/canotera_logo.jpeg" alt="Canotera" class="client-logo">
+                    </div>
+
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/extreme simulations.jpeg" alt="Extreme Simulations" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/monto.jpeg" alt="Montopay" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/itur_intelligence_logo.jpg" alt="Itur Intelligence" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/detectx_logo.jpg" alt="DetectX" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/datumate_logo.jpg" alt="Datumate" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/corbelpay_logo.jpg" alt="CorbelPay" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/genetika_logo.jpeg" alt="Genetika" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/getpackage_logo.jpg" alt="GetPackage" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/keyport.png" alt="Keyport" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/lawflex_logo.jpeg" alt="LawFlex" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/lightyx_logo.jpeg" alt="LightyX" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/omnistruct_logo.jpeg" alt="Omnistruct" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/canotera_logo.jpeg" alt="Canotera" class="client-logo">
+                    </div>
                 </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/monto.jpeg" alt="Montopay" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/itur_intelligence_logo.jpg" alt="Itur Intelligence" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/detectx_logo.jpg" alt="DetectX" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/datumate_logo.jpg" alt="Datumate" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/corbelpay_logo.jpg" alt="CorbelPay" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/genetika_logo.jpeg" alt="Genetika" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/getpackage_logo.jpg" alt="GetPackage" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/keyport.png" alt="Keyport" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/lawflex_logo.jpeg" alt="LawFlex" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/lightyx_logo.jpeg" alt="LightyX" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/omnistruct_logo.jpeg" alt="Omnistruct" class="client-logo">
-                </div>
-                <!-- Duplicate set for seamless loop -->
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/extreme simulations.jpeg" alt="Extreme Simulations" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/monto.jpeg" alt="Montopay" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/itur_intelligence_logo.jpg" alt="Itur Intelligence" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/detectx_logo.jpg" alt="DetectX" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/datumate_logo.jpg" alt="Datumate" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/corbelpay_logo.jpg" alt="CorbelPay" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/genetika_logo.jpeg" alt="Genetika" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/getpackage_logo.jpg" alt="GetPackage" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/keyport.png" alt="Keyport" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/lawflex_logo.jpeg" alt="LawFlex" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/lightyx_logo.jpeg" alt="LightyX" class="client-logo">
-                </div>
-                <div class="logo-item flex-shrink-0 mx-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/logos/omnistruct_logo.jpeg" alt="Omnistruct" class="client-logo">
+            </div>
+
+            <!-- Bottom Row - 12 logos (reverse direction for dynamic effect) -->
+            <div class="logos-row overflow-hidden">
+                <div class="logos-track d-flex align-items-center" style="animation: logoScrollBottom 55s linear infinite reverse; width: 200%;">
+                    <!-- Remaining 12 logos -->
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/carevature_medical_ltd__logo.jpeg" alt="Carevature Medical" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/dolphinecare logo.jpeg" alt="Dolphine Care" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/globein_logo.jpeg" alt="GlobeIn" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/indieflow_logo.jpeg" alt="IndieFlow" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/libba_logo.jpeg" alt="Libba" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/lotoo sheli.png" alt="Lotoo Sheli" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/moon_shot_ai_logo.jpeg" alt="Moon Shot AI" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/p3_media_inc_logo.jpeg" alt="P3 Media Inc" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/p3_media_nyc_logo.jpeg" alt="P3 Media NYC" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/reininsurtech_logo.jpeg" alt="Rein InsurTech" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/verticalfield_logo.jpeg" alt="VerticalField" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/Zoog.jpg" alt="Zoog" class="client-logo">
+                    </div>
+
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/carevature_medical_ltd__logo.jpeg" alt="Carevature Medical" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/dolphinecare logo.jpeg" alt="Dolphine Care" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/globein_logo.jpeg" alt="GlobeIn" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/indieflow_logo.jpeg" alt="IndieFlow" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/libba_logo.jpeg" alt="Libba" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/lotoo sheli.png" alt="Lotoo Sheli" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/moon_shot_ai_logo.jpeg" alt="Moon Shot AI" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/p3_media_inc_logo.jpeg" alt="P3 Media Inc" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/p3_media_nyc_logo.jpeg" alt="P3 Media NYC" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/reininsurtech_logo.jpeg" alt="Rein InsurTech" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/verticalfield_logo.jpeg" alt="VerticalField" class="client-logo">
+                    </div>
+                    <div class="logo-item flex-shrink-0 mx-3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/logos/Zoog.jpg" alt="Zoog" class="client-logo">
+                    </div>
                 </div>
             </div>
         </div>
@@ -1083,8 +1174,8 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Client Logo Carousel */
-@keyframes logoScroll {
+/* Enhanced Two-Row Client Logo Carousel */
+@keyframes logoScrollTop {
     0% {
         transform: translateX(0);
     }
@@ -1093,8 +1184,30 @@
     }
 }
 
-.logos-carousel:hover .logos-track {
+@keyframes logoScrollBottom {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logos-carousel-container:hover .logos-track {
     animation-play-state: paused;
+}
+
+.logos-row {
+    position: relative;
+}
+
+.logos-carousel-container {
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .client-logo {
