@@ -85,7 +85,7 @@
                 "@type": "Review",
                 "author": {
                     "@type": "Person",
-                    "name": "Boaz Fraoman"
+                    "name": "Boaz Fraiman"
                 },
                 "reviewRating": {
                     "@type": "Rating",

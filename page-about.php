@@ -538,7 +538,7 @@
                             <p class="mb-0">"I highly recommend Bridgeland Advisors for their exceptional service in constructing a 409A valuation for our company. They demonstrated utmost professionalism and efficiency throughout the process."</p>
                         </blockquote>
                         <footer class="blockquote-footer">
-                            <strong>Boaz Fraoman</strong>, Startup Founder
+                            <strong>Boaz Fraiman</strong>, Startup Founder
                         </footer>
                     </div>
                 </div>

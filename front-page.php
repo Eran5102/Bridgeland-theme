@@ -809,7 +809,7 @@
                                                     <i class="fas fa-user text-primary fa-lg"></i>
                                                 </div>
                                                 <div>
-                                                    <div class="fw-bold text-dark h5 mb-0" style="font-family: 'Inter', sans-serif;">Boaz Fraoman</div>
+                                                    <div class="fw-bold text-dark h5 mb-0" style="font-family: 'Inter', sans-serif;">Boaz Fraiman</div>
                                                     <small class="text-muted" style="font-family: 'Inter', sans-serif;">Startup Founder</small>
                                                 </div>
                                             </div>
@@ -892,7 +892,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="text-primary mb-2">
-                                <i class="fas fa-shield-check fa-2x"></i>
+                                <i class="fas fa-shield-alt fa-2x"></i>
                             </div>
                             <div class="fw-semibold" style="font-family: 'Inter', sans-serif;">100% Compliant</div>
                             <small class="text-muted">IRS Standards</small>
