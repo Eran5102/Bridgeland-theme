@@ -130,7 +130,9 @@
 
 <!-- Back to Top Button -->
 <div class="position-fixed" style="bottom: 20px; right: 20px; z-index: 1050;">
-    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow-lg" style="display: block; opacity: 1;" title="Back to top">
+    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow-lg"
+            style="opacity: 0; pointer-events: none; transform: translateY(20px); transition: all 0.3s ease;"
+            title="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 </div>
@@ -149,18 +151,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show/hide based on scroll position
         function toggleBackToTop() {
             const scrolled = window.pageYOffset || document.documentElement.scrollTop;
-            console.log('Scroll position:', scrolled);
-            console.log('Button should be visible - forced visibility test mode');
-            // Temporarily disabled opacity control for testing
-            // if (scrolled > 300) {
-            //     backToTopBtn.style.opacity = '1';
-            //     backToTopBtn.style.pointerEvents = 'auto';
-            //     console.log('Showing back to top button');
-            // } else {
-            //     backToTopBtn.style.opacity = '0';
-            //     backToTopBtn.style.pointerEvents = 'none';
-            //     console.log('Hiding back to top button');
-            // }
+
+            if (scrolled > 300) {
+                backToTopBtn.style.opacity = '1';
+                backToTopBtn.style.pointerEvents = 'auto';
+                backToTopBtn.style.transform = 'translateY(0)';
+                console.log('Showing back to top button');
+            } else {
+                backToTopBtn.style.opacity = '0';
+                backToTopBtn.style.pointerEvents = 'none';
+                backToTopBtn.style.transform = 'translateY(20px)';
+                console.log('Hiding back to top button');
+            }
         }
 
         // Scroll event listener
@@ -199,42 +201,79 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Back to top button NOT found!');
     }
 
-    // Fix Bootstrap mobile menu issues
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('#navbarNav');
+    // Enhanced Mobile Menu Fix
+    function initMobileMenu() {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('#navbarNav');
 
-    if (navbarToggler && navbarCollapse) {
-        navbarToggler.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Mobile menu toggle clicked');
+        if (!navbarToggler || !navbarCollapse) {
+            console.log('Mobile menu elements not found');
+            return;
+        }
 
-            // Toggle classes manually if Bootstrap isn't working
-            if (navbarCollapse.classList.contains('show')) {
-                navbarCollapse.classList.remove('show');
-                navbarToggler.setAttribute('aria-expanded', 'false');
-            } else {
-                navbarCollapse.classList.add('show');
-                navbarToggler.setAttribute('aria-expanded', 'true');
+        console.log('Initializing mobile menu...');
+
+        // First try Bootstrap's collapse if available
+        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+            console.log('Using Bootstrap collapse');
+            try {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+
+                navbarToggler.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    bsCollapse.toggle();
+                });
+            } catch (error) {
+                console.log('Bootstrap collapse failed, using manual implementation');
+                setupManualMobileMenu();
             }
-        });
+        } else {
+            console.log('Bootstrap not available, using manual mobile menu');
+            setupManualMobileMenu();
+        }
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
-                navbarCollapse.classList.remove('show');
-                navbarToggler.setAttribute('aria-expanded', 'false');
-            }
-        });
+        function setupManualMobileMenu() {
+            navbarToggler.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
 
-        // Close menu when clicking on a link
-        const navLinks = navbarCollapse.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navbarCollapse.classList.remove('show');
-                navbarToggler.setAttribute('aria-expanded', 'false');
+                const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+                console.log('Mobile menu toggle clicked, currently expanded:', isExpanded);
+
+                if (isExpanded) {
+                    navbarCollapse.classList.remove('show');
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                    console.log('Hiding mobile menu');
+                } else {
+                    navbarCollapse.classList.add('show');
+                    navbarToggler.setAttribute('aria-expanded', 'true');
+                    console.log('Showing mobile menu');
+                }
             });
-        });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+                    navbarCollapse.classList.remove('show');
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close menu when clicking on a link
+            const navLinks = navbarCollapse.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navbarCollapse.classList.remove('show');
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
     }
+
+    // Initialize mobile menu
+    initMobileMenu();
 });
 
 // Smooth scrolling for anchor links

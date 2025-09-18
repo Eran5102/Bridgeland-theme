@@ -1359,6 +1359,94 @@ document.addEventListener('DOMContentLoaded', function() {
             initCounterAnimation();
         }
     }, { once: true });
+
+    // Enhanced Bootstrap Carousel Initialization
+    function initTestimonialsCarousel() {
+        console.log('Initializing testimonials carousel...');
+
+        // Check if Bootstrap is available
+        if (typeof bootstrap === 'undefined') {
+            console.warn('Bootstrap not loaded, trying fallback carousel initialization');
+
+            // Fallback manual carousel functionality
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('#testimonialsCarousel .carousel-item');
+            const indicators = document.querySelectorAll('#testimonialsCarousel .carousel-indicators button');
+            const totalSlides = slides.length;
+
+            if (totalSlides === 0) {
+                console.error('No carousel slides found');
+                return;
+            }
+
+            console.log('Found', totalSlides, 'testimonial slides');
+
+            function showSlide(index) {
+                // Remove active from all slides and indicators
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => {
+                    indicator.classList.remove('active');
+                    indicator.removeAttribute('aria-current');
+                });
+
+                // Add active to current slide and indicator
+                if (slides[index]) {
+                    slides[index].classList.add('active');
+                    console.log('Showing slide', index + 1);
+                }
+                if (indicators[index]) {
+                    indicators[index].classList.add('active');
+                    indicators[index].setAttribute('aria-current', 'true');
+                }
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(currentSlide);
+            }
+
+            // Add click handlers to indicators
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+
+            // Add click handlers to control buttons
+            const prevBtn = document.querySelector('#testimonialsCarousel .carousel-control-prev');
+            const nextBtn = document.querySelector('#testimonialsCarousel .carousel-control-next');
+
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+            // Auto-advance every 5 seconds
+            setInterval(nextSlide, 5000);
+
+            // Ensure first slide is active
+            showSlide(0);
+
+        } else {
+            // Use Bootstrap's carousel
+            console.log('Bootstrap available, initializing carousel');
+            const carouselElement = document.getElementById('testimonialsCarousel');
+            if (carouselElement) {
+                const carousel = new bootstrap.Carousel(carouselElement, {
+                    interval: 5000,
+                    ride: 'carousel'
+                });
+                console.log('✅ Bootstrap carousel initialized');
+            }
+        }
+    }
+
+    // Initialize carousel after a delay to ensure DOM is ready
+    setTimeout(initTestimonialsCarousel, 500);
 });
 </script>
 

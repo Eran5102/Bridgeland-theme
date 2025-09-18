@@ -597,8 +597,11 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 
 <script>
 function initMap() {
-    // Coordinates for 19 Ner Halayla St, Even Yehuda, Israel
-    const officeLocation = { lat: 32.2667, lng: 34.8833 };
+    console.log('Initializing Google Maps...');
+
+    try {
+        // Coordinates for 19 Ner Halayla St, Even Yehuda, Israel
+        const officeLocation = { lat: 32.2667, lng: 34.8833 };
 
     // Create the map
     const map = new google.maps.Map(document.getElementById("office-map"), {
@@ -653,8 +656,32 @@ function initMap() {
         infoWindow.open(map, marker);
     });
 
-    // Open info window by default
-    infoWindow.open(map, marker);
+        // Open info window by default
+        infoWindow.open(map, marker);
+
+        console.log('✅ Google Maps initialized successfully');
+
+    } catch (error) {
+        console.error('Error initializing Google Maps:', error);
+        showMapFallback();
+    }
+}
+
+function showMapFallback() {
+    const mapContainer = document.getElementById('office-map');
+    if (mapContainer) {
+        mapContainer.innerHTML = `
+            <div class="d-flex flex-column align-items-center justify-content-center h-100 bg-light">
+                <i class="fas fa-map fa-3x text-muted mb-3"></i>
+                <h6 class="text-muted mb-2">Map Temporarily Unavailable</h6>
+                <p class="text-muted text-center mb-3">19 Ner Halayla St.<br>Even Yehuda, Israel</p>
+                <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
+                   target="_blank" class="btn btn-primary btn-sm">
+                    <i class="fas fa-external-link-alt me-2"></i>View on Google Maps
+                </a>
+            </div>
+        `;
+    }
 }
 
 // Fallback in case the API fails to load
