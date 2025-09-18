@@ -2,7 +2,7 @@
 Theme Name: Bridgeland Advisors v2
 Description: Professional financial advisory theme with maroon branding and Bootstrap integration
 Author: Bridgeland Advisors
-Version: 4.9
+Version: 5.0
 GitHub Theme URI: Eran5102/Bridgeland-theme
 GitHub Branch: master
 Primary Branch: master
@@ -1200,5 +1200,69 @@ section {
 
 #office-map {
     background-color: #f8f9fa !important;
+}
+
+/* Back to Top Button Enhancements */
+#backToTop {
+    transition: all 0.3s ease !important;
+    opacity: 0 !important;
+    transform: translateY(10px) !important;
+}
+
+#backToTop:hover {
+    transform: translateY(0px) scale(1.1) !important;
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.3) !important;
+}
+
+/* Mobile Menu Fixes */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: white !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        margin-top: 10px !important;
+        padding: 1rem !important;
+    }
+
+    .navbar-collapse.show {
+        display: block !important;
+        animation: slideDown 0.3s ease !important;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem !important;
+        border-bottom: 1px solid #f8f9fa !important;
+        color: var(--color-gray-700) !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: #f8f9fa !important;
+        color: var(--color-maroon) !important;
+        border-radius: 4px !important;
+    }
+
+    .navbar-toggler {
+        border: none !important;
+        padding: 0.25rem 0.5rem !important;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none !important;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23800000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 }

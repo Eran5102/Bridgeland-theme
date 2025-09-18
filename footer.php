@@ -136,21 +136,79 @@
 
 <!-- Custom JavaScript -->
 <script>
-// Back to top functionality
-window.addEventListener('scroll', function() {
+// Enhanced Back to top functionality
+document.addEventListener('DOMContentLoaded', function() {
     const backToTopBtn = document.getElementById('backToTop');
-    if (window.pageYOffset > 300) {
-        backToTopBtn.style.display = 'block';
-    } else {
-        backToTopBtn.style.display = 'none';
-    }
-});
 
-document.getElementById('backToTop').addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    if (backToTopBtn) {
+        // Show/hide based on scroll position
+        function toggleBackToTop() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.style.display = 'block';
+                backToTopBtn.style.opacity = '1';
+            } else {
+                backToTopBtn.style.opacity = '0';
+                setTimeout(() => {
+                    if (window.pageYOffset <= 300) {
+                        backToTopBtn.style.display = 'none';
+                    }
+                }, 300);
+            }
+        }
+
+        // Scroll event listener
+        window.addEventListener('scroll', toggleBackToTop);
+
+        // Click event listener
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Back to top clicked');
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Initial check
+        toggleBackToTop();
+    }
+
+    // Fix Bootstrap mobile menu issues
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('#navbarNav');
+
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Mobile menu toggle clicked');
+
+            // Toggle classes manually if Bootstrap isn't working
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+                navbarToggler.setAttribute('aria-expanded', 'false');
+            } else {
+                navbarCollapse.classList.add('show');
+                navbarToggler.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+                navbarCollapse.classList.remove('show');
+                navbarToggler.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = navbarCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navbarCollapse.classList.remove('show');
+                navbarToggler.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
 });
 
 // Smooth scrolling for anchor links
