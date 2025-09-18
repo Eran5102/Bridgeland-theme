@@ -589,8 +589,6 @@ document.querySelector('.newsletter-form form').addEventListener('submit', funct
 // Track article clicks
 document.querySelectorAll('.article-card a').forEach(link => {
     link.addEventListener('click', function(e) {
-        e.preventDefault(); // Remove this when you have actual article pages
-
         const articleTitle = this.closest('.article-card').querySelector('h5').textContent;
 
         if (typeof gtag !== 'undefined') {
@@ -599,8 +597,7 @@ document.querySelectorAll('.article-card a').forEach(link => {
             });
         }
 
-        // For now, show a message since articles aren't implemented
-        alert('Article content would be displayed here. This is a template demonstration.');
+        // Articles are now implemented - links will navigate to actual pages normally
     });
 });
 </script>
