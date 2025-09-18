@@ -2,7 +2,7 @@
 Theme Name: Bridgeland Advisors v2
 Description: Professional financial advisory theme with maroon branding and Bootstrap integration
 Author: Bridgeland Advisors
-Version: 5.1
+Version: 5.2
 GitHub Theme URI: Eran5102/Bridgeland-theme
 GitHub Branch: master
 Primary Branch: master
@@ -1205,13 +1205,26 @@ section {
 /* Back to Top Button Enhancements */
 #backToTop {
     transition: all 0.3s ease !important;
+    opacity: 1 !important;
+    transform: translateY(0px) !important;
+    background-color: var(--color-maroon) !important;
+    border-color: var(--color-maroon) !important;
+}
+
+#backToTop.show {
+    opacity: 1 !important;
+    transform: translateY(0px) !important;
+}
+
+#backToTop.hide {
     opacity: 0 !important;
     transform: translateY(10px) !important;
 }
 
 #backToTop:hover {
-    transform: translateY(0px) scale(1.1) !important;
-    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.3) !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4) !important;
+    background-color: var(--color-maroon-dark) !important;
 }
 
 /* Mobile Menu Fixes */

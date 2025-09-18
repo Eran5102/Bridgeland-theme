@@ -72,9 +72,12 @@
                             <div><a href="mailto:info@bridgeland-advisors.com" class="text-light text-decoration-none">info@bridgeland-advisors.com</a></div>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center mb-2">
-                        <i class="fas fa-phone text-brand me-2"></i>
-                        <a href="tel:+972-50-6842937" class="text-light text-decoration-none">+972-50-6842937</a>
+                    <div class="d-flex align-items-start mb-2">
+                        <i class="fas fa-phone text-brand me-2 mt-1"></i>
+                        <div class="text-light">
+                            <div><a href="tel:+12153133224" class="text-light text-decoration-none">+1 (215) 313-3224</a> <small>(US Clients)</small></div>
+                            <div><a href="tel:+972-50-6842937" class="text-light text-decoration-none">+972-50-6842937</a> <small>(International)</small></div>
+                        </div>
                     </div>
                     <div class="d-flex align-items-start">
                         <i class="fas fa-map-marker-alt text-brand me-2 mt-1"></i>
@@ -89,8 +92,8 @@
                     <a href="mailto:eran@bridgeland-advisors.com?subject=409A Valuation Inquiry" class="btn btn-primary btn-sm">
                         <i class="fas fa-envelope me-1"></i>Quick Email
                     </a>
-                    <a href="tel:+972-50-6842937" class="btn btn-outline-light btn-sm">
-                        <i class="fas fa-phone me-1"></i>Call Now
+                    <a href="tel:+12153133224" class="btn btn-outline-light btn-sm">
+                        <i class="fas fa-phone me-1"></i>Call US
                     </a>
                 </div>
             </div>
@@ -116,8 +119,8 @@
 </footer>
 
 <!-- WhatsApp Float Button -->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1000;">
-    <a href="https://wa.me/972506842937?text=Hi%20Eran,%20I'm%20interested%20in%20learning%20more%20about%20your%20valuation%20services."
+<div class="position-fixed" style="bottom: 90px; right: 20px; z-index: 1000;">
+    <a href="https://wa.me/12153133224?text=Hi%20Eran,%20I'm%20interested%20in%20learning%20more%20about%20your%20valuation%20services."
        target="_blank"
        class="btn btn-success rounded-circle p-3 shadow-lg"
        title="Chat with us on WhatsApp">
@@ -126,7 +129,7 @@
 </div>
 
 <!-- Back to Top Button -->
-<div class="position-fixed bottom-0 start-0 p-3" style="z-index: 1000;">
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
     <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow-lg" style="display: none;" title="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -145,9 +148,11 @@ document.addEventListener('DOMContentLoaded', function() {
         function toggleBackToTop() {
             if (window.pageYOffset > 300) {
                 backToTopBtn.style.display = 'block';
-                backToTopBtn.style.opacity = '1';
+                backToTopBtn.classList.remove('hide');
+                backToTopBtn.classList.add('show');
             } else {
-                backToTopBtn.style.opacity = '0';
+                backToTopBtn.classList.remove('show');
+                backToTopBtn.classList.add('hide');
                 setTimeout(() => {
                     if (window.pageYOffset <= 300) {
                         backToTopBtn.style.display = 'none';
