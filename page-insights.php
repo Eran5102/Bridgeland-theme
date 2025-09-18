@@ -79,17 +79,17 @@
                             <span class="badge bg-primary me-2">Featured</span>
                             <span class="badge bg-secondary">409A Valuations</span>
                         </div>
-                        <h2 class="h3 mb-3">Understanding 409A Safe Harbor: Why Timing Matters for Your Valuation</h2>
+                        <h2 class="h3 mb-3">2025 Startup Valuation Outlook: Key Trends Shaping the Market</h2>
                         <p class="lead text-muted mb-4">
-                            The IRS safe harbor provision provides crucial protection for companies issuing stock options,
-                            but understanding the timing requirements is essential for maintaining compliance and avoiding penalties.
+                            As we enter 2025, startup valuations are being reshaped by AI adoption, regulatory changes, and evolving investor expectations.
+                            Here's what founders and investors need to know about the new valuation landscape.
                         </p>
                         <div class="article-meta d-flex align-items-center mb-4">
                             <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNFRjQ0NDQiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSI+CjxwYXRoIGQ9Ik0yMCAyMUMyMCAxNi45IDEyIDEzIDEyIDEzUzQgMTYuOSA0IDIxVjIySDIwVjIxWiIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4KPC9zdmc+Cg=="
                                  alt="Eran Ben-Avi" class="rounded-circle me-3" width="40" height="40">
                             <div>
                                 <div class="fw-semibold">Eran Ben-Avi</div>
-                                <div class="small text-muted">December 15, 2024 • 8 min read</div>
+                                <div class="small text-muted">January 15, 2025 • 12 min read</div>
                             </div>
                         </div>
                         <a href="#" class="btn btn-primary">Read Full Article</a>
@@ -111,7 +111,134 @@
         </div>
 
         <div class="row g-4" id="articles-container">
-            <!-- 409A Valuation Articles -->
+            <!-- Latest 2025 Articles -->
+            <div class="col-lg-4 article-item" data-category="market-trends">
+                <div class="article-card card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-warning me-2">New</span>
+                            <span class="badge bg-info me-2">Market Trends</span>
+                            <span class="small text-muted">Jan 10, 2025</span>
+                        </div>
+                        <h5 class="mb-3">AI's Impact on Startup Valuations: The 2025 Reality</h5>
+                        <p class="text-muted mb-3">
+                            How artificial intelligence is reshaping valuation methodologies and what it means for startup founders
+                            seeking funding in the AI-driven economy of 2025.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="small text-muted">11 min read</div>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 article-item" data-category="409a">
+                <div class="article-card card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-warning me-2">New</span>
+                            <span class="badge bg-primary me-2">409A</span>
+                            <span class="small text-muted">Jan 8, 2025</span>
+                        </div>
+                        <h5 class="mb-3">2025 409A Valuation Changes: What You Need to Know</h5>
+                        <p class="text-muted mb-3">
+                            Recent updates to 409A valuation guidelines and methodologies for 2025, including new
+                            requirements for tech companies and AI-focused businesses.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="small text-muted">9 min read</div>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 article-item" data-category="fundraising">
+                <div class="article-card card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-warning me-2">New</span>
+                            <span class="badge bg-success me-2">Fundraising</span>
+                            <span class="small text-muted">Jan 5, 2025</span>
+                        </div>
+                        <h5 class="mb-3">Series A Fundraising Strategies for 2025</h5>
+                        <p class="text-muted mb-3">
+                            Updated fundraising strategies for the new market conditions, including investor preferences,
+                            valuation expectations, and successful pitch tactics for 2025.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="small text-muted">13 min read</div>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 article-item" data-category="tools">
+                <div class="article-card card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-warning me-2">New</span>
+                            <span class="badge bg-dark me-2">Tools</span>
+                            <span class="small text-muted">Jan 3, 2025</span>
+                        </div>
+                        <h5 class="mb-3">Advanced DCF Modeling for Tech Startups</h5>
+                        <p class="text-muted mb-3">
+                            Modern discounted cash flow techniques specifically designed for technology companies,
+                            including SaaS metrics and AI-enabled businesses.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="small text-muted">15 min read</div>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 article-item" data-category="case-studies">
+                <div class="article-card card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-warning me-2">New</span>
+                            <span class="badge bg-purple me-2" style="background-color: #6f42c1;">Case Study</span>
+                            <span class="small text-muted">Dec 30, 2024</span>
+                        </div>
+                        <h5 class="mb-3">Exit Waterfall Success: A $50M Acquisition Case Study</h5>
+                        <p class="text-muted mb-3">
+                            Real-world analysis of a successful startup exit, including waterfall distribution,
+                            investor returns, and key lessons for founders planning their exit strategy.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="small text-muted">16 min read</div>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 article-item" data-category="regulations">
+                <div class="article-card card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-warning me-2">New</span>
+                            <span class="badge bg-warning me-2">Regulations</span>
+                            <span class="small text-muted">Dec 28, 2024</span>
+                        </div>
+                        <h5 class="mb-3">2025 SEC Updates: Impact on Private Markets</h5>
+                        <p class="text-muted mb-3">
+                            Latest SEC regulatory changes affecting private company valuations, reporting requirements,
+                            and compliance obligations for startups and investors.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="small text-muted">10 min read</div>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Original 409A Valuation Articles -->
             <div class="col-lg-4 article-item" data-category="409a">
                 <div class="article-card card border-0 shadow-sm h-100">
                     <div class="card-body p-4">

@@ -592,8 +592,24 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 });
 </script>
 
-<!-- Google Maps API -->
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApJ2itkMqPnuleXFoQFYm9l5HqxZ1ghDs&callback=initMap&libraries=maps,marker&v=beta"></script>
+<!-- Google Maps API with optimized loading -->
+<script>
+    // Optimized Google Maps loading
+    function loadGoogleMaps() {
+        const script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApJ2itkMqPnuleXFoQFYm9l5HqxZ1ghDs&callback=initMap&libraries=marker&v=weekly&loading=async';
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+    }
+
+    // Load maps when page is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadGoogleMaps);
+    } else {
+        loadGoogleMaps();
+    }
+</script>
 
 <script>
 function initMap() {
@@ -603,32 +619,19 @@ function initMap() {
         // Coordinates for 19 Ner Halayla St, Even Yehuda, Israel
         const officeLocation = { lat: 32.2667, lng: 34.8833 };
 
-    // Create the map
-    const map = new google.maps.Map(document.getElementById("office-map"), {
-        zoom: 15,
-        center: officeLocation,
-        mapId: "bridgeland_office_map",
-        styles: [
-            {
-                featureType: "all",
-                elementType: "geometry.fill",
-                stylers: [{ color: "#f8f9fa" }]
-            },
-            {
-                featureType: "water",
-                elementType: "geometry.fill",
-                stylers: [{ color: "#e3f2fd" }]
-            }
-        ]
-    });
+        // Create the map (without custom styles when using mapId)
+        const map = new google.maps.Map(document.getElementById("office-map"), {
+            zoom: 15,
+            center: officeLocation,
+            mapId: "bridgeland_office_map"
+        });
 
-    // Create the marker
-    const marker = new google.maps.Marker({
-        position: officeLocation,
-        map: map,
-        title: "Bridgeland Advisors",
-        animation: google.maps.Animation.DROP
-    });
+        // Create the advanced marker (new recommended approach)
+        const marker = new google.maps.marker.AdvancedMarkerElement({
+            position: officeLocation,
+            map: map,
+            title: "Bridgeland Advisors"
+        });
 
     // Create info window
     const infoWindow = new google.maps.InfoWindow({
@@ -651,13 +654,19 @@ function initMap() {
         `
     });
 
-    // Show info window when marker is clicked
-    marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-    });
+        // Show info window when marker is clicked
+        marker.addListener("click", () => {
+            infoWindow.open({
+                anchor: marker,
+                map: map
+            });
+        });
 
         // Open info window by default
-        infoWindow.open(map, marker);
+        infoWindow.open({
+            anchor: marker,
+            map: map
+        });
 
         console.log('✅ Google Maps initialized successfully');
 
