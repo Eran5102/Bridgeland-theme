@@ -49,9 +49,9 @@ get_header(); ?>
                         enhanced transparency in equity compensation.
                     </p>
 
-                    <div class="bg-primary bg-opacity-10 p-4 rounded my-4">
-                        <h4 class="h5 text-primary mb-2">Major Changes for 2025:</h4>
-                        <ul class="mb-0">
+                    <div class="bg-primary p-4 rounded my-4">
+                        <h4 class="h5 text-white mb-2">Major Changes for 2025:</h4>
+                        <ul class="mb-0 text-white">
                             <li><strong>Enhanced Documentation Requirements:</strong> More detailed valuation reports and methodology explanations</li>
                             <li><strong>AI/Tech Company Specific Guidelines:</strong> New provisions for valuing AI and technology businesses</li>
                             <li><strong>Shortened Safe Harbor Period:</strong> Reduced from 12 to 9 months for high-growth companies</li>
