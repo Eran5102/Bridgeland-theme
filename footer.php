@@ -170,10 +170,20 @@ document.addEventListener('DOMContentLoaded', function() {
         backToTopBtn.addEventListener('click', function(e) {
             e.preventDefault();
             console.log('Back to top clicked - scrolling to top');
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+
+            // Try multiple scroll methods for better compatibility
+            try {
+                // Method 1: Modern smooth scroll
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } catch (error) {
+                console.log('Smooth scroll failed, trying fallback');
+                // Method 2: Fallback scroll
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            }
         });
 
         // Initial check
