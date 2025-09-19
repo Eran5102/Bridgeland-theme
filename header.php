@@ -329,12 +329,12 @@
                         Services
                     </a>
                     <ul class="dropdown-menu shadow border-0">
-                        <li><a class="dropdown-item" href="<?php echo home_url('/409a-valuation/'); ?>"><i class="fas fa-gavel me-2 text-primary"></i>409A Valuation</a></li>
-                        <li><a class="dropdown-item" href="<?php echo home_url('/company-valuation/'); ?>"><i class="fas fa-building me-2 text-primary"></i>Company Valuation</a></li>
-                        <li><a class="dropdown-item" href="<?php echo home_url('/waterfall-analysis/'); ?>"><i class="fas fa-water me-2 text-primary"></i>Exit Waterfall Analysis</a></li>
+                        <li><a class="dropdown-item" href="<?php echo home_url('/409a-valuation/'); ?>"><i class="fas fa-gavel fa-fw me-2 text-primary"></i>409A Valuation</a></li>
+                        <li><a class="dropdown-item" href="<?php echo home_url('/company-valuation/'); ?>"><i class="fas fa-building fa-fw me-2 text-primary"></i>Company Valuation</a></li>
+                        <li><a class="dropdown-item" href="<?php echo home_url('/waterfall-analysis/'); ?>"><i class="fas fa-water fa-fw me-2 text-primary"></i>Exit Waterfall Analysis</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="<?php echo home_url('/capital-raising/'); ?>"><i class="fas fa-handshake me-2 text-primary"></i>Capital Raising</a></li>
-                        <li><a class="dropdown-item" href="<?php echo home_url('/calculators/'); ?>"><i class="fas fa-calculator me-2 text-primary"></i>Calculators</a></li>
+                        <li><a class="dropdown-item" href="<?php echo home_url('/capital-raising/'); ?>"><i class="fas fa-handshake fa-fw me-2 text-primary"></i>Capital Raising</a></li>
+                        <li><a class="dropdown-item" href="<?php echo home_url('/calculators/'); ?>"><i class="fas fa-calculator fa-fw me-2 text-primary"></i>Calculators</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
