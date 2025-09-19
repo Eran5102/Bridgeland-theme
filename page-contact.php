@@ -464,41 +464,21 @@
 
             <div class="col-lg-6">
                 <div class="map-container bg-light rounded overflow-hidden">
-                    <div class="static-map-placeholder d-flex flex-column align-items-center justify-content-center text-center p-4" style="height: 350px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
-                        <div class="mb-4">
-                            <i class="fas fa-map-marker-alt fa-4x text-primary mb-3"></i>
-                            <h5 class="text-dark mb-2">Bridgeland Advisors Office</h5>
-                        </div>
-
-                        <div class="office-details mb-4">
-                            <p class="mb-2 text-muted">
-                                <i class="fas fa-map-marker-alt me-2 text-primary"></i>
-                                <strong>19 Ner Halayla St.</strong><br>
-                                <span class="ms-4">Even Yehuda, Israel</span>
-                            </p>
-                            <p class="mb-2 text-muted">
-                                <i class="fas fa-phone me-2 text-primary"></i>
-                                <strong>+972-50-6842937</strong>
-                            </p>
-                            <p class="mb-0 text-muted">
-                                <i class="fas fa-envelope me-2 text-primary"></i>
-                                <strong>eran@bridgeland-advisors.com</strong>
-                            </p>
-                        </div>
-
-                        <div class="map-actions">
-                            <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
-                               target="_blank" class="btn btn-primary me-2 mb-2">
-                                <i class="fas fa-directions me-2"></i>Get Directions
-                            </a>
-                            <a href="https://www.waze.com/ul?q=19%20Ner%20Halayla%20St%2C%20Even%20Yehuda%2C%20Israel"
-                               target="_blank" class="btn btn-outline-primary mb-2">
-                                <i class="fas fa-route me-2"></i>Open in Waze
-                            </a>
-                        </div>
+                    <div id="office-map" style="height: 350px; width: 100%;">
+                        <!-- Interactive OpenStreetMap will load here -->
                     </div>
                     <div class="map-footer p-3 bg-white text-center">
-                        <small class="text-muted">Expert 409A Valuations & Financial Advisory Services</small>
+                        <small class="text-muted">Bridgeland Advisors Office Location</small>
+                        <div class="mt-2">
+                            <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
+                               target="_blank" class="btn btn-primary btn-sm me-2">
+                                <i class="fas fa-directions me-2"></i>Google Maps
+                            </a>
+                            <a href="https://www.waze.com/ul?q=19%20Ner%20Halayla%20St%2C%20Even%20Yehuda%2C%20Israel"
+                               target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-route me-2"></i>Waze
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -616,7 +596,87 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 });
 </script>
 
-<!-- Static Map Replacement - No API dependencies, always works reliably -->
+<!-- Leaflet.js OpenStreetMap - Free interactive map with no API key required -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        // Initialize the map
+        const map = L.map('office-map', {
+            zoomControl: true,
+            scrollWheelZoom: true,
+            doubleClickZoom: true,
+            boxZoom: true,
+            keyboard: true,
+            dragging: true,
+            touchZoom: true
+        }).setView([32.2667, 34.8833], 15);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        // Create custom marker icon
+        const customIcon = L.divIcon({
+            className: 'custom-marker',
+            html: '<div style="background-color: #8B0000; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 16px; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"><i class="fas fa-building"></i></div>',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+        });
+
+        // Add marker for office location
+        const marker = L.marker([32.2667, 34.8833], { icon: customIcon }).addTo(map);
+
+        // Add popup with office information
+        marker.bindPopup(`
+            <div style="text-align: center; font-family: Inter, sans-serif; min-width: 200px;">
+                <h6 style="margin: 0 0 10px 0; color: #8B0000; font-weight: 600;">Bridgeland Advisors</h6>
+                <p style="margin: 0 0 8px 0; font-size: 14px; color: #666;">
+                    <i class="fas fa-map-marker-alt" style="color: #8B0000; margin-right: 6px;"></i>
+                    19 Ner Halayla St.<br>Even Yehuda, Israel
+                </p>
+                <p style="margin: 0 0 8px 0; font-size: 13px; color: #666;">
+                    <i class="fas fa-phone" style="color: #8B0000; margin-right: 6px;"></i>
+                    +972-50-6842937
+                </p>
+                <p style="margin: 0 0 12px 0; font-size: 12px; color: #888;">
+                    Expert 409A Valuations & Financial Advisory
+                </p>
+                <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
+                   target="_blank"
+                   style="background: #8B0000; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 12px;">
+                    <i class="fas fa-directions" style="margin-right: 4px;"></i>Get Directions
+                </a>
+            </div>
+        `).openPopup();
+
+        console.log('✅ OpenStreetMap loaded successfully');
+
+    } catch (error) {
+        console.error('Error loading map:', error);
+        // Fallback to static display
+        document.getElementById('office-map').innerHTML = `
+            <div class="d-flex flex-column align-items-center justify-content-center h-100 bg-light text-center p-4">
+                <i class="fas fa-map fa-3x text-muted mb-3"></i>
+                <h6 class="text-muted mb-2">Map Loading...</h6>
+                <p class="text-muted mb-3">19 Ner Halayla St.<br>Even Yehuda, Israel</p>
+                <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
+                   target="_blank" class="btn btn-primary btn-sm">
+                    <i class="fas fa-external-link-alt me-2"></i>View Location
+                </a>
+            </div>
+        `;
+    }
+});
+</script>
 
 <style>
 .contact-method-card:hover {
