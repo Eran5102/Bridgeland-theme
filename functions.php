@@ -70,6 +70,16 @@ function bridgeland_scripts() {
     // Custom JavaScript
     wp_enqueue_script('bridgeland-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery', 'bootstrap-js'), '2.0', true);
 
+    // Exclude our scripts from SiteGround Optimizer combination to avoid conflicts
+    if (function_exists('sg_cachepress_exclude_from_optimization')) {
+        sg_cachepress_exclude_from_optimization('assets/js/main.js');
+        sg_cachepress_exclude_from_optimization('bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js');
+    }
+
+    // Add script exclusions for SiteGround Speed Optimizer
+    add_filter('sgo_javascript_combine_excluded_external_paths', 'bridgeland_exclude_scripts_from_combine');
+    add_filter('sgo_javascript_combine_excluded_inline_content', 'bridgeland_exclude_inline_scripts');
+
     // Localize script for AJAX
     wp_localize_script('bridgeland-main', 'bridgeland_ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
@@ -77,6 +87,21 @@ function bridgeland_scripts() {
     ));
 }
 add_action('wp_enqueue_scripts', 'bridgeland_scripts');
+
+// SiteGround Optimizer exclusion functions
+function bridgeland_exclude_scripts_from_combine($excluded_paths) {
+    $excluded_paths[] = 'maps.googleapis.com';
+    $excluded_paths[] = 'mediaelementplayer';
+    $excluded_paths[] = 'wp-mediaelement';
+    return $excluded_paths;
+}
+
+function bridgeland_exclude_inline_scripts($excluded_content) {
+    $excluded_content[] = 'initMap';
+    $excluded_content[] = 'loadGoogleMaps';
+    $excluded_content[] = 'mediaelementplayer';
+    return $excluded_content;
+}
 
 // Custom Post Types
 function bridgeland_custom_post_types() {

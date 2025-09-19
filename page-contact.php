@@ -594,12 +594,27 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 
 <!-- Google Maps API with optimized loading -->
 <script>
-    // Optimized Google Maps loading
+    // Optimized Google Maps loading with error handling
     function loadGoogleMaps() {
         const script = document.createElement('script');
         script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApJ2itkMqPnuleXFoQFYm9l5HqxZ1ghDs&callback=initMap&libraries=marker&v=weekly&loading=async';
         script.async = true;
         script.defer = true;
+
+        // Add error handling for script loading
+        script.onerror = function() {
+            console.warn('Failed to load Google Maps API script');
+            showMapFallback();
+        };
+
+        // Set a timeout in case the API doesn't respond
+        setTimeout(function() {
+            if (typeof google === 'undefined' || !google.maps) {
+                console.warn('Google Maps API failed to load - showing fallback');
+                showMapFallback();
+            }
+        }, 10000);
+
         document.head.appendChild(script);
     }
 
@@ -614,6 +629,13 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 <script>
 function initMap() {
     console.log('Initializing Google Maps...');
+
+    // Check if Google Maps API is available
+    if (typeof google === 'undefined' || !google.maps) {
+        console.warn('Google Maps API not available');
+        showMapFallback();
+        return;
+    }
 
     try {
         // Coordinates for 19 Ner Halayla St, Even Yehuda, Israel
@@ -672,6 +694,16 @@ function initMap() {
 
     } catch (error) {
         console.error('Error initializing Google Maps:', error);
+
+        // Handle specific API errors
+        if (error.message && error.message.includes('ApiTargetBlocked')) {
+            console.warn('Google Maps API blocked for this domain. Showing fallback.');
+        } else if (error.message && error.message.includes('InvalidKey')) {
+            console.warn('Invalid Google Maps API key. Showing fallback.');
+        } else {
+            console.warn('Google Maps initialization failed. Showing fallback.');
+        }
+
         showMapFallback();
     }
 }
