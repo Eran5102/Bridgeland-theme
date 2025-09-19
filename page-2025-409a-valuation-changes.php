@@ -54,7 +54,6 @@ get_header(); ?>
                         <ul class="mb-0 text-white">
                             <li><strong>Enhanced Documentation Requirements:</strong> More detailed valuation reports and methodology explanations</li>
                             <li><strong>AI/Tech Company Specific Guidelines:</strong> New provisions for valuing AI and technology businesses</li>
-                            <li><strong>Shortened Safe Harbor Period:</strong> Reduced from 12 to 9 months for high-growth companies</li>
                             <li><strong>Increased Audit Scrutiny:</strong> Enhanced review processes for companies over $10M valuation</li>
                         </ul>
                     </div>
@@ -104,26 +103,6 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <h2 class="h3 mt-5 mb-3">Safe Harbor Period Changes</h2>
-                    <p>
-                        One of the most significant changes is the reduction of the safe harbor period from 12 to 9 months
-                        for companies experiencing rapid growth or significant business model changes.
-                    </p>
-
-                    <blockquote class="blockquote bg-light p-4 rounded my-4">
-                        <p class="mb-0">"The shortened safe harbor period reflects the reality that fast-growing
-                        tech companies can experience significant valuation changes in shorter timeframes,
-                        particularly in today's dynamic market environment."</p>
-                        <footer class="blockquote-footer mt-2">IRS Guidelines, <cite title="2025 409A Updates">2025 409A Updates</cite></footer>
-                    </blockquote>
-
-                    <h3 class="h4 mb-3">Companies Affected by Shortened Period</h3>
-                    <ul class="my-4">
-                        <li>Companies with 50%+ annual revenue growth</li>
-                        <li>Businesses with recent significant funding rounds</li>
-                        <li>AI/ML companies with evolving business models</li>
-                        <li>Companies preparing for IPO within 18 months</li>
-                    </ul>
 
                     <h2 class="h3 mt-5 mb-3">Enhanced Audit and Review Processes</h2>
                     <p>
