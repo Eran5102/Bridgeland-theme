@@ -607,6 +607,21 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
             showMapFallback();
         };
 
+        // Add global error handler for Google Maps API errors
+        window.gm_authFailure = function() {
+            console.warn('Google Maps API authentication failed - showing fallback');
+            showMapFallback();
+        };
+
+        // Catch ApiTargetBlockedMapError
+        window.addEventListener('error', function(e) {
+            if (e.message && e.message.includes('ApiTargetBlocked')) {
+                console.warn('Google Maps API blocked for this domain - showing fallback');
+                showMapFallback();
+                e.preventDefault();
+            }
+        });
+
         // Set a timeout in case the API doesn't respond
         setTimeout(function() {
             if (typeof google === 'undefined' || !google.maps) {
@@ -646,6 +661,16 @@ function initMap() {
             zoom: 15,
             center: officeLocation,
             mapId: "bridgeland_office_map"
+        });
+
+        // Listen for map errors
+        map.addListener('idle', function() {
+            // Check if map loaded successfully by checking if it has a mapId
+            if (!map.mapId) {
+                console.warn('Google Maps failed to initialize properly - showing fallback');
+                showMapFallback();
+                return;
+            }
         });
 
         // Create the advanced marker (new recommended approach)
