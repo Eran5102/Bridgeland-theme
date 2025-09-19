@@ -197,14 +197,61 @@
             console.warn('⚠️ Bootstrap JavaScript not found - using fallback menu toggle');
         }
 
-        // Add click listeners for mobile menu closing when clicking nav links
-        document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+        // Handle mobile dropdown toggles
+        document.querySelectorAll('.dropdown-toggle').forEach(function(dropdown) {
+            dropdown.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdownMenu = this.nextElementSibling;
+
+                if (dropdownMenu) {
+                    // Toggle the dropdown
+                    if (dropdownMenu.classList.contains('show')) {
+                        dropdownMenu.classList.remove('show');
+                        this.setAttribute('aria-expanded', 'false');
+                        console.log('Mobile dropdown closed');
+                    } else {
+                        // Close all other dropdowns first
+                        document.querySelectorAll('.dropdown-menu.show').forEach(function(openMenu) {
+                            openMenu.classList.remove('show');
+                        });
+                        document.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(function(openToggle) {
+                            openToggle.setAttribute('aria-expanded', 'false');
+                        });
+
+                        // Open this dropdown
+                        dropdownMenu.classList.add('show');
+                        this.setAttribute('aria-expanded', 'true');
+                        console.log('Mobile dropdown opened');
+                    }
+                }
+            });
+        });
+
+        // Add click listeners for mobile menu closing when clicking nav links (but not dropdown toggles)
+        document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)').forEach(function(link) {
             link.addEventListener('click', function() {
                 const navbarNav = document.getElementById('navbarNav');
                 if (navbarNav && navbarNav.classList.contains('show')) {
                     setTimeout(() => {
                         navbarNav.classList.remove('show');
                         document.querySelector('.navbar-toggler').setAttribute('aria-expanded', 'false');
+                    }, 100);
+                }
+            });
+        });
+
+        // Close mobile menu when clicking dropdown items
+        document.querySelectorAll('.dropdown-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                const navbarNav = document.getElementById('navbarNav');
+                if (navbarNav && navbarNav.classList.contains('show')) {
+                    setTimeout(() => {
+                        navbarNav.classList.remove('show');
+                        document.querySelector('.navbar-toggler').setAttribute('aria-expanded', 'false');
+                        // Also close the dropdown
+                        document.querySelectorAll('.dropdown-menu.show').forEach(function(menu) {
+                            menu.classList.remove('show');
+                        });
                     }, 100);
                 }
             });
