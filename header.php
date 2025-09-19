@@ -197,32 +197,43 @@
             console.warn('⚠️ Bootstrap JavaScript not found - using fallback menu toggle');
         }
 
-        // Handle mobile dropdown toggles
+        // Handle mobile dropdown toggles (only on mobile/small screens)
         document.querySelectorAll('.dropdown-toggle').forEach(function(dropdown) {
             dropdown.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdownMenu = this.nextElementSibling;
+                // Only apply custom handling on mobile (when navbar is collapsed)
+                const navbarCollapse = document.getElementById('navbarNav');
+                const isMobile = window.innerWidth < 992; // Bootstrap lg breakpoint
 
-                if (dropdownMenu) {
-                    // Toggle the dropdown
-                    if (dropdownMenu.classList.contains('show')) {
-                        dropdownMenu.classList.remove('show');
-                        this.setAttribute('aria-expanded', 'false');
-                        console.log('Mobile dropdown closed');
-                    } else {
-                        // Close all other dropdowns first
-                        document.querySelectorAll('.dropdown-menu.show').forEach(function(openMenu) {
-                            openMenu.classList.remove('show');
-                        });
-                        document.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(function(openToggle) {
-                            openToggle.setAttribute('aria-expanded', 'false');
-                        });
+                if (isMobile && navbarCollapse) {
+                    e.preventDefault();
+                    e.stopPropagation();
 
-                        // Open this dropdown
-                        dropdownMenu.classList.add('show');
-                        this.setAttribute('aria-expanded', 'true');
-                        console.log('Mobile dropdown opened');
+                    const dropdownMenu = this.nextElementSibling;
+
+                    if (dropdownMenu) {
+                        // Toggle the dropdown
+                        if (dropdownMenu.classList.contains('show')) {
+                            dropdownMenu.classList.remove('show');
+                            this.setAttribute('aria-expanded', 'false');
+                            console.log('Mobile dropdown closed');
+                        } else {
+                            // Close all other dropdowns first
+                            document.querySelectorAll('.dropdown-menu.show').forEach(function(openMenu) {
+                                openMenu.classList.remove('show');
+                            });
+                            document.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach(function(openToggle) {
+                                openToggle.setAttribute('aria-expanded', 'false');
+                            });
+
+                            // Open this dropdown
+                            dropdownMenu.classList.add('show');
+                            this.setAttribute('aria-expanded', 'true');
+                            console.log('Mobile dropdown opened');
+                        }
                     }
+                } else {
+                    // On desktop, let Bootstrap handle it normally
+                    console.log('Desktop dropdown - using Bootstrap default behavior');
                 }
             });
         });
