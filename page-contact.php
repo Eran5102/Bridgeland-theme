@@ -464,23 +464,41 @@
 
             <div class="col-lg-6">
                 <div class="map-container bg-light rounded overflow-hidden">
-                    <iframe
-                        width="100%"
-                        height="350"
-                        style="border:0"
-                        loading="lazy"
-                        allowfullscreen
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyApJ2itkMqPnuleXFoQFYm9l5HqxZ1ghDs&q=19+Ner+Halayla+St,+Even+Yehuda,+Israel&zoom=15">
-                    </iframe>
-                    <div class="map-footer p-3 bg-white text-center">
-                        <small class="text-muted">Bridgeland Advisors Office Location</small>
-                        <div class="mt-2">
+                    <div class="static-map-placeholder d-flex flex-column align-items-center justify-content-center text-center p-4" style="height: 350px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+                        <div class="mb-4">
+                            <i class="fas fa-map-marker-alt fa-4x text-primary mb-3"></i>
+                            <h5 class="text-dark mb-2">Bridgeland Advisors Office</h5>
+                        </div>
+
+                        <div class="office-details mb-4">
+                            <p class="mb-2 text-muted">
+                                <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                                <strong>19 Ner Halayla St.</strong><br>
+                                <span class="ms-4">Even Yehuda, Israel</span>
+                            </p>
+                            <p class="mb-2 text-muted">
+                                <i class="fas fa-phone me-2 text-primary"></i>
+                                <strong>+972-50-6842937</strong>
+                            </p>
+                            <p class="mb-0 text-muted">
+                                <i class="fas fa-envelope me-2 text-primary"></i>
+                                <strong>eran@bridgeland-advisors.com</strong>
+                            </p>
+                        </div>
+
+                        <div class="map-actions">
                             <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
-                               target="_blank" class="btn btn-outline-primary btn-sm">
-                                <i class="fas fa-external-link-alt me-2"></i>Open in Google Maps
+                               target="_blank" class="btn btn-primary me-2 mb-2">
+                                <i class="fas fa-directions me-2"></i>Get Directions
+                            </a>
+                            <a href="https://www.waze.com/ul?q=19%20Ner%20Halayla%20St%2C%20Even%20Yehuda%2C%20Israel"
+                               target="_blank" class="btn btn-outline-primary mb-2">
+                                <i class="fas fa-route me-2"></i>Open in Waze
                             </a>
                         </div>
+                    </div>
+                    <div class="map-footer p-3 bg-white text-center">
+                        <small class="text-muted">Expert 409A Valuations & Financial Advisory Services</small>
                     </div>
                 </div>
             </div>
@@ -598,9 +616,7 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 });
 </script>
 
-<!-- Google Maps Embed - Simple and reliable iframe implementation -->
-
-<!-- No JavaScript needed - Google Maps Embed API is much more reliable -->
+<!-- Static Map Replacement - No API dependencies, always works reliably -->
 
 <style>
 .contact-method-card:hover {
