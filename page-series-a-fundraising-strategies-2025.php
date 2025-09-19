@@ -50,12 +50,13 @@ get_header(); ?>
                     </p>
 
                     <div class="bg-info bg-opacity-10 p-4 rounded my-4">
-                        <h4 class="h5 text-info mb-2">2025 Series A Key Metrics:</h4>
+                        <h4 class="h5 text-info mb-2">Series A Market Observations:</h4>
+                        <p class="small text-muted mb-2"><em>Note: These are general market trends and can vary significantly by sector, geography, and company specifics.</em></p>
                         <ul class="mb-0">
-                            <li><strong>Average Round Size:</strong> $15-25M (up from $12-18M in 2024)</li>
-                            <li><strong>Pre-Money Valuations:</strong> $40-80M for strong performers</li>
-                            <li><strong>Revenue Requirements:</strong> $2-5M ARR for SaaS companies</li>
-                            <li><strong>Time to Close:</strong> 4-6 months on average</li>
+                            <li><strong>Round Size:</strong> Varies widely based on sector and growth potential</li>
+                            <li><strong>Valuations:</strong> Dependent on metrics, market conditions, and competitive dynamics</li>
+                            <li><strong>Revenue Requirements:</strong> Standards differ across industries and business models</li>
+                            <li><strong>Timeline:</strong> Fundraising duration varies by market conditions</li>
                         </ul>
                     </div>
 
@@ -167,40 +168,13 @@ get_header(); ?>
                         a successful Series A fundraise in 2025's more conservative investment climate.
                     </p>
 
-                    <h4 class="h5 mb-3">Valuation Benchmarks by Sector</h4>
-                    <div class="table-responsive my-4">
-                        <table class="table table-bordered">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>Sector</th>
-                                    <th>Revenue Multiple</th>
-                                    <th>Typical Pre-Money</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>SaaS/Enterprise Software</td>
-                                    <td>8-15x ARR</td>
-                                    <td>$40-80M</td>
-                                </tr>
-                                <tr>
-                                    <td>AI/Machine Learning</td>
-                                    <td>10-20x ARR</td>
-                                    <td>$50-100M</td>
-                                </tr>
-                                <tr>
-                                    <td>Fintech</td>
-                                    <td>6-12x ARR</td>
-                                    <td>$35-70M</td>
-                                </tr>
-                                <tr>
-                                    <td>Healthcare Tech</td>
-                                    <td>8-16x ARR</td>
-                                    <td>$40-85M</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <h4 class="h5 mb-3">Understanding Valuation Approaches</h4>
+                    <p>
+                        Valuations vary significantly by sector, business model, growth rate, and market conditions.
+                        For current market valuations specific to your company's situation, consult with professional
+                        valuation advisors who can provide accurate, data-driven assessments based on recent comparable
+                        transactions and current market conditions.
+                    </p>
 
                     <h2 class="h3 mt-5 mb-3">Due Diligence Preparation</h2>
                     <p>

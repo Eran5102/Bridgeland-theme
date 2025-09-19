@@ -51,11 +51,12 @@ get_header(); ?>
 
                     <div class="bg-info bg-opacity-10 p-4 rounded my-4">
                         <h4 class="h5 text-info mb-2">AI Valuation Premium Factors:</h4>
+                        <p class="small text-muted mb-2"><em>The following are general market observations and may vary significantly by sector and company:</em></p>
                         <ul class="mb-0">
-                            <li><strong>Proprietary Data:</strong> 25-40% premium for companies with unique datasets</li>
-                            <li><strong>Custom Models:</strong> 20-30% premium for proprietary AI algorithms</li>
-                            <li><strong>AI-Native Architecture:</strong> 15-25% premium for AI-first design</li>
-                            <li><strong>Defensible Moats:</strong> 30-50% premium for network effects in AI</li>
+                            <li><strong>Proprietary Data:</strong> Significant premiums for companies with unique datasets</li>
+                            <li><strong>Custom Models:</strong> Higher valuations for proprietary AI algorithms</li>
+                            <li><strong>AI-Native Architecture:</strong> Premium valuations for AI-first design</li>
+                            <li><strong>Defensible Moats:</strong> Strong valuations for network effects in AI</li>
                         </ul>
                     </div>
 
@@ -97,12 +98,6 @@ get_header(); ?>
                         distinction is crucial for accurate valuations.
                     </p>
 
-                    <blockquote class="blockquote bg-light p-4 rounded my-4">
-                        <p class="mb-0">"The difference between a company using ChatGPT's API and a company
-                        building proprietary machine learning models is often the difference between a 1x
-                        and 10x valuation multiple."</p>
-                        <footer class="blockquote-footer mt-2">Industry Analysis, <cite title="2025 AI Valuation Study">2025 AI Valuation Study</cite></footer>
-                    </blockquote>
 
                     <h3 class="h4 mb-3">Red Flags in AI Valuations</h3>
                     <ul class="my-4">

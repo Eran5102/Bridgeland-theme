@@ -36,16 +36,28 @@ get_header(); ?>
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="article-body">
+                    <!-- Educational Content Disclaimer -->
+                    <div class="alert alert-warning border-warning mb-4" role="alert">
+                        <h5 class="alert-heading mb-2">
+                            <i class="fas fa-exclamation-triangle me-2"></i>Illustrative Case Study
+                        </h5>
+                        <p class="mb-0">
+                            This is a <strong>hypothetical case study</strong> created for educational purposes to demonstrate
+                            waterfall analysis concepts. The company, financials, and individuals mentioned are fictional.
+                            For actual valuation and exit planning services, please
+                            <a href="<?php echo home_url('/contact-us/'); ?>" class="alert-link">contact our team</a>.
+                        </p>
+                    </div>
+
                     <div class="lead mb-4">
-                        Real-world analysis of a successful startup exit, including detailed waterfall distribution,
-                        investor returns, and key lessons for founders planning their exit strategy. This case study
-                        examines how proper planning and waterfall modeling maximized value for all stakeholders.
+                        This illustrative case study demonstrates how waterfall distributions work in startup acquisitions,
+                        showing how proper planning and waterfall modeling can maximize value for all stakeholders.
                     </div>
 
                     <div class="bg-info bg-opacity-10 p-4 rounded my-4">
-                        <h4 class="h5 text-info mb-2">📊 Case Study Overview</h4>
+                        <h4 class="h5 text-info mb-2">📊 Illustrative Case Overview</h4>
                         <ul class="mb-0">
-                            <li><strong>Company:</strong> TechFlow Solutions (SaaS platform for SMB automation)</li>
+                            <li><strong>Fictional Company:</strong> TechFlow Solutions (example SaaS platform)</li>
                             <li><strong>Acquisition Price:</strong> $50 million cash + earnout</li>
                             <li><strong>Timeline:</strong> Seed to exit in 6 years</li>
                             <li><strong>Total Funding Raised:</strong> $12 million across 3 rounds</li>
