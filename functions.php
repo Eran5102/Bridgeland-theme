@@ -110,7 +110,26 @@ function bridgeland_exclude_inline_scripts($excluded_content) {
     return $excluded_content;
 }
 
-// Additional SiteGround exclusions
+// Nuclear option: Completely disable SiteGround JavaScript optimization
+function bridgeland_disable_siteground_js_optimization() {
+    // Disable JavaScript combination completely
+    add_filter('sgo_js_combine_exclude_params', '__return_false');
+    add_filter('sgo_javascript_combine_exclude', '__return_true');
+    add_filter('sgo_js_async_exclude', '__return_true');
+
+    // Disable minification
+    add_filter('sgo_javascript_minification_exclude', '__return_true');
+
+    // Force disable all JS optimizations for the entire site
+    if (function_exists('sg_cachepress_purge_cache')) {
+        add_action('wp_footer', function() {
+            echo '<script>console.log("SiteGround JS optimization disabled for this site");</script>';
+        });
+    }
+}
+add_action('plugins_loaded', 'bridgeland_disable_siteground_js_optimization', 1);
+
+// Additional SiteGround exclusions (backup approach)
 function bridgeland_aggressive_siteground_exclusions() {
     // Disable JavaScript combination entirely for our theme
     add_filter('sgo_js_combine_exclude', function($excluded) {
@@ -126,8 +145,40 @@ function bridgeland_aggressive_siteground_exclusions() {
         $excluded[] = 'wp-mediaelement';
         return $excluded;
     });
+
+    // Force purge cache on every page load (temporary measure)
+    if (function_exists('sg_cachepress_purge_cache')) {
+        sg_cachepress_purge_cache();
+    }
 }
 add_action('init', 'bridgeland_aggressive_siteground_exclusions');
+
+// Completely remove MediaElement scripts that cause conflicts
+function bridgeland_remove_mediaelement_scripts() {
+    // Dequeue all MediaElement related scripts
+    wp_dequeue_script('wp-mediaelement');
+    wp_dequeue_script('mediaelement');
+    wp_dequeue_script('mediaelement-core');
+    wp_dequeue_script('mediaelement-migrate');
+    wp_dequeue_style('wp-mediaelement');
+    wp_dequeue_style('mediaelement');
+
+    // Remove MediaElement from WordPress core
+    remove_action('wp_enqueue_scripts', 'wp_enqueue_media');
+
+    // Block any plugin that tries to load MediaElement
+    add_filter('wp_enqueue_scripts', function() {
+        global $wp_scripts;
+        if (isset($wp_scripts->registered['mediaelement'])) {
+            unset($wp_scripts->registered['mediaelement']);
+        }
+        if (isset($wp_scripts->registered['wp-mediaelement'])) {
+            unset($wp_scripts->registered['wp-mediaelement']);
+        }
+    }, 999);
+}
+add_action('wp_enqueue_scripts', 'bridgeland_remove_mediaelement_scripts', 999);
+add_action('admin_enqueue_scripts', 'bridgeland_remove_mediaelement_scripts', 999);
 
 // Custom Post Types
 function bridgeland_custom_post_types() {
