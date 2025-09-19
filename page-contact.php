@@ -464,9 +464,15 @@
 
             <div class="col-lg-6">
                 <div class="map-container bg-light rounded overflow-hidden">
-                    <div id="office-map" style="height: 350px; width: 100%;">
-                        <!-- Google Maps will load here -->
-                    </div>
+                    <iframe
+                        width="100%"
+                        height="350"
+                        style="border:0"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyApJ2itkMqPnuleXFoQFYm9l5HqxZ1ghDs&q=19+Ner+Halayla+St,+Even+Yehuda,+Israel&zoom=15">
+                    </iframe>
                     <div class="map-footer p-3 bg-white text-center">
                         <small class="text-muted">Bridgeland Advisors Office Location</small>
                         <div class="mt-2">
@@ -592,189 +598,9 @@ document.querySelectorAll('input[name="service"]').forEach(radio => {
 });
 </script>
 
-<!-- Google Maps API with optimized loading -->
-<script>
-    // Optimized Google Maps loading with error handling
-    function loadGoogleMaps() {
-        const script = document.createElement('script');
-        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyApJ2itkMqPnuleXFoQFYm9l5HqxZ1ghDs&callback=initMap&libraries=marker&v=weekly&loading=async';
-        script.async = true;
-        script.defer = true;
+<!-- Google Maps Embed - Simple and reliable iframe implementation -->
 
-        // Add error handling for script loading
-        script.onerror = function() {
-            console.warn('Failed to load Google Maps API script');
-            showMapFallback();
-        };
-
-        // Add global error handler for Google Maps API errors
-        window.gm_authFailure = function() {
-            console.warn('Google Maps API authentication failed - showing fallback');
-            showMapFallback();
-        };
-
-        // Catch ApiTargetBlockedMapError
-        window.addEventListener('error', function(e) {
-            if (e.message && e.message.includes('ApiTargetBlocked')) {
-                console.warn('Google Maps API blocked for this domain - showing fallback');
-                showMapFallback();
-                e.preventDefault();
-            }
-        });
-
-        // Set a timeout in case the API doesn't respond
-        setTimeout(function() {
-            if (typeof google === 'undefined' || !google.maps) {
-                console.warn('Google Maps API failed to load - showing fallback');
-                showMapFallback();
-            }
-        }, 10000);
-
-        document.head.appendChild(script);
-    }
-
-    // Load maps when page is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadGoogleMaps);
-    } else {
-        loadGoogleMaps();
-    }
-</script>
-
-<script>
-function initMap() {
-    console.log('Initializing Google Maps...');
-
-    // Check if Google Maps API is available
-    if (typeof google === 'undefined' || !google.maps) {
-        console.warn('Google Maps API not available');
-        showMapFallback();
-        return;
-    }
-
-    try {
-        // Coordinates for 19 Ner Halayla St, Even Yehuda, Israel
-        const officeLocation = { lat: 32.2667, lng: 34.8833 };
-
-        // Create the map (without custom styles when using mapId)
-        const map = new google.maps.Map(document.getElementById("office-map"), {
-            zoom: 15,
-            center: officeLocation,
-            mapId: "bridgeland_office_map"
-        });
-
-        // Listen for map errors
-        map.addListener('idle', function() {
-            // Check if map loaded successfully by checking if it has a mapId
-            if (!map.mapId) {
-                console.warn('Google Maps failed to initialize properly - showing fallback');
-                showMapFallback();
-                return;
-            }
-        });
-
-        // Create the advanced marker (new recommended approach)
-        const marker = new google.maps.marker.AdvancedMarkerElement({
-            position: officeLocation,
-            map: map,
-            title: "Bridgeland Advisors"
-        });
-
-    // Create info window
-    const infoWindow = new google.maps.InfoWindow({
-        content: `
-            <div style="padding: 10px; font-family: Inter, sans-serif;">
-                <h6 style="margin: 0 0 8px 0; color: #8B0000; font-weight: 600;">Bridgeland Advisors</h6>
-                <p style="margin: 0 0 8px 0; font-size: 14px; color: #666;">
-                    <i class="fas fa-map-marker-alt" style="color: #8B0000; margin-right: 6px;"></i>
-                    19 Ner Halayla St.<br>
-                    Even Yehuda, Israel
-                </p>
-                <p style="margin: 0 0 8px 0; font-size: 13px; color: #666;">
-                    <i class="fas fa-phone" style="color: #8B0000; margin-right: 6px;"></i>
-                    +972-50-6842937
-                </p>
-                <p style="margin: 0; font-size: 12px; color: #888;">
-                    Expert 409A Valuations & Financial Advisory
-                </p>
-            </div>
-        `
-    });
-
-        // Show info window when marker is clicked
-        marker.addListener("click", () => {
-            infoWindow.open({
-                anchor: marker,
-                map: map
-            });
-        });
-
-        // Open info window by default
-        infoWindow.open({
-            anchor: marker,
-            map: map
-        });
-
-        console.log('✅ Google Maps initialized successfully');
-
-    } catch (error) {
-        console.error('Error initializing Google Maps:', error);
-
-        // Handle specific API errors
-        if (error.message && error.message.includes('ApiTargetBlocked')) {
-            console.warn('Google Maps API blocked for this domain. Showing fallback.');
-        } else if (error.message && error.message.includes('InvalidKey')) {
-            console.warn('Invalid Google Maps API key. Showing fallback.');
-        } else {
-            console.warn('Google Maps initialization failed. Showing fallback.');
-        }
-
-        showMapFallback();
-    }
-}
-
-function showMapFallback() {
-    const mapContainer = document.getElementById('office-map');
-    if (mapContainer) {
-        mapContainer.innerHTML = `
-            <div class="d-flex flex-column align-items-center justify-content-center h-100 bg-light">
-                <i class="fas fa-map fa-3x text-muted mb-3"></i>
-                <h6 class="text-muted mb-2">Map Temporarily Unavailable</h6>
-                <p class="text-muted text-center mb-3">19 Ner Halayla St.<br>Even Yehuda, Israel</p>
-                <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
-                   target="_blank" class="btn btn-primary btn-sm">
-                    <i class="fas fa-external-link-alt me-2"></i>View on Google Maps
-                </a>
-            </div>
-        `;
-    }
-}
-
-// Fallback in case the API fails to load
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        if (typeof google === 'undefined') {
-            const mapContainer = document.getElementById('office-map');
-            if (mapContainer) {
-                mapContainer.innerHTML = `
-                    <div class="d-flex flex-column align-items-center justify-content-center h-100 text-center p-4">
-                        <i class="fas fa-map fa-3x text-muted mb-3"></i>
-                        <h6 class="text-muted mb-2">Map Loading...</h6>
-                        <p class="text-muted small mb-3">
-                            19 Ner Halayla St.<br>
-                            Even Yehuda, Israel
-                        </p>
-                        <a href="https://maps.google.com/?q=19+Ner+Halayla+St,+Even+Yehuda,+Israel"
-                           target="_blank" class="btn btn-outline-primary btn-sm">
-                            <i class="fas fa-external-link-alt me-2"></i>View on Google Maps
-                        </a>
-                    </div>
-                `;
-            }
-        }
-    }, 3000);
-});
-</script>
+<!-- No JavaScript needed - Google Maps Embed API is much more reliable -->
 
 <style>
 .contact-method-card:hover {
