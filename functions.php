@@ -74,6 +74,8 @@ function bridgeland_scripts() {
     if (function_exists('sg_cachepress_exclude_from_optimization')) {
         sg_cachepress_exclude_from_optimization('assets/js/main.js');
         sg_cachepress_exclude_from_optimization('bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js');
+        sg_cachepress_exclude_from_optimization('bootstrap');
+        sg_cachepress_exclude_from_optimization('navbar');
     }
 
     // Add script exclusions for SiteGround Speed Optimizer

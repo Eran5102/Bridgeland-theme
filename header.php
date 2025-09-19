@@ -161,8 +161,55 @@
         }
     }
 
-    // Enhanced Calendly loading check
+    // Mobile menu toggle function (fallback if Bootstrap JS fails)
+    function toggleMobileMenu() {
+        console.log('Mobile menu toggle clicked');
+        const navbarNav = document.getElementById('navbarNav');
+        const toggler = document.querySelector('.navbar-toggler');
+
+        if (navbarNav) {
+            if (navbarNav.classList.contains('show')) {
+                navbarNav.classList.remove('show');
+                toggler.setAttribute('aria-expanded', 'false');
+                console.log('Mobile menu closed');
+            } else {
+                navbarNav.classList.add('show');
+                toggler.setAttribute('aria-expanded', 'true');
+                console.log('Mobile menu opened');
+            }
+        }
+
+        // Try Bootstrap's method as backup
+        if (typeof bootstrap !== 'undefined') {
+            console.log('Using Bootstrap collapse');
+            const collapse = new bootstrap.Collapse(navbarNav, {
+                toggle: true
+            });
+        }
+    }
+
+    // Bootstrap and mobile menu initialization
     document.addEventListener('DOMContentLoaded', function() {
+        // Check if Bootstrap is loaded
+        if (typeof bootstrap !== 'undefined') {
+            console.log('✅ Bootstrap JavaScript is loaded');
+        } else {
+            console.warn('⚠️ Bootstrap JavaScript not found - using fallback menu toggle');
+        }
+
+        // Add click listeners for mobile menu closing when clicking nav links
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                const navbarNav = document.getElementById('navbarNav');
+                if (navbarNav && navbarNav.classList.contains('show')) {
+                    setTimeout(() => {
+                        navbarNav.classList.remove('show');
+                        document.querySelector('.navbar-toggler').setAttribute('aria-expanded', 'false');
+                    }, 100);
+                }
+            });
+        });
+
         console.log('Checking for Calendly widget...');
 
         // Check if Calendly is loaded every 200ms for up to 10 seconds
@@ -220,7 +267,7 @@
         </a>
 
         <!-- Mobile menu toggle -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleMobileMenu()">
             <span class="navbar-toggler-icon"></span>
         </button>
 
