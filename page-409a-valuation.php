@@ -33,7 +33,7 @@
                     </div>
                     <div class="stat-item d-flex justify-content-between mb-2">
                         <span>Pricing Range:</span>
-                        <strong>$2,500 - $7,500</strong>
+                        <strong>$1,750 - $6,750</strong>
                     </div>
                     <div class="stat-item d-flex justify-content-between mb-2">
                         <span>Validity Period:</span>
@@ -261,8 +261,8 @@
                     <div class="card-body p-4 text-center">
                         <h4 class="mb-3">Early Stage</h4>
                         <div class="price-display mb-4">
-                            <span class="h2 text-primary">$2,500</span>
-                            <span class="text-muted">- $3,500</span>
+                            <span class="h2 text-primary">$1,750</span>
+                            <span class="text-muted">- $2,750</span>
                         </div>
                         <ul class="list-unstyled mb-4">
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Pre-revenue to $2M ARR</li>
@@ -284,8 +284,8 @@
                     <div class="card-body p-4 text-center">
                         <h4 class="mb-3">Growth Stage</h4>
                         <div class="price-display mb-4">
-                            <span class="h2 text-primary">$4,000</span>
-                            <span class="text-muted">- $5,500</span>
+                            <span class="h2 text-primary">$3,250</span>
+                            <span class="text-muted">- $4,750</span>
                         </div>
                         <ul class="list-unstyled mb-4">
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i>$2M - $10M ARR</li>
@@ -304,8 +304,8 @@
                     <div class="card-body p-4 text-center">
                         <h4 class="mb-3">Enterprise</h4>
                         <div class="price-display mb-4">
-                            <span class="h2 text-primary">$6,000</span>
-                            <span class="text-muted">- $7,500</span>
+                            <span class="h2 text-primary">$5,250</span>
+                            <span class="text-muted">- $6,750</span>
                         </div>
                         <ul class="list-unstyled mb-4">
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i>$10M+ ARR</li>

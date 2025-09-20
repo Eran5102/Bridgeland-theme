@@ -225,7 +225,7 @@
                             IRS-compliant equity valuations for stock option programs and financial reporting with 14-day turnaround guarantee.
                         </p>
                         <div class="service-meta d-flex justify-content-between text-small text-muted mb-3">
-                            <span><i class="fas fa-dollar-sign me-1"></i>$2,500 - $7,500</span>
+                            <span><i class="fas fa-dollar-sign me-1"></i>$1,750 - $6,750</span>
                             <span><i class="fas fa-clock me-1"></i>1-2 weeks</span>
                         </div>
                         <a href="<?php echo home_url('/409a-valuation/'); ?>" class="btn btn-primary w-100">
