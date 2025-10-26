@@ -294,17 +294,17 @@
                 <div class="additional-service-card card h-100 border-0 shadow-sm">
                     <div class="card-body p-4 text-center">
                         <div class="service-icon bg-primary bg-opacity-10 rounded-circle p-3 mx-auto mb-3" style="width: 60px; height: 60px;">
-                            <i class="fas fa-file-contract text-primary"></i>
+                            <i class="fas fa-globe text-primary"></i>
                         </div>
-                        <h4 class="h5 mb-3">Term Sheet Review</h4>
+                        <h4 class="h5 mb-3">Transfer Pricing Studies</h4>
                         <p class="text-muted mb-3">
-                            Expert analysis and negotiation support for investment terms and agreements.
+                            OECD-compliant transfer pricing documentation for cross-border transactions and Israeli tax compliance.
                         </p>
                         <div class="pricing mb-3">
                             <div class="small text-muted">Starting at</div>
-                            <div class="h6 text-primary">$1,000</div>
+                            <div class="h6 text-primary">$5,000</div>
                         </div>
-                        <a href="#contact" class="btn btn-outline-primary btn-sm">Get Quote</a>
+                        <a href="<?php echo home_url('/transfer-pricing-studies/'); ?>" class="btn btn-outline-primary btn-sm">Learn More</a>
                     </div>
                 </div>
             </div>
