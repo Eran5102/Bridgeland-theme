@@ -337,18 +337,18 @@
                     <div class="card-body p-4">
                         <div class="service-icon text-center mb-3">
                             <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fas fa-file-contract text-primary fa-lg"></i>
+                                <i class="fas fa-globe text-primary fa-lg"></i>
                             </div>
                         </div>
-                        <h3 class="service-title h5 mb-3 text-center">Term Sheet Negotiation</h3>
+                        <h3 class="service-title h5 mb-3 text-center">Transfer Pricing Studies</h3>
                         <p class="service-description text-muted mb-3">
-                            Expert analysis and negotiation support for investment terms with comprehensive market knowledge.
+                            OECD-compliant transfer pricing documentation for cross-border transactions and Israeli tax compliance.
                         </p>
                         <div class="service-meta d-flex justify-content-between text-small text-muted mb-3">
-                            <span><i class="fas fa-dollar-sign me-1"></i>$1,000 - $4,000</span>
-                            <span><i class="fas fa-clock me-1"></i>1 week</span>
+                            <span><i class="fas fa-dollar-sign me-1"></i>$5,000 - $15,000</span>
+                            <span><i class="fas fa-clock me-1"></i>3-6 weeks</span>
                         </div>
-                        <a href="<?php echo home_url('/term-sheet-negotiation/'); ?>" class="btn btn-primary w-100">
+                        <a href="<?php echo home_url('/transfer-pricing-studies/'); ?>" class="btn btn-primary w-100">
                             Learn More <i class="fas fa-arrow-right ms-2"></i>
                         </a>
                     </div>

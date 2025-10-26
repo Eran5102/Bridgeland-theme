@@ -336,7 +336,7 @@
                     <a class="nav-link fw-medium" href="<?php echo home_url(); ?>">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle fw-medium" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle fw-medium" href="<?php echo home_url("/services/"); ?>" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Services
                     </a>
                     <ul class="dropdown-menu shadow border-0">
@@ -346,6 +346,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="<?php echo home_url('/capital-raising/'); ?>"><i class="fas fa-handshake fa-fw me-2 text-primary"></i>Capital Raising</a></li>
                         <li><a class="dropdown-item" href="<?php echo home_url('/calculators/'); ?>"><i class="fas fa-calculator fa-fw me-2 text-primary"></i>Calculators</a></li>
+                        <li><a class="dropdown-item" href="<?php echo home_url("/transfer-pricing-studies/"); ?>"><i class="fas fa-globe fa-fw me-2 text-primary"></i>Transfer Pricing Studies</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
