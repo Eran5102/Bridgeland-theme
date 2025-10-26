@@ -814,9 +814,9 @@ function bridgeland_create_pages() {
             'content' => ''
         ),
         array(
-            'title' => 'Term Sheet Negotiation',
-            'slug' => 'term-sheet-negotiation',
-            'template' => 'page-term-sheet-negotiation.php',
+            'title' => 'Transfer Pricing Studies',
+            'slug' => 'transfer-pricing-studies',
+            'template' => 'page-transfer-pricing-studies.php',
             'content' => ''
         ),
         array(
